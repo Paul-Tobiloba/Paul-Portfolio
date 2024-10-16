@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { TypeAnimation } from "react-type-animation";
 import Resume from "../src/components/Resume";
 import Layout from "../src/layouts/Layout";
 import {
@@ -47,15 +48,36 @@ const Index = () => {
                   </h1>
                   <div className="label lui-subtitle">
                     {" "}
-                    I am <strong>Web Developer</strong>
+                    I am a{" "}
+                    <strong>
+                      <TypeAnimation
+                        sequence={[
+                          "Web Developer", // Start with "Web Developer"
+                          2000, // Hold for 2 seconds
+                          "Solutions Architect",
+                          2000, // Hold for 2 seconds
+                          "Automations Specialist",
+                          2000, // Hold for 2 seconds
+                          "Power Developer",
+                          2000, // Hold for 2 seconds
+                        ]}
+                        wrapper="span"
+                        speed={60} // Typing speed (60ms per character)
+                        deletionSpeed={40} // Speed of deletion effect
+                        style={{ fontSize: "inherit", display: "inline-block" }}
+                        repeat={Infinity}
+                      />
+                    </strong>
                   </div>
                 </div>
                 <div className="description">
                   <div>
                     <p>
-                      From France, Paris. I have rich experience in web design,
-                      also I am good at wordpress. I love to talk with you about
-                      our unique.
+                      I’m from Lagos, Nigeria. I specialize in web development
+                      and streamlining business processes through automation and
+                      process mapping. With a focus on efficiency and
+                      documentation, I help organizations simplify workflows and
+                      boost productivity.
                     </p>
                   </div>
                   <div className="social-links">
@@ -73,7 +95,7 @@ const Index = () => {
                 <div className="bts">
                   <a
                     target="_blank"
-                    href="https://drive.google.com/"
+                    href="https://drive.google.com/file/d/1XmbjKZEE6Qry26rnzZ_LcOawXFMuQaSH/view?usp=drive_link"
                     className="btn"
                   >
                     <span>Download CV</span>
@@ -90,8 +112,8 @@ const Index = () => {
               >
                 <img
                   decoding="async"
-                  src="assets/images/profile2.png"
-                  alt="<b>Zoé</b> Miller"
+                  src="assets/images/profile-potrait.png"
+                  alt="<b>Paul</b> Tobiloba"
                 />
                 <span className="circle circle-1" />
                 <span
@@ -116,14 +138,14 @@ const Index = () => {
                   <ul>
                     <li>
                       <span className="num">
-                        12 <strong>+</strong>
+                        6 <strong>+</strong>
                       </span>
                       <span className="value">
                         Years of <strong>Experience</strong>
                       </span>
                     </li>
                     <li>
-                      <span className="num">330</span>
+                      <span className="num">12</span>
                       <span className="value">
                         Completed <strong>Projects</strong>
                       </span>
@@ -182,16 +204,18 @@ const Index = () => {
                   </div>
                   <div className="icon" />
                   <h5 className="lui-title">
-                    <span> Web Design &amp; Logo </span>
+                    <span> Frontend Web Developer </span>
                   </h5>
                   <div className="lui-text">
                     <div>
                       {" "}
-                      Web designers craft the overall vision &amp; plan for a
-                      website layout. Professional logo development: Business,
-                      Company, or Personal.{" "}
+                      I build responsive, user-friendly websites with a focus on
+                      performance, ensuring seamless integration between design
+                      and functionality using modern frameworks like React and
+                      Next.js{" "}
                     </div>
                   </div>
+                  <div className="icon" />
                   <a href="#pricing-section" className="lnk">
                     {" "}
                     See Pricing{" "}
@@ -207,21 +231,24 @@ const Index = () => {
               <SwiperSlide className="swiper-slide">
                 <div className="services-item">
                   <div className="lui-subtitle">
-                    <span> Apps Development </span>
+                    <span> Business Process Management </span>
                   </div>
                   <div className="icon" />
                   <h5 className="lui-title">
-                    <span> iOS &amp; Android </span>
+                    <span> Solutions Architect </span>
                   </h5>
                   <div className="lui-text">
                     <div>
                       <p>
-                        Design Software applications to run on mobile devices.
-                        Modern and mobile-ready application that will help you
-                        reach all of your marketing.
+                        I help businesses streamline complex workflows by
+                        designing and implementing efficient systems. Through
+                        process mapping and automation, I develop tailored
+                        solutions that optimize business processes, enhance
+                        productivity, and reduce operational risks.
                       </p>
                     </div>
                   </div>
+                  <div className="icon" />
                   <a href="#pricing-section" className="lnk">
                     {" "}
                     See Pricing{" "}
@@ -237,20 +264,24 @@ const Index = () => {
               <SwiperSlide className="swiper-slide">
                 <div className="services-item">
                   <div className="lui-subtitle">
-                    <span> Game Development </span>
+                    <span> Automations </span>
                   </div>
                   <div className="icon" />
                   <h5 className="lui-title">
-                    <span> Unity &amp; Unreal Engine </span>
+                    <span> Automations Specialist </span>
                   </h5>
                   <div className="lui-text">
                     <div>
                       {" "}
-                      Creating games &amp; describes the design, development and
-                      release of a game. Developing unique mobile android and
-                      ios games.{" "}
+                      With extensive experience in automation, I specialize in
+                      simplifying repetitive tasks and boosting efficiency for
+                      organizations. Using tools like Power Automate, n8n, and
+                      make.com, I design and deploy automated workflows that
+                      integrate various systems, helping businesses save time
+                      and reduce human error.{" "}
                     </div>
                   </div>
+                  <div className="icon" />
                   <a href="#pricing-section" className="lnk">
                     {" "}
                     See Pricing{" "}
@@ -266,49 +297,22 @@ const Index = () => {
               <SwiperSlide className="swiper-slide">
                 <div className="services-item">
                   <div className="lui-subtitle">
-                    <span> Advertising </span>
+                    <span> Power Platform </span>
                   </div>
                   <div className="icon" />
                   <h5 className="lui-title">
-                    <span> Google Ads </span>
+                    <span> Power Developer </span>
                   </h5>
                   <div className="lui-text">
                     <div>
                       {" "}
-                      Advertising services include: Google search result pages,
-                      gmails, YouTube and other websites participated in Google
-                      Ads program.{" "}
+                      I develop custom solutions on Microsoft’s Power Platform,
+                      optimizing workflows and creating apps that improve
+                      business processes, enhance collaboration, and drive
+                      productivity across organizations.{" "}
                     </div>
-                  </div>
-                  <a href="#pricing-section" className="lnk">
-                    {" "}
-                    See Pricing{" "}
-                  </a>
-                  <div
-                    className="image"
-                    style={{
-                      backgroundImage: "url(assets/images/pat-2.png)",
-                    }}
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <div className="services-item">
-                  <div className="lui-subtitle">
-                    <span> Music Writing </span>
                   </div>
                   <div className="icon" />
-                  <h5 className="lui-title">
-                    <span> Sound Track </span>
-                  </h5>
-                  <div className="lui-text">
-                    <div>
-                      <p>
-                        Music copying, writing, creating, transcription and
-                        composition services.
-                      </p>
-                    </div>
-                  </div>
                   <a href="#pricing-section" className="lnk">
                     {" "}
                     See Pricing{" "}
@@ -1324,7 +1328,7 @@ const Index = () => {
                       <span> Email </span>
                     </div>
                     <div className="lui-text">
-                      <span> zoe.miller@mydomain.com </span>
+                      <span> mailto:oluwatobiloba.xyz@gmail.com </span>
                     </div>
                   </div>
                   <div
@@ -1338,7 +1342,7 @@ const Index = () => {
                       <span> Phone </span>
                     </div>
                     <div className="lui-text">
-                      <span> +1 900 - 900 - 9000 </span>
+                      <span> Tel:+234 0810 695 5510 </span>
                     </div>
                   </div>
                 </div>
