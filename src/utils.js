@@ -21,7 +21,7 @@ export function initCursor() {
   });
 
   const link = document.querySelectorAll(
-    "a, .swiper-pagination, .swiper-button-prev, .swiper-button-next, button, .button, .btn, .lnk"
+    "a, .swiper-pagination, .swiper-button-prev, .swiper-button-next, button, .button, .btn, .lnk, .skl-lnk"
   );
   link.forEach((link) => {
     link.addEventListener("mouseenter", () => {

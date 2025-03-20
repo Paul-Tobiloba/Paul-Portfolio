@@ -22,11 +22,5 @@
     "files": [
       "static/chunks/_pages-dir-browser_src_components_skills_jsx.js"
     ]
-  },
-  "pages\\works.jsx -> ../src/components/PortfolioIsotope": {
-    "id": "pages\\works.jsx -> ../src/components/PortfolioIsotope",
-    "files": [
-      "static/chunks/_pages-dir-browser_src_components_PortfolioIsotope_js.js"
-    ]
   }
 }

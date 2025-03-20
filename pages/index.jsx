@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { TypeAnimation } from "react-type-animation";
 import Resume from "../src/components/Resume";
 import Layout from "../src/layouts/Layout";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import {
   servicesSliderProps,
   testimonialsSliderProps,
@@ -55,11 +56,11 @@ const Index = () => {
                     <strong>
                       <TypeAnimation
                         sequence={[
-                          "Web Developer", // Start with "Web Developer"
-                          2000, // Hold for 2 seconds
                           "Solutions Architect",
                           2000, // Hold for 2 seconds
                           "Automations Specialist",
+                          2000, // Hold for 2 seconds
+                          "Web Developer",
                           2000, // Hold for 2 seconds
                           "Power Developer",
                           2000, // Hold for 2 seconds
@@ -84,28 +85,28 @@ const Index = () => {
                     </p>
                   </div>
                   <div className="social-links">
-                    <a target="_blank" rel="nofollow" href="#">
-                      <i aria-hidden="true" className="fab fa-twitter" />
+                    <a target="_blank" rel="nofollow" href="https://github.com/Paul-Tobiloba">
+                      <FaGithub />
                     </a>
-                    <a target="_blank" rel="nofollow" href="#">
-                      <i aria-hidden="true" className="fab fa-dribbble" />
+                    <a target="_blank" rel="nofollow" href="https://www.linkedin.com/in/oluwatobiloba-paul/">
+                      <FaLinkedin />
                     </a>
-                    <a target="_blank" rel="nofollow" href="#">
-                      <i aria-hidden="true" className="fab fa-behance" />
+                    <a target="_blank" rel="nofollow" href="https://x.com/TobyCodes">
+                      <FaXTwitter />
                     </a>
                   </div>
                 </div>
                 <div className="bts">
                   <a
                     target="_blank"
-                    href="https://drive.google.com/file/d/1XmbjKZEE6Qry26rnzZ_LcOawXFMuQaSH/view?usp=drive_link"
+                    href="https://cal.com/paul-tobiloba"
                     className="btn"
                   >
-                    <span>Download CV</span>
+                    <span>Schedule a call</span>
                   </a>
-                  <a href="#skills-section" className="btn-lnk">
+                  <a target="_blank" href="/resume.pdf" className="btn-lnk">
                     {" "}
-                    My Skills{" "}
+                    Download Resume{" "}
                   </a>
                 </div>
               </div>
@@ -148,7 +149,7 @@ const Index = () => {
                       </span>
                     </li>
                     <li>
-                      <span className="num">12</span>
+                      <span className="num">18</span>
                       <span className="value">
                         Completed <strong>Projects</strong>
                       </span>
@@ -267,7 +268,7 @@ const Index = () => {
               <SwiperSlide className="swiper-slide">
                 <div className="services-item">
                   <div className="lui-subtitle">
-                    <span> Automations </span>
+                    <span> Scripting & Automations </span>
                   </div>
                   <div className="icon" />
                   <h5 className="lui-title">

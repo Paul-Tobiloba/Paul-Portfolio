@@ -1,3 +1,4 @@
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div className="footer">
@@ -9,14 +10,26 @@ const Footer = () => {
                 className="social-links scrolla-element-anim-1 scroll-animate"
                 data-animate="active"
               >
-                <a target="_blank" rel="nofollow" href="http://twitter.com">
-                  <i aria-hidden="true" className="fab fa-twitter" />
+                <a
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://github.com/Paul-Tobiloba"
+                >
+                  <FaGithub />
                 </a>
-                <a target="_blank" rel="nofollow" href="http://dribble.com">
-                  <i aria-hidden="true" className="fab fa-dribbble" />
+                <a
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://www.linkedin.com/in/oluwatobiloba-paul/"
+                >
+                  <FaLinkedin />
                 </a>
-                <a target="_blank" rel="nofollow" href="http://behance.com">
-                  <i aria-hidden="true" className="fab fa-behance" />
+                <a
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://x.com/TobyCodes"
+                >
+                  <FaXTwitter />
                 </a>
               </div>
             </div>
@@ -25,7 +38,7 @@ const Footer = () => {
                 className="copyright-text align-center scrolla-element-anim-1 scroll-animate"
                 data-animate="active"
               >
-                © 2024 <strong>Tobiloba</strong>. All rights reserved
+                © 2025 <strong>Tobiloba</strong>. All rights reserved
               </div>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">

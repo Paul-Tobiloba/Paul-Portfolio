@@ -158,6 +158,7 @@ const SkillsIsotope = () => {
               data-animate="active"
             >
               <h6 className="name">
+ 
                 <span>{skill.name}</span>
               </h6>
               <div className="text">
