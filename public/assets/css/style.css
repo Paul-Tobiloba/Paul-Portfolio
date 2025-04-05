@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
 /* TABLE OF CONTENTS
 	- Base Styles
 	|--Typography
@@ -2426,10 +2428,12 @@ hr {
   top: -50px;
   left: -50%;
   width: 200%;
-  font-size: 350px;
-  font-family: "Caveat";
+  font-size: 300px;
+  font-family: "Neonderthaw", cursive;
+  font-weight: 400;
+  /* font-style: normal; */
   color: rgba(0, 0, 0, 0.02);
-  font-weight: bold;
+  font-weight: semibold;
   line-height: 1px;
   text-align: center;
   white-space: nowrap;
@@ -2908,7 +2912,7 @@ hr {
 }
 
 .history-item .text {
-  padding: 15px 0 30px 0;
+  padding: 10px 0 15px 0;
   clear: both;
 }
 

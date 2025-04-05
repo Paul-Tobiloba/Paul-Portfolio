@@ -1,0 +1,22 @@
+
+"metadata": 
+{
+"source": 
+"blob",
+"blobType": 
+"application/json",
+"loc": 
+{
+"lines": 
+{
+"from": 
+296,
+"to": 
+310
+}
+}
+}
+},
+{
+"pageContent": 
+"<section class="top-card-layout container-lined overflow-hidden babybear:rounded-[0px]">\n        \n    <figure class="cover-img min-h-[87px] papbear:min-h-[100px] rounded-t-[2px] babybear:rounded-[0px] -z-1">\n<!---->      <div class="cover-img__image-frame relative w-full overflow-hidden pb-[calc((134/782)*100%)]">\n        <div class="cover-img__image-position absolute top-0 right-0 bottom-0 left-0\n            ">\n            <img class="cover-img__image relative w-full h-full o

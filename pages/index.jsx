@@ -9,6 +9,53 @@ import {
   servicesSliderProps,
   testimonialsSliderProps,
 } from "../src/sliderProps";
+
+const testimonials = [
+  {
+    name: "Abhi Kuril",
+    role: "CEO, Advanced Cloud Partners",
+    text: "Working with Paul has been a game-changer for our team. His deep knowledge of AI and workflow automation streamlined our operations and added real value. He brings both skill and strategy to the table.",
+    image: "assets/images/testi4-2.jpg"
+  },
+  {
+    name: "Charles Okafor",
+    role: "CEO, Noirak Technologies",
+    text: "Paul's meticulous nature and drive for excellence truly stand out. He has a sharp eye for both design and functionality, always pushing the boundaries to deliver more than expected.",
+    image: "assets/images/testi4-3.jpg"
+  },
+  {
+    name: "Oluwafemi Bombata",
+    role: "Lead Solutions Architect, SakalGb",
+    text: "I’ve had the pleasure of watching him consistently deliver exceptional results across a wide range of client projects. His ability to understand complex requirements, automate workflows, and collaborate seamlessly with cross-functional teams makes him an invaluable asset. Paul brings a rare combination of technical depth, creativity, and professionalism to every engagement.",
+    image: "assets/images/testi4-4.jpg"
+  },
+  {
+    name: "Ayomide Adefe",
+    role: "Business Analyst, IPNX Nigeria",
+    text: "Paul has an impressive grasp of RPA and process automation. His ability to dissect intricate workflows and convert them into elegant, functional systems is second to none.",
+    image: "assets/images/testi4-7.jpg"
+  },
+  {
+    name: "Akin Oluka",
+    role: "Automation Engineer, Parallex Bank",
+    text: "I’ve had the pleasure of collaborating with Paul on several client projects. His ability to blend technical knowledge with teamwork makes him not only effective but also inspiring to work alongside.",
+    image: "assets/images/testi4-5.jpg"
+  },
+  {
+    name: "Ebenezer Adeleye",
+    role: "Solutions Architect",
+    text: "Collaborating with Paul across diverse client engagements has shown me just how impactful his workflow automation skills are. He approaches challenges with clarity and consistently crafts solutions that are both robust and easy to maintain. A true team player with a sharp problem-solving mindset.",
+    image: "assets/images/testi4-1.jpg"
+  },
+  {
+    name: "Tochukwu Jonah",
+    role: "Workflow Developer, Wema Bank",
+    text: "Paul has a rare combination of frontend finesse and automation expertise. His contributions elevated our systems and brought clarity and efficiency to our workflows.",
+    image: "assets/images/testi4-6.jpg"
+  }
+];
+
+
 const PortfolioIsotope = dynamic(
   () => import("../src/components/PortfolioIsotope"),
   {
@@ -58,7 +105,7 @@ const Index = () => {
                         sequence={[
                           "Solutions Architect",
                           2000, // Hold for 2 seconds
-                          "Automations Specialist",
+                          "AI Automations Specialist",
                           2000, // Hold for 2 seconds
                           "Web Developer",
                           2000, // Hold for 2 seconds
@@ -116,7 +163,7 @@ const Index = () => {
               >
                 <img
                   decoding="async"
-                  src="assets/images/profile-potrait.png"
+                  src="assets/images/profile_portrait1.png"
                   alt="<b>Paul</b> Tobiloba"
                 />
                 <span className="circle circle-1" />
@@ -159,7 +206,7 @@ const Index = () => {
               </div>
             </div>
             <div className="lui-bgtitle">
-              <span> Web Developer </span>
+              <span> AI Overlord </span>
             </div>
           </div>
         </div>
@@ -438,20 +485,13 @@ const Index = () => {
         {/* Testimonials */}
         <div className="v-line v-line-right">
           <div className="container">
-            <Swiper
-              {...testimonialsSliderProps}
-              className="swiper-container js-testimonials scrolla-element-anim-1 scroll-animate"
-              data-animate="active"
-            >
-              <SwiperSlide className="swiper-slide">
-                <div className="testimonials-item">
-                  <div className="image">
-                    <img
-                      decoding="async"
-                      src="assets/images/testi4-2.jpg"
-                      alt="Barbara Wilson"
-                    />
-                    <div className="icon">
+          <Swiper {...testimonialsSliderProps} className="swiper-container js-testimonials scrolla-element-anim-1 scroll-animate" data-animate="active">
+  {testimonials.map((testimonial, index) => (
+    <SwiperSlide key={index} className="swiper-slide">
+      <div className="testimonials-item">
+        <div className="image">
+          {/* <img decoding="async" src={testimonial.image} alt={testimonial.name} /> */}
+          <div className="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -462,239 +502,25 @@ const Index = () => {
                           fillRule="evenodd"
                           strokeWidth="2px"
                           stroke="rgb(0, 0, 0)"
-                          fill="rgb(41, 165, 135)"
+                          fill="rgb(108 171 221)"
                           d="M17.360,8.325 C15.490,5.563 11.616,4.762 8.705,6.536 C6.901,7.635 5.815,9.533 5.826,11.567 C5.828,14.854 8.637,17.516 12.101,17.515 C13.290,17.513 14.456,17.192 15.460,16.587 C14.967,17.975 14.049,19.457 12.537,20.942 C11.934,21.533 11.951,22.476 12.574,23.048 C13.198,23.619 14.192,23.604 14.794,23.012 C20.384,17.515 19.658,11.539 17.360,8.333 L17.360,8.325 ZM32.407,8.325 C30.538,5.563 26.663,4.762 23.752,6.536 C21.949,7.635 20.863,9.533 20.873,11.567 C20.875,14.854 23.685,17.516 27.148,17.515 C28.338,17.513 29.503,17.192 30.508,16.587 C30.015,17.975 29.097,19.457 27.585,20.942 C26.982,21.533 26.999,22.476 27.622,23.048 C28.245,23.619 29.239,23.604 29.842,23.012 C35.432,17.515 34.706,11.539 32.407,8.333 L32.407,8.325 Z"
                         />
                       </svg>
-                    </div>
-                  </div>
-                  <div className="text lui-text">
-                    <div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="info">
-                    <h6 className="name">
-                      <span>Barbara Wilson</span>
-                    </h6>
-                    <div className="author">
-                      <span>CEO Company</span>
-                    </div>
-                  </div>
-                  <div
-                    className="bg-img"
-                    style={{
-                      backgroundImage: "url(assets/images/pat-2.png)",
-                    }}
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <div className="testimonials-item">
-                  <div className="image">
-                    <img
-                      decoding="async"
-                      src="assets/images/testi4-1.jpg"
-                      alt="Charlie Smith"
-                    />
-                    <div className="icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlnsXlink="http://www.w3.org/1999/xlink"
-                        width="44px"
-                        height="34px"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          strokeWidth="2px"
-                          stroke="rgb(0, 0, 0)"
-                          fill="rgb(41, 165, 135)"
-                          d="M17.360,8.325 C15.490,5.563 11.616,4.762 8.705,6.536 C6.901,7.635 5.815,9.533 5.826,11.567 C5.828,14.854 8.637,17.516 12.101,17.515 C13.290,17.513 14.456,17.192 15.460,16.587 C14.967,17.975 14.049,19.457 12.537,20.942 C11.934,21.533 11.951,22.476 12.574,23.048 C13.198,23.619 14.192,23.604 14.794,23.012 C20.384,17.515 19.658,11.539 17.360,8.333 L17.360,8.325 ZM32.407,8.325 C30.538,5.563 26.663,4.762 23.752,6.536 C21.949,7.635 20.863,9.533 20.873,11.567 C20.875,14.854 23.685,17.516 27.148,17.515 C28.338,17.513 29.503,17.192 30.508,16.587 C30.015,17.975 29.097,19.457 27.585,20.942 C26.982,21.533 26.999,22.476 27.622,23.048 C28.245,23.619 29.239,23.604 29.842,23.012 C35.432,17.515 34.706,11.539 32.407,8.333 L32.407,8.325 Z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="text lui-text">
-                    <div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="info">
-                    <h6 className="name">
-                      <span>Charlie Smith</span>
-                    </h6>
-                    <div className="author">
-                      <span>Designer</span>
-                    </div>
-                  </div>
-                  <div
-                    className="bg-img"
-                    style={{
-                      backgroundImage: "url(assets/images/pat-2.png)",
-                    }}
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <div className="testimonials-item">
-                  <div className="image">
-                    <img
-                      decoding="async"
-                      src="assets/images/testi4-4.jpg"
-                      alt="Roy Wang"
-                    />
-                    <div className="icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlnsXlink="http://www.w3.org/1999/xlink"
-                        width="44px"
-                        height="34px"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          strokeWidth="2px"
-                          stroke="rgb(0, 0, 0)"
-                          fill="rgb(41, 165, 135)"
-                          d="M17.360,8.325 C15.490,5.563 11.616,4.762 8.705,6.536 C6.901,7.635 5.815,9.533 5.826,11.567 C5.828,14.854 8.637,17.516 12.101,17.515 C13.290,17.513 14.456,17.192 15.460,16.587 C14.967,17.975 14.049,19.457 12.537,20.942 C11.934,21.533 11.951,22.476 12.574,23.048 C13.198,23.619 14.192,23.604 14.794,23.012 C20.384,17.515 19.658,11.539 17.360,8.333 L17.360,8.325 ZM32.407,8.325 C30.538,5.563 26.663,4.762 23.752,6.536 C21.949,7.635 20.863,9.533 20.873,11.567 C20.875,14.854 23.685,17.516 27.148,17.515 C28.338,17.513 29.503,17.192 30.508,16.587 C30.015,17.975 29.097,19.457 27.585,20.942 C26.982,21.533 26.999,22.476 27.622,23.048 C28.245,23.619 29.239,23.604 29.842,23.012 C35.432,17.515 34.706,11.539 32.407,8.333 L32.407,8.325 Z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="text lui-text">
-                    <div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="info">
-                    <h6 className="name">
-                      <span>Roy Wang</span>
-                    </h6>
-                    <div className="author">
-                      <span>Manager GYM</span>
-                    </div>
-                  </div>
-                  <div
-                    className="bg-img"
-                    style={{
-                      backgroundImage: "url(assets/images/pat-2.png)",
-                    }}
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <div className="testimonials-item">
-                  <div className="image">
-                    <img
-                      decoding="async"
-                      src="assets/images/testi4-3.jpg"
-                      alt="Jennifer Smith"
-                    />
-                    <div className="icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlnsXlink="http://www.w3.org/1999/xlink"
-                        width="44px"
-                        height="34px"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          strokeWidth="2px"
-                          stroke="rgb(0, 0, 0)"
-                          fill="rgb(41, 165, 135)"
-                          d="M17.360,8.325 C15.490,5.563 11.616,4.762 8.705,6.536 C6.901,7.635 5.815,9.533 5.826,11.567 C5.828,14.854 8.637,17.516 12.101,17.515 C13.290,17.513 14.456,17.192 15.460,16.587 C14.967,17.975 14.049,19.457 12.537,20.942 C11.934,21.533 11.951,22.476 12.574,23.048 C13.198,23.619 14.192,23.604 14.794,23.012 C20.384,17.515 19.658,11.539 17.360,8.333 L17.360,8.325 ZM32.407,8.325 C30.538,5.563 26.663,4.762 23.752,6.536 C21.949,7.635 20.863,9.533 20.873,11.567 C20.875,14.854 23.685,17.516 27.148,17.515 C28.338,17.513 29.503,17.192 30.508,16.587 C30.015,17.975 29.097,19.457 27.585,20.942 C26.982,21.533 26.999,22.476 27.622,23.048 C28.245,23.619 29.239,23.604 29.842,23.012 C35.432,17.515 34.706,11.539 32.407,8.333 L32.407,8.325 Z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="text lui-text">
-                    <div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="info">
-                    <h6 className="name">
-                      <span>Jennifer Smith</span>
-                    </h6>
-                    <div className="author">
-                      <span>CEO &amp; Founder</span>
-                    </div>
-                  </div>
-                  <div
-                    className="bg-img"
-                    style={{
-                      backgroundImage: "url(assets/images/pat-2.png)",
-                    }}
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <div className="testimonials-item">
-                  <div className="image">
-                    <img
-                      decoding="async"
-                      src="assets/images/testi4-5.jpg"
-                      alt="Paul Freeman"
-                    />
-                    <div className="icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlnsXlink="http://www.w3.org/1999/xlink"
-                        width="44px"
-                        height="34px"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          strokeWidth="2px"
-                          stroke="rgb(0, 0, 0)"
-                          fill="rgb(41, 165, 135)"
-                          d="M17.360,8.325 C15.490,5.563 11.616,4.762 8.705,6.536 C6.901,7.635 5.815,9.533 5.826,11.567 C5.828,14.854 8.637,17.516 12.101,17.515 C13.290,17.513 14.456,17.192 15.460,16.587 C14.967,17.975 14.049,19.457 12.537,20.942 C11.934,21.533 11.951,22.476 12.574,23.048 C13.198,23.619 14.192,23.604 14.794,23.012 C20.384,17.515 19.658,11.539 17.360,8.333 L17.360,8.325 ZM32.407,8.325 C30.538,5.563 26.663,4.762 23.752,6.536 C21.949,7.635 20.863,9.533 20.873,11.567 C20.875,14.854 23.685,17.516 27.148,17.515 C28.338,17.513 29.503,17.192 30.508,16.587 C30.015,17.975 29.097,19.457 27.585,20.942 C26.982,21.533 26.999,22.476 27.622,23.048 C28.245,23.619 29.239,23.604 29.842,23.012 C35.432,17.515 34.706,11.539 32.407,8.333 L32.407,8.325 Z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="text lui-text">
-                    <div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="info">
-                    <h6 className="name">
-                      <span>Paul Freeman</span>
-                    </h6>
-                    <div className="author">
-                      <span>Photographer</span>
-                    </div>
-                  </div>
-                  <div
-                    className="bg-img"
-                    style={{
-                      backgroundImage: "url(assets/images/pat-2.png)",
-                    }}
-                  />
-                </div>
-              </SwiperSlide>
-              <div className="swiper-pagination" />
-            </Swiper>
+          </div>
+        </div>
+        <div className="text lui-text">
+          <p>{testimonial.text}</p>
+        </div>
+        <div className="info">
+          <h6 className="name"><span>{testimonial.name}</span></h6>
+          <div className="author"><span>{testimonial.role}</span></div>
+        </div>
+        <div className="bg-img" style={{ backgroundImage: "url(assets/images/pat-2.png)" }} />
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
             <div className="lui-bgtitle">
               <span> Reviews </span>
             </div>

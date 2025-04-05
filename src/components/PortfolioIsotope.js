@@ -53,14 +53,14 @@ const PortfolioIsotope = ({ noViewMore }) => {
             onClick={handleFilterKeyChange("sorting-ui-ux-design")}
             data-href=".sorting-ui-ux-design"
           >
-            UI UX Design
+            Process Automation / UIUX Redesign
           </a>
           <a
             className={`c-pointer lui-subtitle ${activeBtn("sorting-photo")}`}
             onClick={handleFilterKeyChange("sorting-photo")}
             data-href=".sorting-photo"
           >
-            Photography
+            RPA
           </a>
           <a
             className={`c-pointer lui-subtitle ${activeBtn(
@@ -69,7 +69,7 @@ const PortfolioIsotope = ({ noViewMore }) => {
             onClick={handleFilterKeyChange("sorting-development")}
             data-href=".sorting-development"
           >
-            Development
+            Frontend Web Development
           </a>
           <a
             className={`c-pointer lui-subtitle ${activeBtn(
@@ -78,7 +78,7 @@ const PortfolioIsotope = ({ noViewMore }) => {
             onClick={handleFilterKeyChange("sorting-branding")}
             data-href=".sorting-branding"
           >
-            Branding
+            Scripting & Automations
           </a>
         </div>
         <div className="works-items works-masonry-items row">

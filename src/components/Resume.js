@@ -30,27 +30,61 @@ const educationData = [
 const experienceData = [
   {
     id: 1,
-    title: "Automations Developer",
-    company: "Advanced Cloud Partners",
-    dec: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    startYear: "2024",
+    title: "AI Automations / Workflow Developer",
+    company: "Freelance",
+    dec: [
+      "Developed and implemented AI-driven automation solutions for various clients, enhancing operational efficiency and reducing manual workload.",
+      "Designed and built custom automation workflows using n8n, Make.com, and other platforms, integrating AI capabilities to optimize business processes.",
+      "Collaborated with clients to identify automation opportunities, analyze requirements, and deliver tailored solutions that meet specific business needs.",
+      "Created user-friendly interfaces and dashboards to visualize automation processes and provide insights into performance metrics."
+    ],
+    startYear: "2023",
     endYear: false,
   },
   {
     id: 2,
-    title: "UI / UX Specialist",
-    company: "Kana Design Studio",
-    dec: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    startYear: "2018",
-    endYear: "2020",
+    title: "Automations Developer",
+    company: "Advanced Cloud Partners, USA",
+    dec: [
+      "Streamlined business processes through process mapping and automation, enhancing efficiency and productivity for multiple clients across diverse industries.",
+      "Developed and customized business processes using n8n, Make.com, Power Automate, Zenphi, and other platforms, incorporating custom nodes and user-friendly interfaces to enhance workflow adoption and improve user experience.",
+      "Redesigned and optimized existing Power Automate flows, integrating them with K2 solutions to consolidate disparate automation processes into cohesive, scalable systems.",
+      "Utilized open-source automation tools alongside MS/Google platform capabilities to deliver tailored, high-value automation solutions aligned with client needs.",
+      "Documented technical specifications, process requirements, and UI design decisions to ensure maintainability and support future enhancements.",
+    ],
+    startYear: "2024",
+    endYear: false,
   },
   {
     id: 3,
-    title: "Plugins Developer",
-    company: "Fiverr.com",
-    dec: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    startYear: "2016",
-    endYear: "2018",
+    title: "Solutions Architect / K2 & Frontend Developer",
+    company: "SakalGb Solutions, Nigeria",
+    dec: [
+      "Built User-friendly interfaces for business processes.",
+      "Redesigned K2 custom Themes into modern interfaces using CSS and Javascript.",
+      "Streamlined business processes through process mapping and automation, improving overall efficiency and productivity.",
+      "Collaborated with cross-functional teams to identify areas for improvement and develop solutions.",
+      "Built Power Automate Desktop Bots to automate reconciliation of external records with organization's GL account records.",
+      "Automated various processes using K2, including LASG E-Planning Permit, Account Opening, Foreign Operations Portal, Project Management, Employee Onboarding and Offboarding.",
+      "Maintained detailed documentation of business process requirements, product value optimization, and risk management.",
+      "Conducted training sessions to educate interns on business processes and technologies.",
+      "Provided technical support to clients and resolved issues promptly.",
+    ],
+    startYear: "2022",
+    endYear: false,
+  },
+  {
+    id: 4,
+    title: "Lead Engineer / Frontend Developer",
+    company: "Noirak Technologies,  Nigeria",
+    dec: [
+      "Built responsive and user-friendly websites, ensuring optimal performance and functionality.",
+      "Worked closely with designers and project managers to ensure timely delivery of projects.",
+      "Conducted quality assurance testing and resolved issues before launch.",
+      "Collaborated with back-end developers to integrate front-end features with back-end functionality.",
+    ],
+    startYear: "2023",
+    endYear: "2025",
   },
 ];
 
@@ -87,7 +121,7 @@ const Resume = () => {
       <div className="v-line v-line-left">
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            {/* <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
               <h5
                 className="history-title scrolla-element-anim-1 scroll-animate"
                 data-animate="active"
@@ -134,8 +168,8 @@ const Resume = () => {
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            </div> */}
+            <div className="col-xs-12 col-sm-6 col-md-8 col-lg-12">
               <h5
                 className="history-title scrolla-element-anim-1 scroll-animate"
                 data-animate="active"
@@ -175,9 +209,16 @@ const Resume = () => {
                         </span>
                       </div>
                       <div className="text">
-                        <div>
-                          <p>{experience.dec}</p>
-                        </div>
+                        <ul
+                          className="pl-6 list-disc !list-outside"
+                          style={{ listStylePosition: "outside" }}
+                        >
+                          {experience.dec.map((desc, index) => (
+                            <li key={index} className="mb-2">
+                              {desc}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </div>
