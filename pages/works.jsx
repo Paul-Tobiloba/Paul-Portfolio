@@ -34,9 +34,9 @@ const Works = () => {
           </div>
         </div>
       </section>
-      {/* Section - Works */}
+      {/* Section - works */}
       <section className="lui-section">
-        {/* Works */}
+        {/* works */}
         <div className="v-line v-line-right v-line-top">
           <div className="container">
             <PortfolioIsotope noViewMore />

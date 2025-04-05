@@ -11,16 +11,16 @@
       "static/chunks/_pages-dir-browser_node_modules_next_dist_pages__error_js.js"
     ]
   },
-  "pages\\index.jsx -> ../src/components/PortfolioIsotope": {
-    "id": "pages\\index.jsx -> ../src/components/PortfolioIsotope",
+  "pages\\works.jsx -> ../src/components/PortfolioIsotope": {
+    "id": "pages\\works.jsx -> ../src/components/PortfolioIsotope",
     "files": [
       "static/chunks/_pages-dir-browser_src_components_PortfolioIsotope_js.js"
     ]
   },
-  "pages\\index.jsx -> ../src/components/skills": {
-    "id": "pages\\index.jsx -> ../src/components/skills",
+  "pages\\works\\[slug]\\index.jsx -> ../../../src/components/WorkSingleISotope": {
+    "id": "pages\\works\\[slug]\\index.jsx -> ../../../src/components/WorkSingleISotope",
     "files": [
-      "static/chunks/_pages-dir-browser_src_components_skills_jsx.js"
+      "static/chunks/_pages-dir-browser_src_components_WorkSingleISotope_js.js"
     ]
   }
 }
