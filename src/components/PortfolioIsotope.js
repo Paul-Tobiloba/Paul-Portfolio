@@ -1,12 +1,39 @@
 import Isotope from "isotope-layout";
 import Link from "next/link";
 import { Fragment, useEffect, useRef, useState } from "react";
-import { projectItems, filters } from "../data/projectData";
+import { filters } from "../data/projectData";
+import { createClient } from "@supabase/supabase-js";
+import { supabase } from "../../utils/supabase";
 
 const PortfolioIsotope = ({ noViewMore }) => {
   const isotope = useRef();
   const [filterKey, setFilterKey] = useState("*");
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  // Fetch project data from Supabase
+  useEffect(() => {
+    const fetchProjects = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("projects")
+        .select("*")
+        .order("id", { ascending: true });
+
+      if (error) {
+        console.error("Error fetching projects:", error);
+      } else {
+        setProjects(data);
+        console.log("Fetched projects:", data);
+      }
+
+      setLoading(false);
+    };
+
+    fetchProjects();
+  }, []);
+
+  // Initialize Isotope
   useEffect(() => {
     isotope.current = new Isotope(".works-items", {
       itemSelector: ".works-col",
@@ -16,9 +43,10 @@ const PortfolioIsotope = ({ noViewMore }) => {
       },
     });
 
-    return () => isotope.current.destroy();
-  }, []);
+    return () => isotope.current?.destroy();
+  }, [projects]);
 
+  // Update filter
   useEffect(() => {
     if (isotope.current) {
       filterKey === "*"
@@ -28,7 +56,6 @@ const PortfolioIsotope = ({ noViewMore }) => {
   }, [filterKey]);
 
   const handleFilterKeyChange = (key) => () => setFilterKey(key);
-
   const activeBtn = (key) => (key === filterKey ? "active" : "");
 
   return (
@@ -51,52 +78,56 @@ const PortfolioIsotope = ({ noViewMore }) => {
         </div>
 
         <div className="works-items works-masonry-items row">
-          {projectItems.map((item, index) => (
-            <div
-              key={index}
-              className={`works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 ${item.filters.join(
-                " "
-              )}`}
-            >
+          {loading ? (
+            <p className="text-center w-full">Loading projects...</p>
+          ) : (
+            projects.map((item, index) => (
               <div
-                className="works-item scrolla-element-anim-1 scroll-animate"
-                data-animate="active"
+                key={index}
+                className={`works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 ${item.filters?.join(
+                  " "
+                )}`}
               >
-                <div className="image">
-                  <div className="img">
-                    <Link legacyBehavior href={item.link}>
-                      <a>
-                        <img
-                          decoding="async"
-                          src={item.image}
-                          alt={item.title}
-                        />
-                        <span className="overlay" />
-                      </a>
-                    </Link>
-                  </div>
-                </div>
-                <div className="desc">
-                  <span className="category">{item.category}</span>
-                  <h5 className="name">
-                    <Link legacyBehavior href={item.link}>
-                      <a>{item.title}</a>
-                    </Link>
-                  </h5>
-                  <div className="text">
-                    <p>{item.description}</p>
-                  </div>
-                  <Link legacyBehavior href={item.link}>
-                    <a className="lnk">See project</a>
-                  </Link>
-                </div>
                 <div
-                  className="bg-img"
-                  style={{ backgroundImage: "url(assets/images/pat-2.png)" }}
-                />
+                  className="works-item scrolla-element-anim-1 scroll-animate"
+                  data-animate="active"
+                >
+                  <div className="image">
+                    <div className="img">
+                      <Link legacyBehavior href={`/works/${item.slug}`}>
+                        <a>
+                          <img
+                            decoding="async"
+                            src={item.image}
+                            alt={item.title}
+                          />
+                          <span className="overlay" />
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="desc">
+                    <span className="category">{item.categories}</span>
+                    <h5 className="name">
+                      <Link legacyBehavior href={`/works/${item.slug}`}>
+                        <a>{item.title}</a>
+                      </Link>
+                    </h5>
+                    <div className="text">
+                      <p>{item.description?.[0]}</p>
+                    </div>
+                    <Link legacyBehavior href={`/works/${item.slug}`}>
+                      <a className="lnk">See project</a>
+                    </Link>
+                  </div>
+                  <div
+                    className="bg-img"
+                    style={{ backgroundImage: "url(/assets/images/pat-2.png)" }}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
 
         {!noViewMore && (

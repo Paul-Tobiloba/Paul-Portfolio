@@ -148,6 +148,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "@supabase/supabase-js":
+/*!****************************************!*\
+  !*** external "@supabase/supabase-js" ***!
+  \****************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("@supabase/supabase-js");
+
+/***/ }),
+
 /***/ "isotope-layout":
 /*!*********************************!*\
   !*** external "isotope-layout" ***!

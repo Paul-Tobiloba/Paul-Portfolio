@@ -1,7 +1,8 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { supabase } from "../../../utils/supabase";
 import Layout from "../../../src/layouts/Layout";
 import PreLoader from "../../../src/layouts/PreLoader";
 import { projects } from "../../../src/data/projects";
@@ -16,7 +17,23 @@ const WorkSingle = () => {
   const { slug } = router.query;
   const [videoToggle, setVideoToggle] = useState(false);
 
-  const project = projects.find((p) => p.slug === slug);
+  const [project, setProject] = useState(null);
+
+  useEffect(() => {
+    const fetchProject = async () => {
+      if (!slug) return;
+      const { data, error } = await supabase
+        .from("projects")
+        .select("*")
+        .eq("slug", slug)
+        .single();
+
+      if (data) setProject(data);
+      if (error) console.error(error);
+    };
+
+    fetchProject();
+  }, [slug]);
 
   if (!project) return <PreLoader />;
 
@@ -68,10 +85,10 @@ const WorkSingle = () => {
         <div className="m-image-large">
           <div
             className="img js-parallax"
-            style={{ backgroundImage: `url(${project.image})` }}
+            style={{ backgroundImage: `url(${project.projectImg[0]})`, height: "500px" }}
           />
         </div>
-      </div>
+      </div>  
 
       {/* Description */}
       <section className="section section-inner">
@@ -90,7 +107,7 @@ const WorkSingle = () => {
       {/* Gallery */}
       <div className="section section-inner">
         <div className="container">
-          <WorkSingleISotope />
+          <WorkSingleISotope images={project.projectImg} />
         </div>
       </div>
 
