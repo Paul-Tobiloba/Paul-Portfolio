@@ -1,4 +1,4 @@
-/* Luique - Dark Skin Styles v1.0 */
+﻿/* Luique - Dark Skin Styles v1.0 */
 
 /**
 * Base Styles
@@ -21,27 +21,26 @@
 }
 
 body.dark-skin {
-	color: #eaeaea;
-}
-
-body.dark-skin {
-	background-color: #222831;
+	--bg: #222831;
+	--text: #eaeaea;
+	color: var(--text);
+	background-color: var(--bg);
 }
 
 /*.dark-skin a {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 .dark-skin a:link {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 .dark-skin a:active {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 .dark-skin a:visited {
-	color: #6cabdd;
+	color: var(--brand);
 }*/
 
 /* - Typography */
@@ -210,7 +209,7 @@ body.dark-skin {
 }
 
 .dark-skin .swiper-pagination.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
-	background: #6cabdd;
+	background: var(--brand);
 }
 
 /**
@@ -244,11 +243,11 @@ body.dark-skin {
 }
 
 .dark-skin .menu-full ul li ul li.active>a {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 .dark-skin .menu-full ul li.active>a {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 .dark-skin .menu-social-links a {
@@ -256,7 +255,7 @@ body.dark-skin {
 }
 
 .dark-skin .menu-social-links a:hover i {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 .dark-skin .header .logo .logotype__title {
@@ -264,7 +263,7 @@ body.dark-skin {
 }
 
 .dark-skin .header .logo .logotype__sub {
-	color: #eaeaea;
+	color: var(--text);
 }
 
 .dark-skin .header__builder .logo img,
@@ -287,7 +286,7 @@ body.dark-skin {
 
 .dark-skin .footer .copyright-text a:hover,
 .dark-skin .footer .footer-heading a:hover {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 .dark-skin .social-links a {
@@ -295,7 +294,7 @@ body.dark-skin {
 }
 
 .dark-skin .social-links a:hover {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 /**
@@ -304,17 +303,17 @@ body.dark-skin {
 
 .dark-skin .lui-gradient-top {
 	background-color: transparent;
-	background-image: linear-gradient(0deg, #31363c 0%, #222831 100%);
+	background-image: linear-gradient(0deg, #31363c 0%, var(--bg) 100%);
 }
 
 .dark-skin .lui-gradient-bottom {
 	background-color: transparent;
-	background-image: linear-gradient(180deg, #31363c 0%, #222831 100%);
+	background-image: linear-gradient(180deg, #31363c 0%, var(--bg) 100%);
 }
 
 .dark-skin .lui-gradient-center {
 	background-color: transparent;
-	background-image: linear-gradient(180deg, #222831 0%, #222831 100%);
+	background-image: linear-gradient(180deg, var(--bg) 0%, var(--bg) 100%);
 }
 
 /**
@@ -322,11 +321,11 @@ body.dark-skin {
 **/
 
 .dark-skin .section.section-inner {
-	background: #222831;
+	background: var(--bg);
 }
 
 .dark-skin .section.section-inner.started-heading {
-	background: linear-gradient(180deg, #31363c 0%, #222831 100%);
+	background: linear-gradient(180deg, #31363c 0%, var(--bg) 100%);
 }
 
 .dark-skin .m-titles .m-title {
@@ -399,7 +398,7 @@ body.dark-skin {
 }
 
 .dark-skin .skills-item .dots .dot {
-	background: #6cabdd;
+	background: var(--brand);
 }
 
 .dark-skin .skills-item .dots .dot span {
@@ -426,7 +425,7 @@ body.dark-skin {
 }
 
 .dark-skin .history-item .name:after {
-	background: #222831;
+	background: var(--bg);
 	border: 2px solid #a3a5a7;
 	box-shadow: 5px 5px rgb(255 255 255 / 10%);
 }
@@ -468,17 +467,17 @@ body.dark-skin {
 }
 
 .dark-skin .filter-links a.active {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 .dark-skin .works-item .image:before,
 .dark-skin .works-item .image:after {
-	background: #222831;
+	background: var(--bg);
 }
 
 .dark-skin .works-item .image .img:before,
 .dark-skin .works-item .image .img:after {
-	background: #222831;
+	background: var(--bg);
 }
 
 .dark-skin .works-items.works-list-items .works-item .desc .name {
@@ -498,7 +497,7 @@ body.dark-skin {
 }
 
 .dark-skin .works-item:hover .desc .name a {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 /**
@@ -516,7 +515,7 @@ body.dark-skin {
 
 .dark-skin .pricing-col.center .label {
 	color: #fff;
-	border: 2px solid #6cabdd;
+	border: 2px solid var(--brand);
   box-shadow: 5px 5px 0px 0px rgba(255, 255, 255, 0.1);
 }
 
@@ -549,7 +548,7 @@ body.dark-skin {
 }
 
 .dark-skin .archive-item .desc h5 a:hover {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 .dark-skin .blog-items .archive-item {
@@ -645,7 +644,7 @@ body.dark-skin {
 .dark-skin a.post-page-numbers.current,
 .dark-skin .page-numbers.current,
 .dark-skin .post-page-numbers.current {
-	background: #6cabdd;
+	background: var(--brand);
 	color: #fff;
 }
 
@@ -680,7 +679,7 @@ body.dark-skin {
 
 .dark-skin .content-sidebar ul li a:hover,
 .dark-skin .post-content .wp-block-archives li a:hover {
-	color: #6cabdd;
+	color: var(--brand);
 }
 
 .dark-skin .calendar_wrap table td,
@@ -738,8 +737,8 @@ body.dark-skin {
 }
 
 .dark-skin .share-post .share-btn:hover {
-	color: #6cabdd;
-	border-color: #6cabdd;
+	color: var(--brand);
+	border-color: var(--brand);
 }
 
 .dark-skin .wp-block-latest-comments__comment-date,

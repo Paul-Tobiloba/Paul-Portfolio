@@ -1,41 +1,16 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { supabase } from "../../../utils/supabase";
+import { useState } from "react";
 import Layout from "../../../src/layouts/Layout";
-import PreLoader from "../../../src/layouts/PreLoader";
-import { projects } from "../../../src/data/projects";
+import { getProjectBySlug, getProjectSlugs } from "../../../src/lib/projects";
 
 const WorkSingleISotope = dynamic(
   () => import("../../../src/components/WorkSingleISotope"),
   { ssr: false }
 );
 
-const WorkSingle = () => {
-  const router = useRouter();
-  const { slug } = router.query;
+const WorkSingle = ({ project }) => {
   const [videoToggle, setVideoToggle] = useState(false);
-
-  const [project, setProject] = useState(null);
-
-  useEffect(() => {
-    const fetchProject = async () => {
-      if (!slug) return;
-      const { data, error } = await supabase
-        .from("projects")
-        .select("*")
-        .eq("slug", slug)
-        .single();
-
-      if (data) setProject(data);
-      if (error) console.error(error);
-    };
-
-    fetchProject();
-  }, [slug]);
-
-  if (!project) return <PreLoader />;
 
   return (
     <Layout pageClassName="portfolio-template">
@@ -162,6 +137,35 @@ const WorkSingle = () => {
       )}
     </Layout>
   );
+};
+
+export const getStaticPaths = async () => {
+  const slugs = await getProjectSlugs();
+
+  return {
+    paths: slugs.map((slug) => ({
+      params: { slug },
+    })),
+    fallback: "blocking",
+  };
+};
+
+export const getStaticProps = async ({ params }) => {
+  const project = await getProjectBySlug(params.slug);
+
+  if (!project) {
+    return {
+      notFound: true,
+      revalidate: 60,
+    };
+  }
+
+  return {
+    props: {
+      project,
+    },
+    revalidate: 60,
+  };
 };
 
 export default WorkSingle;

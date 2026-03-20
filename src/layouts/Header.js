@@ -104,84 +104,95 @@ const Header = () => {
                               </Link>
                             </li>
                             <li className="menu-item">
-                              <a
-                                className="splitting-text-anim-2"
-                                data-splitting="chars"
-                                href="/#services-section"
-                                onClick={() => linkClick()}
-                              >
-                                Services
-                              </a>
+                              <Link legacyBehavior href="/#services-section">
+                                <a
+                                  className="splitting-text-anim-2"
+                                  data-splitting="chars"
+                                  onClick={() => linkClick()}
+                                >
+                                  Services
+                                </a>
+                              </Link>
                             </li>
                             <li className="menu-item">
-                              <a
-                                className="splitting-text-anim-2"
-                                data-splitting="chars"
-                                href="/#skills-section"
-                                onClick={() => linkClick()}
-                              >
-                                Skills
-                              </a>
+                              <Link legacyBehavior href="/#skills-section">
+                                <a
+                                  className="splitting-text-anim-2"
+                                  data-splitting="chars"
+                                  onClick={() => linkClick()}
+                                >
+                                  Skills
+                                </a>
+                              </Link>
                             </li>
                             <li className="menu-item">
-                              <a
-                                className="splitting-text-anim-2"
-                                data-splitting="chars"
-                                href="/#works-section"
-                                onClick={() => linkClick()}
-                              >
-                                Works
-                              </a>
+                              <Link legacyBehavior href="/#works-section">
+                                <a
+                                  className="splitting-text-anim-2"
+                                  data-splitting="chars"
+                                  onClick={() => linkClick()}
+                                >
+                                  Works
+                                </a>
+                              </Link>
                             </li>
                             <li className="menu-item">
-                              <a
-                                className="splitting-text-anim-2"
-                                data-splitting="chars"
-                                href="/#resume-section"
-                                onClick={() => linkClick()}
-                              >
-                                Resume
-                              </a>
+                              <Link legacyBehavior href="/#resume-section">
+                                <a
+                                  className="splitting-text-anim-2"
+                                  data-splitting="chars"
+                                  onClick={() => linkClick()}
+                                >
+                                  Resume
+                                </a>
+                              </Link>
                             </li>
                             <li className="menu-item">
-                              <a
-                                className="splitting-text-anim-2"
-                                data-splitting="chars"
-                                href="/#testimonials-sec
-                                onClick={() => linkClick()}tion"
+                              <Link
+                                legacyBehavior
+                                href="/#testimonials-section"
                               >
-                                Testimonials
-                              </a>
+                                <a
+                                  className="splitting-text-anim-2"
+                                  data-splitting="chars"
+                                  onClick={() => linkClick()}
+                                >
+                                  Testimonials
+                                </a>
+                              </Link>
                             </li>
                             <li className="menu-item">
-                              <a
-                                className="splitting-text-anim-2"
-                                data-splitting="chars"
-                                href="/#pricing-section"
-                                onClick={() => linkClick()}
-                              >
-                                Pricing
-                              </a>
+                              <Link legacyBehavior href="/#pricing-section">
+                                <a
+                                  className="splitting-text-anim-2"
+                                  data-splitting="chars"
+                                  onClick={() => linkClick()}
+                                >
+                                  Pricing
+                                </a>
+                              </Link>
                             </li>
                             <li className="menu-item">
-                              <a
-                                className="splitting-text-anim-2"
-                                data-splitting="chars"
-                                href="/#blog-section"
-                                onClick={() => linkClick()}
-                              >
-                                Blog
-                              </a>
+                              <Link legacyBehavior href="/#blog-section">
+                                <a
+                                  className="splitting-text-anim-2"
+                                  data-splitting="chars"
+                                  onClick={() => linkClick()}
+                                >
+                                  Blog
+                                </a>
+                              </Link>
                             </li>
                             <li className="menu-item">
-                              <a
-                                className="splitting-text-anim-2"
-                                data-splitting="chars"
-                                href="/#contact-section"
-                                onClick={() => linkClick()}
-                              >
-                                Contact
-                              </a>
+                              <Link legacyBehavior href="/#contact-section">
+                                <a
+                                  className="splitting-text-anim-2"
+                                  data-splitting="chars"
+                                  onClick={() => linkClick()}
+                                >
+                                  Contact
+                                </a>
+                              </Link>
                             </li>
                             <li
                               className={`menu-item menu-item-has-children has-children ${

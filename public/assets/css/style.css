@@ -1,4 +1,4 @@
-
+﻿
 @import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
 /* TABLE OF CONTENTS
 	- Base Styles
@@ -36,6 +36,13 @@
 * Base Styles
 **/
 
+:root {
+  --brand: #6cabdd;
+  --brand-accent: #1e3344;
+  --bg: #f0ebe3;
+  --text: #262626;
+}
+
 * {
   outline: none;
   -webkit-box-sizing: border-box;
@@ -64,7 +71,7 @@ body {
   padding: 0;
   height: auto !important;
   font-size: 16px;
-  color: #262626;
+  color: var(--text);
   font-family: "Jost", sans-serif;
   font-weight: 400;
   line-height: 1.7;
@@ -74,7 +81,7 @@ body {
 }
 
 body {
-  background-color: #f0ebe3;
+  background-color: var(--bg);
 }
 
 body.no-scroll {
@@ -82,7 +89,7 @@ body.no-scroll {
 }
 
 a {
-  color: #6cabdd;
+  color: var(--brand);
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -91,15 +98,15 @@ a {
 }
 
 a:link {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 a:active {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 a:visited {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 a:hover {
@@ -239,7 +246,7 @@ a.lnk:after,
   top: 1px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #6cabdd;
+  color: var(--brand);
   -webkit-transition: all 0.3s cubic-bezier(0.3, 0, 0.3, 1);
   transition: all 0.3s cubic-bezier(0.3, 0, 0.3, 1);
 }
@@ -351,7 +358,7 @@ input[type="submit"] {
 
 input[type="submit"] {
   color: #fff;
-  background: #6cabdd;
+  background: var(--brand);
   outline: none;
   cursor: pointer;
 }
@@ -365,7 +372,7 @@ button:before {
   top: 50%;
   width: 0%;
   height: 0%;
-  background: #6cabdd;
+  background: var(--brand);
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.3, 1);
   transition: all 0.6s cubic-bezier(0.3, 0, 0.3, 1);
   -webkit-transform: translate(-50%, -50%);
@@ -622,7 +629,7 @@ blockquote cite,
   position: relative;
   text-align: left;
   font-weight: 700;
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .block-quote cite em,
@@ -732,7 +739,7 @@ blockquote cite br {
 
 .wp-block-calendar a {
   text-decoration: none;
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .wp-block-column p:first-child,
@@ -875,8 +882,8 @@ hr {
   text-align: center;
   text-decoration: none;
   overflow-wrap: break-word;
-  background-color: #6cabdd;
-  border: 1px solid #6cabdd;
+  background-color: var(--brand);
+  border: 1px solid var(--brand);
   border-radius: 28px;
   color: #fff;
   cursor: pointer;
@@ -897,8 +904,8 @@ hr {
 
 .is-style-outline .wp-block-button__link {
   background-color: transparent;
-  color: #6cabdd;
-  border: 1px solid #6cabdd;
+  color: var(--brand);
+  border: 1px solid var(--brand);
 }
 
 .post-content .wp-block-archives {
@@ -1181,7 +1188,7 @@ hr {
   display: inline-block;
   width: 15px;
   height: 15px;
-  background: #6cabdd;
+  background: var(--brand);
   border-radius: 15px;
   -webkit-animation: spinner 0.75s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
   animation: spinner 0.75s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
@@ -1205,7 +1212,7 @@ hr {
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: #6cabdd;
+  background: var(--brand);
   border-radius: 0;
   -webkit-animation: spinnerline 1s cubic-bezier(0.17, 0.37, 0.43, 0.67)
     infinite;
@@ -1422,7 +1429,7 @@ hr {
   width: 13px;
   height: 13px;
   top: 2px;
-  background: #6cabdd;
+  background: var(--brand);
 }
 
 .swiper-button-prev.swiper-button-disabled,
@@ -1930,7 +1937,7 @@ hr {
 
 .menu-full ul li a:hover .char,
 .menu-full ul li a:hover .word {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .menu-full ul li ul {
@@ -2027,15 +2034,15 @@ hr {
 
 .menu-full ul li ul li a:hover .char,
 .menu-full ul li ul li a:hover .word {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .menu-full ul li ul li.active > a {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .menu-full ul li.active > a {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .menu-full ul li.opened > ul {
@@ -2092,7 +2099,7 @@ hr {
 }
 
 .menu-social-links a:hover i {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 @-webkit-keyframes close-menu-popup {
@@ -2236,7 +2243,7 @@ hr {
 .footer .footer-heading strong,
 .footer .copyright-text b,
 .footer .footer-heading b {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .footer .copyright-text p,
@@ -2251,7 +2258,7 @@ hr {
 
 .footer .copyright-text a:hover,
 .footer .footer-heading a:hover {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .social-links a {
@@ -2268,7 +2275,7 @@ hr {
 }
 
 .social-links a:hover {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 /**
@@ -2282,17 +2289,17 @@ hr {
 
 .lui-gradient-top {
   background-color: transparent;
-  background-image: linear-gradient(0deg, #ffffff 0%, #f0ebe3 100%);
+  background-image: linear-gradient(0deg, #ffffff 0%, var(--bg) 100%);
 }
 
 .lui-gradient-bottom {
   background-color: transparent;
-  background-image: linear-gradient(180deg, #ffffff 0%, #f0ebe3 100%);
+  background-image: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
 }
 
 .lui-gradient-center {
   background-color: transparent;
-  background-image: linear-gradient(180deg, #f0ebe3 0%, #f0ebe3 100%);
+  background-image: linear-gradient(180deg, var(--bg) 0%, var(--bg) 100%);
 }
 
 /**
@@ -2301,7 +2308,7 @@ hr {
 
 .section.section-inner {
   padding: 0;
-  background: #f0ebe3;
+  background: var(--bg);
 }
 
 .portfolio-template .section.section-inner {
@@ -2321,7 +2328,7 @@ hr {
 .section.section-inner.started-heading {
   padding-top: 220px;
   padding-bottom: 120px;
-  background: linear-gradient(180deg, #ffffff 0%, #f0ebe3 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
   z-index: 3;
 }
 
@@ -2354,7 +2361,7 @@ hr {
   position: relative;
   font-size: 14px;
   line-height: 1;
-  color: #6cabdd;
+  color: var(--brand);
   font-weight: 700;
   z-index: 2;
   text-transform: uppercase;
@@ -2399,7 +2406,7 @@ hr {
 
 .h-titles .h-subtitle.red,
 .m-titles .m-subtitle.red {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .lui-subtitle {
@@ -2412,7 +2419,7 @@ hr {
 
 .lui-subtitle strong,
 .lui-subtitle b {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .lui-text {
@@ -2527,7 +2534,7 @@ hr {
   width: 680px;
   height: 680px;
   z-index: 2;
-  background: linear-gradient(270.16deg, #1e3344 5.74%, #6cabdd 92.05%);
+  background: linear-gradient(270.16deg, var(--brand-accent) 5.74%, var(--brand) 92.05%);
   border-radius: 100%;
   -webkit-border-radius: 100%;
 }
@@ -2690,7 +2697,7 @@ hr {
 .section.hero-started .subtitle b,
 .section.hero-started .title b,
 .section.hero-started .info-list ul li b {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 /**
@@ -2743,7 +2750,7 @@ hr {
 .skills-item .dots .dot span {
   border: 2px solid #000;
   border-radius: 50%;
-  background-color: #6cabdd;
+  background-color: var(--brand);
   box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
   position: absolute;
   right: 0;
@@ -2781,7 +2788,7 @@ hr {
 }
 
 .skills-item .value .num span {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .history-title {
@@ -2893,7 +2900,7 @@ hr {
 
 .history-item .name.active:after {
   content: "-";
-  background: #f0ebe3;
+  background: var(--bg);
 }
 
 .history-item .subname {
@@ -2984,7 +2991,7 @@ hr {
   font-size: 41px;
   min-height: 50px;
   line-height: 1;
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .services-item .lui-text {
@@ -3061,7 +3068,7 @@ hr {
   width: 0;
   max-width: 60%;
   height: 2px;
-  background: #6cabdd;
+  background: var(--brand);
   transition: all 0.3s cubic-bezier(0.3, 0, 0.3, 1);
   -moz-transition: all 0.3s cubic-bezier(0.3, 0, 0.3, 1);
   -webkit-transition: all 0.3s cubic-bezier(0.3, 0, 0.3, 1);
@@ -3074,7 +3081,7 @@ hr {
 }
 
 .filter-links a.active {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .works-item {
@@ -3094,7 +3101,7 @@ hr {
   top: -10px;
   width: 10px;
   height: calc(100% + 20px);
-  background: #f0ebe3;
+  background: var(--bg);
   z-index: 2;
   pointer-events: none;
   transition: all 0.6s cubic-bezier(0.3, 0, 0.3, 1);
@@ -3130,7 +3137,7 @@ hr {
   top: -10px;
   width: calc(100% + 20px);
   height: 10px;
-  background: #f0ebe3;
+  background: var(--bg);
   z-index: 2;
   pointer-events: none;
   transition: all 0.6s cubic-bezier(0.3, 0, 0.3, 1);
@@ -3198,7 +3205,7 @@ hr {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .works-items.works-list-items .works-item .desc .name {
@@ -3285,7 +3292,7 @@ hr {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .works-items.works-masonry-items .works-item .desc .name {
@@ -3297,7 +3304,7 @@ hr {
 }
 
 .works-item:hover .desc .name a {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .works-items.works-masonry-items .works-item .desc .text {
@@ -3398,7 +3405,7 @@ hr {
   z-index: 2;
   display: block;
   border: 2px solid #000;
-  background-color: #6cabdd;
+  background-color: var(--brand);
   box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.2);
   border-radius: 26px;
   -webkit-border-radius: 26px;
@@ -3409,7 +3416,7 @@ hr {
   font-size: 41px;
   min-height: 50px;
   line-height: 1;
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .pricing-item .price {
@@ -3421,7 +3428,7 @@ hr {
 }
 
 .pricing-item .price b {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .pricing-item .price em {
@@ -3457,7 +3464,7 @@ hr {
   position: absolute;
   left: 0;
   top: 6px;
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .pricing-item .list ul li em {
@@ -3609,7 +3616,7 @@ hr {
 }
 
 .archive-item .desc h5 a:hover {
-  color: #6cabdd;
+  color: var(--brand);
   text-decoration: none;
 }
 
@@ -3756,7 +3763,7 @@ hr {
 
 .contacts-form label strong,
 .contacts-form label b {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .contacts-form label,
@@ -3953,7 +3960,7 @@ hr {
 }
 
 .m-page-navigation a:hover .h-title {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 .m-page-navigation .nav-arrow {
@@ -4261,7 +4268,7 @@ a.page-numbers.current,
 a.post-page-numbers.current,
 .page-numbers.current,
 .post-page-numbers.current {
-  background: #6cabdd;
+  background: var(--brand);
   color: #fff;
 }
 
@@ -4373,7 +4380,7 @@ input.search-submit,
   bottom: -20px;
   width: 30px;
   height: 4px;
-  background: #6cabdd;
+  background: var(--brand);
   -webkit-transition: opacity 0.3s linear, color 0.3s linear,
     -webkit-transform 0.3s cubic-bezier(0.3, 0, 0.3, 1);
   transition: opacity 0.3s linear, color 0.3s linear,
@@ -4421,7 +4428,7 @@ input.search-submit,
 
 .content-sidebar ul li a:hover,
 .post-content .wp-block-archives li a:hover {
-  color: #6cabdd;
+  color: var(--brand);
   text-decoration: underline;
 }
 
@@ -4571,7 +4578,7 @@ input.search-submit,
   color: #000;
   text-transform: none;
   text-decoration: none;
-  border: 1px solid #6cabdd;
+  border: 1px solid var(--brand);
 }
 
 .content-sidebar ul.menu {
@@ -4856,8 +4863,8 @@ h5.comment-box__details {
 }
 
 .share-post .share-btn:hover {
-  color: #6cabdd;
-  border-color: #6cabdd;
+  color: var(--brand);
+  border-color: var(--brand);
 }
 
 .share-post .share-btn span {
@@ -4950,7 +4957,7 @@ form.post-password-form label {
 }
 
 .post-password-form input[type="submit"] {
-  background-color: #6cabdd;
+  background-color: var(--brand);
   border: 0;
   border-radius: 5rem;
   color: #fff;
@@ -5069,7 +5076,7 @@ form.post-password-form label {
 
 .is-style-outline > .wp-block-button__link:not(.has-text-color),
 .wp-block-button__link.is-style-outline:not(.has-text-color) {
-  color: #6cabdd;
+  color: var(--brand);
 }
 
 a.wp-block-button__link {
@@ -5111,7 +5118,7 @@ a.wp-block-button__link {
 }
 
 .error-page__num {
-  color: #6cabdd;
+  color: var(--brand);
   font-size: 220px;
   display: block;
   height: auto;

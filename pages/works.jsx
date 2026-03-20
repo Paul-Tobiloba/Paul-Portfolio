@@ -1,12 +1,14 @@
 import dynamic from "next/dynamic";
 import Layout from "../src/layouts/Layout";
+import { getProjects } from "../src/lib/projects";
+
 const PortfolioIsotope = dynamic(
   () => import("../src/components/PortfolioIsotope"),
   {
     ssr: false,
   }
 );
-const Works = () => {
+const Works = ({ projects }) => {
   return (
     <Layout>
       {/* Section Started Heading */}
@@ -39,7 +41,7 @@ const Works = () => {
         {/* works */}
         <div className="v-line v-line-right v-line-top">
           <div className="container">
-            <PortfolioIsotope noViewMore />
+            <PortfolioIsotope noViewMore projects={projects} />
             <div className="lui-bgtitle">
               <span> Portfolio </span>
             </div>
@@ -49,4 +51,12 @@ const Works = () => {
     </Layout>
   );
 };
+
+export const getStaticProps = async () => ({
+  props: {
+    projects: await getProjects(),
+  },
+  revalidate: 60,
+});
+
 export default Works;

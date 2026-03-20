@@ -2,39 +2,17 @@ import Isotope from "isotope-layout";
 import Link from "next/link";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { filters } from "../data/projectData";
-import { createClient } from "@supabase/supabase-js";
-import { supabase } from "../../utils/supabase";
 
-const PortfolioIsotope = ({ noViewMore }) => {
+const PortfolioIsotope = ({ noViewMore, projects = [] }) => {
   const isotope = useRef();
   const [filterKey, setFilterKey] = useState("*");
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  // Fetch project data from Supabase
-  useEffect(() => {
-    const fetchProjects = async () => {
-      setLoading(true);
-      const { data, error } = await supabase
-        .from("projects")
-        .select("*")
-        .order("id", { ascending: true });
-
-      if (error) {
-        console.error("Error fetching projects:", error);
-      } else {
-        setProjects(data);
-        console.log("Fetched projects:", data);
-      }
-
-      setLoading(false);
-    };
-
-    fetchProjects();
-  }, []);
 
   // Initialize Isotope
   useEffect(() => {
+    if (!projects.length) {
+      return undefined;
+    }
+
     isotope.current = new Isotope(".works-items", {
       itemSelector: ".works-col",
       percentPosition: true,
@@ -78,8 +56,8 @@ const PortfolioIsotope = ({ noViewMore }) => {
         </div>
 
         <div className="works-items works-masonry-items row">
-          {loading ? (
-            <p className="text-center w-full">Loading projects...</p>
+          {!projects.length ? (
+            <p className="text-center w-full">No projects available.</p>
           ) : (
             projects.map((item, index) => (
               <div

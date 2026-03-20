@@ -1,4 +1,4 @@
-import SwiperCore, {
+import {
   Autoplay,
   EffectCreative,
   EffectFade,
@@ -7,8 +7,9 @@ import SwiperCore, {
   Navigation,
   Pagination,
   Virtual,
-} from "swiper";
-SwiperCore.use([
+} from "swiper/modules";
+
+const sliderModules = [
   Mousewheel,
   Pagination,
   Navigation,
@@ -17,9 +18,10 @@ SwiperCore.use([
   Grid,
   EffectCreative,
   Virtual,
-]);
+];
 
 export const servicesSliderProps = {
+  modules: sliderModules,
   slidesPerView: 3,
   spaceBetween: 40,
   watchSlidesProgress: true,
@@ -52,6 +54,7 @@ export const servicesSliderProps = {
 };
 
 export const testimonialsSliderProps = {
+  modules: sliderModules,
   slidesPerView: 3,
   spaceBetween: 40,
   watchSlidesProgress: true,

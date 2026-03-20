@@ -9,6 +9,7 @@ import {
   servicesSliderProps,
   testimonialsSliderProps,
 } from "../src/sliderProps";
+import { getProjects } from "../src/lib/projects";
 
 const testimonials = [
   {
@@ -65,7 +66,7 @@ const PortfolioIsotope = dynamic(
 const SkillsIsotope = dynamic(() => import("../src/components/skills"), {
   ssr: false,
 });
-const Index = () => {
+const Index = ({ projects }) => {
   return (
     <Layout pageClassName={"home"}>
       {/* Section - Hero Started */}
@@ -443,7 +444,7 @@ const Index = () => {
         {/* Works */}
         <div className="v-line v-line-right">
           <div className="container">
-            <PortfolioIsotope />
+            <PortfolioIsotope projects={projects} />
             <div className="lui-bgtitle">
               <span> Portfolio </span>
             </div>
@@ -1071,4 +1072,12 @@ const Index = () => {
     </Layout>
   );
 };
+
+export const getStaticProps = async () => ({
+  props: {
+    projects: await getProjects(),
+  },
+  revalidate: 60,
+});
+
 export default Index;
