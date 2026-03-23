@@ -1,5 +1,6 @@
-import dynamic from "next/dynamic";
+﻿import dynamic from "next/dynamic";
 import Link from "next/link";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { TypeAnimation } from "react-type-animation";
 import Resume from "../src/components/Resume";
@@ -9,6 +10,7 @@ import {
   servicesSliderProps,
   testimonialsSliderProps,
 } from "../src/sliderProps";
+import { blogPosts } from "../src/data/blogPosts";
 import { getProjects } from "../src/lib/projects";
 
 const testimonials = [
@@ -67,6 +69,81 @@ const SkillsIsotope = dynamic(() => import("../src/components/skills"), {
   ssr: false,
 });
 const Index = ({ projects }) => {
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [contactStatus, setContactStatus] = useState({
+    type: "idle",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleContactChange = ({ target: { name, value } }) => {
+    setContactForm((current) => ({
+      ...current,
+      [name]: value,
+    }));
+  };
+
+  const handleContactSubmit = async (event) => {
+    event.preventDefault();
+
+    const payload = {
+      name: contactForm.name.trim(),
+      email: contactForm.email.trim(),
+      subject: contactForm.subject.trim(),
+      message: contactForm.message.trim(),
+    };
+
+    if (!payload.name || !payload.email || !payload.subject || !payload.message) {
+      setContactStatus({
+        type: "error",
+        message: "Please complete all required fields before sending your message.",
+      });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      setContactStatus({ type: "idle", message: "" });
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Unable to send message right now.");
+      }
+
+      setContactForm({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+      setContactStatus({
+        type: "success",
+        message: "Thanks, your message was sent successfully.",
+      });
+    } catch (error) {
+      setContactStatus({
+        type: "error",
+        message: error.message || "Unable to send message right now.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <Layout pageClassName={"home"}>
       {/* Section - Hero Started */}
@@ -548,7 +625,7 @@ const Index = ({ projects }) => {
               >
                 <span>
                   {" "}
-                  my <b>Price Board</b>
+                  ways to <b>Work With Me</b>
                 </span>
               </div>
             </div>
@@ -564,22 +641,22 @@ const Index = ({ projects }) => {
                   data-animate="active"
                 >
                   <div className="lui-subtitle">
-                    <span> Hourley Basis </span>
+                    <span> Advisory Session </span>
                   </div>
                   <div className="icon" />
                   <div className="price">
                     <span>
                       {" "}
-                      39 <b>$</b>
+                      75 <b>$</b>
                     </span>
                     <em>Hour</em>
                   </div>
                   <div className="lui-text">
                     <div>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                        Best for technical direction, solution architecture,
+                        automation planning, workflow reviews, and fixing stuck
+                        projects without committing to a full build sprint.
                       </p>
                     </div>
                   </div>
@@ -588,28 +665,29 @@ const Index = ({ projects }) => {
                       <ul>
                         <li>
                           <i className="fas fa-check" />
-                          Brand Design
+                          Automation roadmap and process audit
                         </li>
                         <li>
                           <i className="fas fa-check" />
-                          Web Development
+                          Web architecture and integration advice
                         </li>
                         <li>
-                          <em>Advertising</em>
+                          <i className="fas fa-check" />
+                          Stack and tooling recommendations
                         </li>
                         <li>
-                          <em>Photography</em>
+                          <em>Implementation not included</em>
                         </li>
                       </ul>
                     </div>
                   </div>
                   <a href="#contact-section" className="btn btn-solid">
-                    <span>Start Project</span>
+                    <span>Book a Call</span>
                   </a>
                   <div
                     className="bg-img"
                     style={{
-                      backgroundImage: "url(assets/images/pat-2.png)",
+                      backgroundImage: "url(/assets/images/pat-2.png)",
                     }}
                   />
                 </div>
@@ -623,22 +701,22 @@ const Index = ({ projects }) => {
                   data-animate="active"
                 >
                   <div className="lui-subtitle">
-                    <span> Freelancing </span>
+                    <span> Build Sprint </span>
                   </div>
                   <div className="icon" />
                   <div className="price">
                     <span>
                       {" "}
-                      259 <b>$</b>
+                      2,800 <b>$</b>
                     </span>
-                    <em>Week</em>
+                    <em>Starting</em>
                   </div>
                   <div className="lui-text">
                     <div>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                        Ideal for focused delivery: landing pages, internal
+                        tools, client portals, Power Automate workflows, and
+                        AI-assisted business automations with a clear scope.
                       </p>
                     </div>
                   </div>
@@ -647,18 +725,18 @@ const Index = ({ projects }) => {
                       <ul>
                         <li>
                           <i className="fas fa-check" />
-                          Brand Design
+                          Discovery and scope alignment
                         </li>
                         <li>
                           <i className="fas fa-check" />
-                          Web Development
+                          Design, development, and QA
                         </li>
                         <li>
                           <i className="fas fa-check" />
-                          Advertising
+                          Documentation and handoff support
                         </li>
                         <li>
-                          <em>Photography</em>
+                          <em>Complex enterprise integrations scoped separately</em>
                         </li>
                       </ul>
                     </div>
@@ -669,7 +747,7 @@ const Index = ({ projects }) => {
                   <div
                     className="bg-img"
                     style={{
-                      backgroundImage: "url(assets/images/pat-2.png)",
+                      backgroundImage: "url(/assets/images/pat-2.png)",
                     }}
                   />
                 </div>
@@ -680,22 +758,22 @@ const Index = ({ projects }) => {
                   data-animate="active"
                 >
                   <div className="lui-subtitle">
-                    <span> Full Time </span>
+                    <span> Monthly Retainer </span>
                   </div>
                   <div className="icon" />
                   <div className="price">
                     <span>
                       {" "}
-                      1.249 <b>$</b>
+                      4,500 <b>$</b>
                     </span>
                     <em>Month</em>
                   </div>
                   <div className="lui-text">
                     <div>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                        For teams that need an ongoing technical partner to
+                        improve operations, ship product updates, and maintain
+                        automations without hiring a full in-house specialist.
                       </p>
                     </div>
                   </div>
@@ -704,30 +782,30 @@ const Index = ({ projects }) => {
                       <ul>
                         <li>
                           <i className="fas fa-check" />
-                          Brand Design
+                          Priority delivery queue
                         </li>
                         <li>
                           <i className="fas fa-check" />
-                          Web Development
+                          Ongoing web and automation support
                         </li>
                         <li>
                           <i className="fas fa-check" />
-                          Advertising
+                          Weekly check-ins and reporting
                         </li>
                         <li>
                           <i className="fas fa-check" />
-                          Photography
+                          Continuous optimization and iteration
                         </li>
                       </ul>
                     </div>
                   </div>
                   <a href="#contact-section" className="btn btn-solid">
-                    <span>Start Project</span>
+                    <span>Discuss Retainer</span>
                   </a>
                   <div
                     className="bg-img"
                     style={{
-                      backgroundImage: "url(assets/images/pat-2.png)",
+                      backgroundImage: "url(/assets/images/pat-2.png)",
                     }}
                   />
                 </div>
@@ -759,7 +837,7 @@ const Index = ({ projects }) => {
               >
                 <span>
                   {" "}
-                  my <b>Articles and Advice</b>
+                  practical notes on <b>automation delivery</b>
                 </span>
               </div>
             </div>
@@ -769,126 +847,47 @@ const Index = ({ projects }) => {
         <div className="v-line v-line-right">
           <div className="container">
             <div className="blog-items row">
-              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+              {blogPosts.map((post) => (
                 <div
-                  className="archive-item scrolla-element-anim-1 scroll-animate"
-                  data-animate="active"
+                  key={post.slug}
+                  className="col-xs-12 col-sm-6 col-md-6 col-lg-6"
                 >
-                  <div className="image">
-                    <Link legacyBehavior href="/blog-single">
-                      <a>
-                        <img
-                          decoding="async"
-                          src="assets/images/single7.jpg"
-                          alt="The Main Thing For The Designer"
-                        />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="desc">
-                    <div className="category lui-subtitle">
-                      <span>October 31, 2022</span>
-                    </div>
-                    <h5 className="lui-title">
-                      <Link legacyBehavior href="/blog-single">
-                        <a>The Main Thing For The Designer</a>
+                  <div
+                    className="archive-item scrolla-element-anim-1 scroll-animate"
+                    data-animate="active"
+                  >
+                    <div className="image">
+                      <Link legacyBehavior href={`/blog/${post.slug}`}>
+                        <a>
+                          <img
+                            decoding="async"
+                            src={post.image}
+                            alt={post.title}
+                          />
+                        </a>
                       </Link>
-                    </h5>
-                    <div className="lui-text">
-                      <p>
-                        Vivamus interdum suscipit lacus. Nunc ultrices accumsan
-                        mattis. Aliquam vel sem vel velit efficitur malesuada.
-                        Donec arcu lacus, ornare eget…{" "}
-                      </p>
-                      <div className="readmore">
-                        <Link legacyBehavior href="/blog-single">
-                          <a className="lnk">Read more</a>
+                    </div>
+                    <div className="desc">
+                      <div className="category lui-subtitle">
+                        <span>{post.categoryText}</span>
+                      </div>
+                      <h5 className="lui-title">
+                        <Link legacyBehavior href={`/blog/${post.slug}`}>
+                          <a>{post.title}</a>
                         </Link>
+                      </h5>
+                      <div className="lui-text">
+                        <p>{post.excerpt}</p>
+                        <div className="readmore">
+                          <Link legacyBehavior href={`/blog/${post.slug}`}>
+                            <a className="lnk">Read article</a>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div
-                  className="archive-item scrolla-element-anim-1 scroll-animate"
-                  data-animate="active"
-                >
-                  <div className="image">
-                    <Link legacyBehavior href="/blog-single">
-                      <a>
-                        <img
-                          decoding="async"
-                          src="assets/images/blog-4-scaled-1.jpg"
-                          alt="Follow Your Own Design Process"
-                        />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="desc">
-                    <div className="category lui-subtitle">
-                      <span>October 31, 2022</span>
-                    </div>
-                    <h5 className="lui-title">
-                      <Link legacyBehavior href="/blog-single">
-                        <a>Follow Your Own Design Process</a>
-                      </Link>
-                    </h5>
-                    <div className="lui-text">
-                      <p>
-                        Vivamus interdum suscipit lacus. Nunc ultrices accumsan
-                        mattis. Aliquam vel sem vel velit efficitur malesuada.
-                        Donec arcu lacus, ornare eget…{" "}
-                      </p>
-                      <div className="readmore">
-                        <Link legacyBehavior href="/blog-single">
-                          <a className="lnk">Read more</a>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div
-                  className="archive-item scrolla-element-anim-1 scroll-animate"
-                  data-animate="active"
-                >
-                  <div className="image">
-                    <Link legacyBehavior href="/blog-single">
-                      <a>
-                        <img
-                          decoding="async"
-                          src="assets/images/blog-2.jpg"
-                          alt="Usability Secrets to Create Better Interfaces"
-                        />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="desc">
-                    <div className="category lui-subtitle">
-                      <span>November 28, 2021</span>
-                    </div>
-                    <h5 className="lui-title">
-                      <Link legacyBehavior href="/blog-single">
-                        <a>Usability Secrets to Create Better Interfaces</a>
-                      </Link>
-                    </h5>
-                    <div className="lui-text">
-                      <p>
-                        Vivamus interdum suscipit lacus. Nunc ultrices accumsan
-                        mattis. Aliquam vel sem vel velit efficitur malesuada.
-                        Donec arcu lacus, ornare eget…{" "}
-                      </p>
-                      <div className="readmore">
-                        <Link legacyBehavior href="/blog-single">
-                          <a className="lnk">Read more</a>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
             <div className="load-more">
               <Link legacyBehavior href="/blog">
@@ -949,7 +948,7 @@ const Index = ({ projects }) => {
                       <span> Address </span>
                     </div>
                     <div className="lui-text">
-                      <span> North Tower, Toronto, Canada </span>
+                      <span> Westwood Estate, Badore Ajah-Lekki, Lagos, Nigeria </span>
                     </div>
                   </div>
                   <div
@@ -977,7 +976,7 @@ const Index = ({ projects }) => {
                       <span> Email </span>
                     </div>
                     <div className="lui-text">
-                      <span> mailto:oluwatobiloba.xyz@gmail.com </span>
+                      <span> oluwatobiloba.xyz@gmail.com </span>
                     </div>
                   </div>
                   <div
@@ -1004,17 +1003,23 @@ const Index = ({ projects }) => {
                   <div
                     className="bg-img"
                     style={{
-                      backgroundImage: "url(assets/images/pat-1.png)",
+                      backgroundImage: "url(/assets/images/pat-1.png)",
                     }}
                   />
                   <div className="contacts-form">
-                    <form onSubmit={(e) => e.preventDefault()} id="cform">
+                    <form onSubmit={handleContactSubmit} id="cform">
                       <div className="row">
                         <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                           <div className="group">
                             <label>
                               Your Full Name <b>*</b>
-                              <input type="text" name="name" />
+                              <input
+                                type="text"
+                                name="name"
+                                value={contactForm.name}
+                                onChange={handleContactChange}
+                                autoComplete="name"
+                              />
                             </label>
                           </div>
                         </div>
@@ -1022,7 +1027,13 @@ const Index = ({ projects }) => {
                           <div className="group">
                             <label>
                               Your Email Address <b>*</b>
-                              <input type="email" name="email" />
+                              <input
+                                type="email"
+                                name="email"
+                                value={contactForm.email}
+                                onChange={handleContactChange}
+                                autoComplete="email"
+                              />
                             </label>
                           </div>
                         </div>
@@ -1030,7 +1041,12 @@ const Index = ({ projects }) => {
                           <div className="group">
                             <label>
                               Your Subject <b>*</b>
-                              <input type="text" name="subject" />
+                              <input
+                                type="text"
+                                name="subject"
+                                value={contactForm.subject}
+                                onChange={handleContactChange}
+                              />
                             </label>
                           </div>
                         </div>
@@ -1038,7 +1054,11 @@ const Index = ({ projects }) => {
                           <div className="group">
                             <label>
                               Your Message <b>*</b>
-                              <textarea name="message" defaultValue={""} />
+                              <textarea
+                                name="message"
+                                value={contactForm.message}
+                                onChange={handleContactChange}
+                              />
                             </label>
                           </div>
                         </div>
@@ -1046,19 +1066,23 @@ const Index = ({ projects }) => {
                           <div className="terms-label">
                             * Accept the terms and conditions.
                           </div>
-                          <a
-                            href="#"
-                            className="btn"
-                            onclick="$('#cform').submit(); return false;"
-                          >
-                            <span>Send Message</span>
-                          </a>
+                          <button type="submit" className="btn" disabled={isSubmitting}>
+                            <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                          </button>
                         </div>
                       </div>
                     </form>
-                    <div className="alert-success" style={{ display: "none" }}>
-                      <p>Thanks, your message is sent successfully.</p>
-                    </div>
+                    {contactStatus.message ? (
+                      <div
+                        className="alert-success"
+                        style={{
+                          display: "block",
+                          color: contactStatus.type === "error" ? "#b42318" : undefined,
+                        }}
+                      >
+                        <p>{contactStatus.message}</p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>

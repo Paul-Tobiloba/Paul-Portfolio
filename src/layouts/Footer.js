@@ -1,5 +1,8 @@
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="footer">
       <div className="footer__builder">
@@ -38,7 +41,7 @@ const Footer = () => {
                 className="copyright-text align-center scrolla-element-anim-1 scroll-animate"
                 data-animate="active"
               >
-                © 2025 <strong>Tobiloba</strong>. All rights reserved
+                {"\u00A9"} {currentYear} <strong>Tobiloba</strong>. All rights reserved
               </div>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -55,4 +58,5 @@ const Footer = () => {
     </div>
   );
 };
+
 export default Footer;

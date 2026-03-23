@@ -30,29 +30,29 @@ const educationData = [
 const experienceData = [
   {
     id: 1,
+    title: "Power Automate Desktop RPA Engineer",
+    company: "Union Bank (Contract, secondment from SakalGb Solutions)",
+    dec: [
+      "Developed automation solutions using Power Automate Desktop for high-volume financial reconciliation processes, ensuring accuracy and consistency across transaction datasets.",
+      "Engineered data processing workflows combining RPA and Python to handle large-scale transformations, validation logic, and structured output generation.",
+      "Implemented efficient data handling strategies including bulk operations, in-memory processing, and formula-driven workflows to overcome performance and memory constraints in Excel-based automations.",
+      "Designed reusable automation components for data parsing, session-based mapping, and reporting, improving maintainability and reducing execution time.",
+      "Delivered automation solutions aligned with business requirements, with clear logging, error handling, and support for operational monitoring.",
+    ],
+    startYear: "2025",
+    endYear: false,
+  },
+  {
+    id: 2,
     title: "AI Automations / Workflow Developer",
     company: "Freelance",
     dec: [
       "Developed and implemented AI-driven automation solutions for various clients, enhancing operational efficiency and reducing manual workload.",
       "Designed and built custom automation workflows using n8n, Make.com, and other platforms, integrating AI capabilities to optimize business processes.",
       "Collaborated with clients to identify automation opportunities, analyze requirements, and deliver tailored solutions that meet specific business needs.",
-      "Created user-friendly interfaces and dashboards to visualize automation processes and provide insights into performance metrics."
+      "Created user-friendly interfaces and dashboards to visualize automation processes and provide insights into performance metrics.",
     ],
     startYear: "2023",
-    endYear: false,
-  },
-  {
-    id: 2,
-    title: "Automations Developer",
-    company: "Advanced Cloud Partners, USA",
-    dec: [
-      "Streamlined business processes through process mapping and automation, enhancing efficiency and productivity for multiple clients across diverse industries.",
-      "Developed and customized business processes using n8n, Make.com, Power Automate, Zenphi, and other platforms, incorporating custom nodes and user-friendly interfaces to enhance workflow adoption and improve user experience.",
-      "Redesigned and optimized existing Power Automate flows, integrating them with K2 solutions to consolidate disparate automation processes into cohesive, scalable systems.",
-      "Utilized open-source automation tools alongside MS/Google platform capabilities to deliver tailored, high-value automation solutions aligned with client needs.",
-      "Documented technical specifications, process requirements, and UI design decisions to ensure maintainability and support future enhancements.",
-    ],
-    startYear: "2024",
     endYear: false,
   },
   {
@@ -75,6 +75,20 @@ const experienceData = [
   },
   {
     id: 4,
+    title: "Automations Developer",
+    company: "Advanced Cloud Partners, USA",
+    dec: [
+      "Streamlined business processes through process mapping and automation, enhancing efficiency and productivity for multiple clients across diverse industries.",
+      "Developed and customized business processes using n8n, Make.com, Power Automate, Zenphi, and other platforms, incorporating custom nodes and user-friendly interfaces to enhance workflow adoption and improve user experience.",
+      "Redesigned and optimized existing Power Automate flows, integrating them with K2 solutions to consolidate disparate automation processes into cohesive, scalable systems.",
+      "Utilized open-source automation tools alongside MS/Google platform capabilities to deliver tailored, high-value automation solutions aligned with client needs.",
+      "Documented technical specifications, process requirements, and UI design decisions to ensure maintainability and support future enhancements.",
+    ],
+    startYear: "2024",
+    endYear: "2025",
+  },
+  {
+    id: 5,
     title: "Lead Engineer / Frontend Developer",
     company: "Noirak Technologies,  Nigeria",
     dec: [

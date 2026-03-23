@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { linkClick, toggleMenu } from "../utils";
 
 const Header = () => {
@@ -12,8 +13,6 @@ const Header = () => {
       document.querySelector("body").classList.add("dark-skin");
     }
   }, [day]);
-
-  const [pageToggle, setPageToggle] = useState(false);
 
   return (
     <Fragment>
@@ -173,17 +172,6 @@ const Header = () => {
                               </Link>
                             </li>
                             <li className="menu-item">
-                              <Link legacyBehavior href="/#blog-section">
-                                <a
-                                  className="splitting-text-anim-2"
-                                  data-splitting="chars"
-                                  onClick={() => linkClick()}
-                                >
-                                  Blog
-                                </a>
-                              </Link>
-                            </li>
-                            <li className="menu-item">
                               <Link legacyBehavior href="/#contact-section">
                                 <a
                                   className="splitting-text-anim-2"
@@ -194,106 +182,33 @@ const Header = () => {
                                 </a>
                               </Link>
                             </li>
-                            <li
-                              className={`menu-item menu-item-has-children has-children ${
-                                pageToggle ? "opened" : "closed"
-                              }`}
-                            >
-                              <a
-                                className="splitting-text-anim-2"
-                                data-splitting="chars"
-                                onClick={() => setPageToggle(!pageToggle)}
-                              >
-                                Pages
-                                <i className="fas fa-chevron-down"></i>
-                              </a>
-
-                              <ul
-                                className="sub-menu"
-                                style={{
-                                  marginTop: "1rem",
-                                  display: `${pageToggle ? "block" : "none"}`,
-                                }}
-                              >
-                                <li className="menu-item">
-                                  <Link legacyBehavior href="/works-list">
-                                    <a
-                                      className="splitting-text-anim-1"
-                                      data-splitting="chars"
-                                    >
-                                      Works (List)
-                                    </a>
-                                  </Link>
-                                </li>
-                                <li className="menu-item">
-                                  <Link legacyBehavior href="/works">
-                                    <a
-                                      className="splitting-text-anim-1"
-                                      data-splitting="chars"
-                                    >
-                                      Works (Grid)
-                                    </a>
-                                  </Link>
-                                </li>
-                                <li className="menu-item">
-                                  <Link legacyBehavior href="/work-single">
-                                    <a
-                                      className="splitting-text-anim-1"
-                                      data-splitting="chars"
-                                    >
-                                      Work Single Page
-                                    </a>
-                                  </Link>
-                                </li>
-                                <li className="menu-item">
-                                  <Link legacyBehavior href="/blog">
-                                    <a
-                                      className=" splitting-text-anim-1"
-                                      data-splitting="chars"
-                                    >
-                                      Blog
-                                    </a>
-                                  </Link>
-                                </li>
-                                <li className="menu-item">
-                                  <Link legacyBehavior href="/blog-single">
-                                    <a
-                                      className="splitting-text-anim-1"
-                                      data-splitting="chars"
-                                    >
-                                      Single Post
-                                    </a>
-                                  </Link>
-                                </li>
-                              </ul>
-                            </li>
                           </ul>
                         </div>
                         {/* social */}
                         <div className="menu-social-links">
                           <a
-                            href="http://dribbble.com"
-                            target="blank"
+                            target="_blank"
+                            rel="nofollow"
+                            href="https://github.com/Paul-Tobiloba"
                             className="scrolla-element-anim-1"
-                            title="dribbble"
                           >
-                            <i className="fab fa-dribbble" />
+                            <FaGithub />
                           </a>
                           <a
-                            href="http://twitter.com"
-                            target="blank"
+                            target="_blank"
+                            rel="nofollow"
+                            href="https://www.linkedin.com/in/oluwatobiloba-paul/"
                             className="scrolla-element-anim-1"
-                            title="twitter"
                           >
-                            <i className="fab fa-twitter" />
+                            <FaLinkedin />
                           </a>
                           <a
-                            href="http://behance.com"
-                            target="blank"
+                            target="_blank"
+                            rel="nofollow"
+                            href="https://x.com/TobyCodes"
                             className="scrolla-element-anim-1"
-                            title="behance"
                           >
-                            <i className="fab fa-behance" />
+                            <FaXTwitter />
                           </a>
                         </div>
                         <div className="v-line-block">

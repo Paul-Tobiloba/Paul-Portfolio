@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../../../src/layouts/Layout";
 import { getProjectBySlug, getProjectSlugs } from "../../../src/lib/projects";
 
@@ -11,6 +11,10 @@ const WorkSingleISotope = dynamic(
 
 const WorkSingle = ({ project }) => {
   const [videoToggle, setVideoToggle] = useState(false);
+
+  useEffect(() => {
+    setVideoToggle(false);
+  }, [project.slug]);
 
   return (
     <Layout pageClassName="portfolio-template">
@@ -59,6 +63,7 @@ const WorkSingle = ({ project }) => {
       <div className="section section-inner">
         <div className="m-image-large">
           <div
+            key={`${project.slug}-hero-image`}
             className="img js-parallax"
             style={{ backgroundImage: `url(${project.projectImg[0]})`, height: "500px" }}
           />
@@ -82,7 +87,7 @@ const WorkSingle = ({ project }) => {
       {/* Gallery */}
       <div className="section section-inner">
         <div className="container">
-          <WorkSingleISotope images={project.projectImg} />
+          <WorkSingleISotope key={project.slug} images={project.projectImg} />
         </div>
       </div>
 
@@ -105,7 +110,7 @@ const WorkSingle = ({ project }) => {
         <div className={`video ${videoToggle ? "active" : ""}`}>
           <div
             className="img js-parallax"
-            style={{ backgroundImage: "url(assets/images/blog9.jpg)" }}
+            style={{ backgroundImage: "url(/assets/images/blog9.jpg)" }}
           />
           <iframe
             className="js-video-iframe"

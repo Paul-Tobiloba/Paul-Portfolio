@@ -1,6 +1,7 @@
 import { Fragment, useEffect } from "react";
 import {
   activeAnimation,
+  destroyJarallaxAnimation,
   initCursor,
   jarallaxAnimation,
   stickyNav,
@@ -14,6 +15,11 @@ const Layout = ({ children, pageClassName }) => {
     initCursor();
     window.addEventListener("scroll", activeAnimation);
     window.addEventListener("scroll", stickyNav);
+
+    return () => {
+      window.removeEventListener("scroll", activeAnimation);
+      window.removeEventListener("scroll", stickyNav);
+    };
   }, []);
 
   useEffect(() => {
@@ -25,6 +31,10 @@ const Layout = ({ children, pageClassName }) => {
     document.querySelector("body").className = pageClassName
       ? pageClassName
       : "";
+
+    return () => {
+      destroyJarallaxAnimation();
+    };
   });
 
   return (

@@ -1,1 +1,4 @@
-(()=>{var e={};e.id=636,e.ids=[636],e.modules={7522:()=>{throw Error('Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):\nError:   \x1b[31mx\x1b[0m Expected \'}\', got \':\'\n    ,-[\x1b[36;1;4mC:\\Users\\USER\\Documents\\GitHub\\Paul-Portfolio\\pages\\_app.js\x1b[0m:93:1]\n \x1b[2m90\x1b[0m |       <script type="module" defer>\n \x1b[2m91\x1b[0m |   import Chatbot from "https://cdn.n8nchatui.com/v1/embed.js";\n \x1b[2m92\x1b[0m |   Chatbot.init({\n \x1b[2m93\x1b[0m |     "n8nChatUrl": "https://n8n.advancedcloudpartners.com/webhook/c3b720b6-f764-497b-a7e8-9d86721058a7/chat",\n    : \x1b[35;1m                ^\x1b[0m\n \x1b[2m94\x1b[0m |     "metadata": {}, // Include any custom data to send with each message to your n8n workflow\n \x1b[2m95\x1b[0m |     "theme": {\n \x1b[2m95\x1b[0m |       "button": {\r\n    `----\n\n\nCaused by:\n    Syntax Error')}};var t=require("../webpack-runtime.js");t.C(e);var n=t(t.s=7522);module.exports=n})();
+var R=require("../chunks/ssr/[turbopack]_runtime.js")("server/pages/_app.js")
+R.c("server/chunks/ssr/[root-of-the-server]__00f.l08._.js")
+R.m(7342)
+module.exports=R.m(7342).exports

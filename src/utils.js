@@ -131,9 +131,27 @@ export const linkClick = () => {
   return false;
 };
 
+export const destroyJarallaxAnimation = () => {
+  const { jarallax } = require("jarallax");
+  const elements = document.querySelectorAll(".js-parallax");
+
+  if (!elements.length) {
+    return;
+  }
+
+  jarallax(elements, "destroy");
+};
+
 export const jarallaxAnimation = () => {
-  let { jarallax, jarallaxVideo } = require("jarallax");
-  jarallax(document.querySelectorAll(`.js-parallax`), {
+  const { jarallax } = require("jarallax");
+  const elements = document.querySelectorAll(".js-parallax");
+
+  if (!elements.length) {
+    return;
+  }
+
+  jarallax(elements, "destroy");
+  jarallax(elements, {
     speed: 0.65,
     type: "scroll",
   });

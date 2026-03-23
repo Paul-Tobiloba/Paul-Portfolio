@@ -3,6 +3,23 @@ import { projects as fallbackProjects } from "../data/projects";
 
 let sql;
 
+const normalizeAssetPath = (value) => {
+  if (typeof value !== "string" || !value.trim()) {
+    return value ?? null;
+  }
+
+  if (
+    value.startsWith("/") ||
+    value.startsWith("http://") ||
+    value.startsWith("https://") ||
+    value.startsWith("data:")
+  ) {
+    return value;
+  }
+
+  return `/${value.replace(/^\.?\//, "")}`;
+};
+
 const normalizeProjectShape = (project) => ({
   id: project.id ?? null,
   createdAt:
@@ -16,7 +33,7 @@ const normalizeProjectShape = (project) => ({
   technologies: project.technologies ?? null,
   categories: project.categories ?? null,
   filters: Array.isArray(project.filters) ? project.filters : [],
-  image: project.image ?? null,
+  image: normalizeAssetPath(project.image ?? null),
   description: Array.isArray(project.description) ? project.description : [],
   conclusion: Array.isArray(project.conclusion) ? project.conclusion : [],
   video: project.video ?? null,
@@ -24,9 +41,9 @@ const normalizeProjectShape = (project) => ({
   nextProjectSlug:
     project.nextProjectSlug ?? project.next_project_slug ?? project.nextProject?.slug ?? null,
   projectImg: Array.isArray(project.projectImg)
-    ? project.projectImg
+    ? project.projectImg.map(normalizeAssetPath).filter(Boolean)
     : project.image
-      ? [project.image]
+      ? [normalizeAssetPath(project.image)]
       : [],
 });
 
