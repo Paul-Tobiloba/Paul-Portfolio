@@ -1,6 +1,6 @@
 ﻿import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { TypeAnimation } from "react-type-animation";
 import Resume from "../src/components/Resume";
@@ -68,7 +68,11 @@ const PortfolioIsotope = dynamic(
 const SkillsIsotope = dynamic(() => import("../src/components/skills"), {
   ssr: false,
 });
+
 const Index = ({ projects }) => {
+  const experienceStartYear = 2020;
+  const yearsOfExperience = new Date().getFullYear() - experienceStartYear;
+
   const [contactForm, setContactForm] = useState({
     name: "",
     email: "",
@@ -80,6 +84,18 @@ const Index = ({ projects }) => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (!contactStatus.message) {
+      return undefined;
+    }
+
+    const timeoutId = setTimeout(() => {
+      setContactStatus({ type: "idle", message: "" });
+    }, 4500);
+
+    return () => clearTimeout(timeoutId);
+  }, [contactStatus]);
 
   const handleContactChange = ({ target: { name, value } }) => {
     setContactForm((current) => ({
@@ -121,7 +137,11 @@ const Index = ({ projects }) => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Unable to send message right now.");
+        throw new Error(
+          response.status >= 500
+            ? "Something went wrong while sending your message. Please try again later."
+            : data.message || "Please check your input and try again."
+        );
       }
 
       setContactForm({
@@ -137,7 +157,9 @@ const Index = ({ projects }) => {
     } catch (error) {
       setContactStatus({
         type: "error",
-        message: error.message || "Unable to send message right now.",
+        message:
+          error.message ||
+          "Something went wrong while sending your message. Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
@@ -146,6 +168,26 @@ const Index = ({ projects }) => {
 
   return (
     <Layout pageClassName={"home"}>
+      {contactStatus.message ? (
+        <div
+          className={`site-toast ${
+            contactStatus.type === "error" ? "is-error" : "is-success"
+          }`}
+        >
+          <div className="site-toast__content">
+            <p>{contactStatus.message}</p>
+          </div>
+          <button
+            type="button"
+            className="site-toast__close"
+            onClick={() => setContactStatus({ type: "idle", message: "" })}
+            aria-label="Close notification"
+          >
+            ×
+          </button>
+        </div>
+      ) : null}
+
       {/* Section - Hero Started */}
       <section
         className="lui-section lui-section-hero lui-gradient-top"
@@ -187,7 +229,7 @@ const Index = ({ projects }) => {
                           2000, // Hold for 2 seconds
                           "Web Developer",
                           2000, // Hold for 2 seconds
-                          "Power Developer",
+                          "RPA Developer",
                           2000, // Hold for 2 seconds
                         ]}
                         wrapper="span"
@@ -267,7 +309,7 @@ const Index = ({ projects }) => {
                   <ul>
                     <li>
                       <span className="num">
-                        6 <strong>+</strong>
+                        {yearsOfExperience} <strong>+</strong>
                       </span>
                       <span className="value">
                         Years of <strong>Experience</strong>
@@ -1072,17 +1114,6 @@ const Index = ({ projects }) => {
                         </div>
                       </div>
                     </form>
-                    {contactStatus.message ? (
-                      <div
-                        className="alert-success"
-                        style={{
-                          display: "block",
-                          color: contactStatus.type === "error" ? "#b42318" : undefined,
-                        }}
-                      >
-                        <p>{contactStatus.message}</p>
-                      </div>
-                    ) : null}
                   </div>
                 </div>
               </div>

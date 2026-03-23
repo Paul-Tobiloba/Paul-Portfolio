@@ -50,8 +50,9 @@ export default async function handler(req, res) {
   const transporter = getTransporter();
 
   if (!transporter) {
+    console.error("[contact-api] Missing SMTP configuration.");
     return res.status(500).json({
-      message: "Email service is not configured yet. Add SMTP env variables first.",
+      message: "Something went wrong while sending your message. Please try again later.",
     });
   }
 
@@ -84,9 +85,10 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ message: "Message sent successfully." });
   } catch (error) {
+    console.error("[contact-api] Mail send failed:", error);
+
     return res.status(500).json({
-      message: "Unable to send message right now.",
-      error: error.message,
+      message: "Something went wrong while sending your message. Please try again later.",
     });
   }
 }
