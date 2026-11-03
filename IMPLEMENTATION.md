@@ -15,7 +15,7 @@ $env:NEXT_DIST_DIR = ".next-security-dev"
 npm.cmd run dev
 
 # In a separate terminal, or after stopping the development server:
-$env:NEXT_DIST_DIR = ".next-security-brand"
+$env:NEXT_DIST_DIR = ".next-security-matrix"
 npm.cmd run build
 npm.cmd run start
 ```
@@ -26,15 +26,15 @@ Use the same NEXT_DIST_DIR value when starting a production build. These are run
 
 The user selected direction C from the right column of the second concept board. The open P, shaped T, and rounded geometric lettering are a font-free vector interpretation of that approved imagegen concept, not a bitmap crop or exact-tracing claim. src/data/brandGeometry.json is canonical: BrandLogo, wordmark, P+T icon, favicons, and loading mark reuse the same paths. No body font or palette changes accompany the identity.
 
-BrandLogo.jsx renders the shared geometry; BrandLoading.jsx renders a nonblocking labelled status; SecurityApp.jsx owns real font/navigation pending state; routeLoading.mjs isolates router lifecycle ownership. Identity in PortfolioShell and the securityPortfolio branch of pages/_app.js use this system.
+BrandLogo.jsx renders the unchanged header geometry. BrandLoading.jsx now renders the approved full-screen Matrix introduction; MatrixWordmark.jsx and matrixLoading.mjs supply glyph resolution and controller state. SecurityApp.jsx owns font/navigation pending state and the progressive-enhancement content wrapper/ref; routeLoading.mjs retains router ownership. Identity in PortfolioShell and the securityPortfolio branch of pages/_app.js use this system.
 
 Desktop identity reserves 238 × 44px, with a 238 × 32px SVG using viewBox 0 0 681 90. P stays anchored; hover and keyboard focus move T from 76 to 236 SVG units over 420ms with cubic-bezier(.16,1,.3,1). Remaining letters enter with 200ms opacity and 420ms translation, delayed 80ms. The old text PT 23px and generic 180ms name reveal are retired.
 
 At ≤650px, the header reserves 56px for compact P+T. Hover/focus shows the full wordmark in a 252px below-header panel; touch visitors have the full name in the expanded menu. Menu identity flexes to available width, with full SVG at most 238 × 32px. Existing circular actions remain 44px. The home link retains “Paul Tobiloba, home”; SVG artwork is decorative to assistive technology.
 
-The contour entrance is finite at 700ms with a 90ms T delay. Separate pending-state loading uses a 1.6s contour/fill loop and 1.4s sweep, only while fonts/navigation are actually pending. It is labelled “Loading portfolio…,” positioned near the header, and does not block content, set a minimum wait, or show a fabricated percentage. Hidden tabs pause loading loops. Reduced motion renders visible static paths and a still pending indicator.
+The header contour entrance remains finite at 700ms with a 90ms T delay. Its former small loading badge/ink/sweep loops are retired by the approved Matrix replacement specified below.
 
-The router helper ignores shallow filter transitions, ties completion/error to the active URL so older cancellation cannot clear newer navigation, and removes listeners on cleanup. Frame/font callbacks are disposal guarded; loading visibility listeners are cleaned up. These are source facts, not exercised browser behavior.
+The router helper still ignores shallow filters and protects active-URL ownership against older completion/errors. Frame/font callbacks, timers, and visibility/motion listeners are cleanup guarded. The Matrix controller adds pending-renewal and progressive-enhancement guards detailed below; these are source facts.
 
 Assets under public/assets/brand/: wordmark.svg, wordmark-ink.svg, monogram.svg, icon.svg, favicon-32.png, apple-touch-icon.png (180px), and icon-512.png. Root public/favicon.ico is the fallback. PNGs are native SVG exports through installed Sharp, with source JSON sidecars and SOURCE.md ledger. No imagegen call was made for this implementation; it vectors the prior approved concept.
 
@@ -43,6 +43,24 @@ Reference: C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/output/paul-tob
 Current brand checks: five route lifecycle Node tests pass via npm.cmd run test:brand. The final isolated .next-security-brand build passed all 17 static pages and API routes; git diff --check passed. Targeted lint reports zero errors and 13 warnings: 11 unchanged legacy _app font/manual-style warnings and two native SVG-image warnings. Asset validation passed for four font-free SVG masters without external references, PNG dimensions 32/180/512, and an ICO container matching PNG32. The brand provenance scan reports three rasters and zero missing origins/prompts; PNGs retain JSON sidecars and embedded native-SVG origins. ICO was refreshed from the annotated32px PNG without pixel/code changes after the final build. The download pack is C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/output/paul-tobiloba-logo/paul-tobiloba-direction-c-v1.zip. The source/artwork review found no material implementation/asset defect; it is not whole-UI SHIP.
 
 The implementation lives on codex/security-portfolio; the earlier portfolio snapshot was pushed at 92da56d. The user authorized publication of this identity extension. Production deployment and rendered verification remain unverified.
+
+### Approved full-screen Matrix loader
+
+The user rejected the small header badge and approved the inline preview at C:/Users/USER/.codex/visualizations/2026/11/02/01a19ccf-95bd-7952-bfb3-75d469c00c2b/matrix-loader-preview.html, then requested a smaller name and the exact label “Loading.” BrandLoading.jsx now renders that full-screen graphite introduction. MatrixWordmark.jsx uses canonical direction-C font-free geometry plus deterministic binary/mixed SVG glyphs resolving left-to-right into Paul Tobiloba. Header P+T expansion, brand exports, body fonts, palette, and portfolio content remain unchanged.
+
+The name is capped at 520px (about 24% narrower than the preview’s 681px), with width min(76vw,520px); compact layout uses 76vw. Meter width is min(240px,72vw), or min(220px,70vw) at ≤650px. Labels are 11px IBM Plex Mono; subtext is 12px. Caption changes from “Hacking in progress…” to “Access granted.” It is presentation copy, not an authentication/device-access claim.
+
+matrixLoading.mjs controls timed presentation progress, not downloaded bytes. Startup resolves over 4200ms, then holds 220ms and fades 220ms after actual route/font work is ready. While actual work is pending, progress stays at or below 95%; 100%/Access granted occurs only when ready. Renewed pending work clears readyAt during either hold or fade, revoking completion and preventing a close/reopen race.
+
+Subsequent pending navigation waits 120ms before starting an 1800ms resolve; fast cached navigation and shallow filters avoid a flash. The sequence has a 10-second fail-safe, Skip loading screen, and Escape release. Skip may reveal the page while actual work is still pending without claiming completed byte transfer. Reduced motion displays the full static name and exits immediately when ready. Hidden-tab RAF work pauses; resume uses elapsed wall time instead of replaying background time.
+
+The client effect sets data-loader-ready before enabling the overlay and making the underlying content inert/aria-hidden with page scrolling locked. Default CSS keeps the SSR overlay hidden, invisible, and pointer-inactive; SSR page content is not inert. If hydration never reaches the effect, content remains accessible. SecurityApp supplies the content wrapper/ref and a noscript hidden-loader fallback. Cleanup restores prior inert/aria-hidden/overflow state and focus to a connected previous element or destination main. The labelled modal/progress semantics and single Skip-control keyboard loop are source facts, not browser accessibility verification.
+
+SecurityApp, routeLoading.mjs, RAF/visibility/motion listeners, font callbacks, and timers retain cleanup/ownership guards. No fake bytes, minimum network wait, new raster, dependency, or actual authentication is introduced. The old near-header status, 1.6s loading-ink loop, and 1.4s sweep are retired; the separate finite header contour intro is unchanged.
+
+Current source checks: all 15 loading tests pass through npm.cmd run test:brand (five route lifecycle and ten Matrix controller cases). Targeted lint has zero errors/warnings. The final after-fix .next-security-matrix production build passed all 17 static pages and API routes; git diff --check passed. Source review marks both hydration-trap and renewed-pending P2s resolved. Static generated-output checks in C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/.build/security-portfolio/matrix-review/built-output.json confirm exact Loading text, no SSR client-ready marker, SSR page not inert, noscript fallback, and compiled overlay hidden until the client marker. This is static output evidence only. These checks establish source/controller behavior only; rendered timing, focus/scroll, announcements, hydration-failure UI, touch, reduced motion, and hidden-tab execution remain unverified.
+
+The implementation lives on codex/security-portfolio; the prior identity snapshot was pushed at 6cc5ac4. Publication is user-authorized. Production deployment and rendered/runtime verification remain unverified.
 
 ## Sources and route coverage
 
@@ -144,6 +162,8 @@ The generated-HTML report checks 15 content routes: home, /works, /works-list, /
 The source-only reviewers identified and the implementation resolved three code issues: archive h2 versus compact h3 hierarchy; a late mobile identity-width override conflicting with the compact capsule; and the explorer details' keyboard focus entry point. The console review reports no further material code correction in its bounded source scope, while leaving rendered/runtime verification owed. Its disposition is not whole-UI SHIP.
 
 Evidence reviewed for this documentation:
+- C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/.build/security-portfolio/matrix-review/source-review.md
+- BrandLoading.jsx, MatrixWordmark.jsx, matrixLoading.mjs, SecurityApp/CSS integration, test:brand script and Matrix tests; final check results supplied by the implementation handoff.
 - C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/.build/security-portfolio/brand-review/source-review.md
 - Brand geometry/components, route lifecycle helper, shell/app/CSS integration, asset ledger, and implementation handoff check results. Artwork proof is static logo artwork, not UI capture.
 - C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/.build/security-portfolio/campaign-review/source-review.md

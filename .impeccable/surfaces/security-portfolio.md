@@ -50,13 +50,23 @@ Replace the former text PT with the canonical SVG. Desktop identity is 238 × 44
 
 At ≤650px, compact P+T reserves 56px; the full name appears in a 252px below-header hover/focus panel and stays available to touch visitors in the menu. Menu identity flexes within available width, with SVG no larger than 238 × 32px. Action circles stay 44px.
 
-Only actual route/font pending state shows a nonblocking labelled loading status near the header. Ink loops for 1.6s and sweep for 1.4s while pending, pause in hidden tabs, and become complete still paths/indicator under reduced motion. No fake percentage, minimum wait, or blocking overlay. Active-URL route guards ignore stale completion/cancellation and shallow filters; listeners/frame/font callbacks are cleaned up.
+## Approved full-screen Matrix loading replacement
+
+The approved full-screen graphite loader replaces the rejected header badge. Canonical direction-C SVG glyphs resolve from binary/mixed letters left-to-right into Paul Tobiloba, capped at 520px (76vw compact). The exact label is “Loading,” with 11px labels, 12px subtext, and “Hacking in progress…” then “Access granted.” The latter is presentation copy, not authentication. Progress is timed presentation, not bytes: it caps at 95% during actual route/font pending work and reaches 100% only when ready.
+
+Startup uses 4200ms resolve + 220ms hold + 220ms fade. Subsequent pending navigation is delayed 120ms and resolves over 1800ms; fast/shallow transitions avoid a flash. Skip/Escape and a 10s fail-safe release the page, even if work is still pending. Reduced motion uses a full static name and immediate ready exit. Hidden-tab RAF pauses and resumes against wall time. New pending work revokes completion during hold/fade.
+
+Default CSS hides and disables pointer handling for the SSR overlay. Only the client data-loader-ready effect reveals it and applies inert/aria-hidden/page-scroll management to the content wrapper; SSR content is not inert, so failed hydration leaves the page accessible. Noscript fallback and cleanup restore content/focus/scroll. The modal/progress/Skip contracts are source-inspected; their actual browser behavior remains unverified. Header identity paths/hover, brand exports, palette, and body typography are unchanged.
+
+All 15 loading tests passed via npm.cmd run test:brand (five route lifecycle + ten Matrix controller tests); targeted lint reports zero errors/warnings. The final after-fix .next-security-matrix build passed all 17 static pages and API routes; git diff --check passed. The bounded source review marks hydration-trap and renewed-pending P2s resolved. No browser/rendered/runtime or whole-UI SHIP claim follows from these checks.
+
+The previous badge/ink/sweep loader is retired. The approved preview is C:/Users/USER/.codex/visualizations/2026/11/02/01a19ccf-95bd-7952-bfb3-75d469c00c2b/matrix-loader-preview.html; implementation reduces the name from its 681px reference. No new raster or dependency is introduced.
 
 All assets share brandGeometry.json paths: SVG wordmarks/monogram/icon, 32/180/512px PNGs, and root favicon.ico. Native SVG-to-PNG exports use installed Sharp with source sidecars; public/assets/brand/SOURCE.md records provenance. This vectors an already-approved imagegen concept; no new imagegen call occurred.
 
 Five route lifecycle tests pass via npm.cmd run test:brand. Final .next-security-brand build passed all 17 static pages and API routes; git diff --check passed. Targeted lint: zero errors, 13 warnings (11 unchanged legacy _app font/manual-style, two native SVG-image). Source/artwork review found no material defect. Artwork proof is static SVG evidence only, not a rendered UI screenshot or motion proof; all browser limitations remain.
 
-The implementation lives on codex/security-portfolio, with the previous snapshot pushed at 92da56d and publication of the identity extension authorized. Production deployment and rendered verification remain unverified.
+The implementation lives on codex/security-portfolio, with the prior identity snapshot pushed at 6cc5ac4 and publication of the Matrix replacement authorized. Production deployment and rendered verification remain unverified.
 
 ## Evidence and remaining work
 
