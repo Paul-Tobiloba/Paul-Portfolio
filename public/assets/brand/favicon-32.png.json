@@ -1,0 +1,6 @@
+{
+  "origin": "Native SVG export of the user-approved direction-C logo",
+  "source": "icon.svg",
+  "geometry": "src/data/brandGeometry.json",
+  "renderer": "Installed Sharp SVG renderer"
+}

@@ -15,12 +15,34 @@ $env:NEXT_DIST_DIR = ".next-security-dev"
 npm.cmd run dev
 
 # In a separate terminal, or after stopping the development server:
-$env:NEXT_DIST_DIR = ".next-security-campaign"
+$env:NEXT_DIST_DIR = ".next-security-brand"
 npm.cmd run build
 npm.cmd run start
 ```
 
 Use the same NEXT_DIST_DIR value when starting a production build. These are run instructions, not authorization to retry the blocked browser origin.
+
+## Approved direction C identity and loading
+
+The user selected direction C from the right column of the second concept board. The open P, shaped T, and rounded geometric lettering are a font-free vector interpretation of that approved imagegen concept, not a bitmap crop or exact-tracing claim. src/data/brandGeometry.json is canonical: BrandLogo, wordmark, P+T icon, favicons, and loading mark reuse the same paths. No body font or palette changes accompany the identity.
+
+BrandLogo.jsx renders the shared geometry; BrandLoading.jsx renders a nonblocking labelled status; SecurityApp.jsx owns real font/navigation pending state; routeLoading.mjs isolates router lifecycle ownership. Identity in PortfolioShell and the securityPortfolio branch of pages/_app.js use this system.
+
+Desktop identity reserves 238 × 44px, with a 238 × 32px SVG using viewBox 0 0 681 90. P stays anchored; hover and keyboard focus move T from 76 to 236 SVG units over 420ms with cubic-bezier(.16,1,.3,1). Remaining letters enter with 200ms opacity and 420ms translation, delayed 80ms. The old text PT 23px and generic 180ms name reveal are retired.
+
+At ≤650px, the header reserves 56px for compact P+T. Hover/focus shows the full wordmark in a 252px below-header panel; touch visitors have the full name in the expanded menu. Menu identity flexes to available width, with full SVG at most 238 × 32px. Existing circular actions remain 44px. The home link retains “Paul Tobiloba, home”; SVG artwork is decorative to assistive technology.
+
+The contour entrance is finite at 700ms with a 90ms T delay. Separate pending-state loading uses a 1.6s contour/fill loop and 1.4s sweep, only while fonts/navigation are actually pending. It is labelled “Loading portfolio…,” positioned near the header, and does not block content, set a minimum wait, or show a fabricated percentage. Hidden tabs pause loading loops. Reduced motion renders visible static paths and a still pending indicator.
+
+The router helper ignores shallow filter transitions, ties completion/error to the active URL so older cancellation cannot clear newer navigation, and removes listeners on cleanup. Frame/font callbacks are disposal guarded; loading visibility listeners are cleaned up. These are source facts, not exercised browser behavior.
+
+Assets under public/assets/brand/: wordmark.svg, wordmark-ink.svg, monogram.svg, icon.svg, favicon-32.png, apple-touch-icon.png (180px), and icon-512.png. Root public/favicon.ico is the fallback. PNGs are native SVG exports through installed Sharp, with source JSON sidecars and SOURCE.md ledger. No imagegen call was made for this implementation; it vectors the prior approved concept.
+
+Reference: C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/output/paul-tobiloba-logo/paul-tobiloba-concepts-v2.png. Artwork evidence: C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/.build/security-portfolio/brand/brand-artwork-proof.png. This proof shows static SVG artwork only; it is not a rendered header screenshot or motion evidence.
+
+Current brand checks: five route lifecycle Node tests pass via npm.cmd run test:brand. The final isolated .next-security-brand build passed all 17 static pages and API routes; git diff --check passed. Targeted lint reports zero errors and 13 warnings: 11 unchanged legacy _app font/manual-style warnings and two native SVG-image warnings. Asset validation passed for four font-free SVG masters without external references, PNG dimensions 32/180/512, and an ICO container matching PNG32. The brand provenance scan reports three rasters and zero missing origins/prompts; PNGs retain JSON sidecars and embedded native-SVG origins. ICO was refreshed from the annotated32px PNG without pixel/code changes after the final build. The download pack is C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/output/paul-tobiloba-logo/paul-tobiloba-direction-c-v1.zip. The source/artwork review found no material implementation/asset defect; it is not whole-UI SHIP.
+
+The implementation lives on codex/security-portfolio; the earlier portfolio snapshot was pushed at 92da56d. The user authorized publication of this identity extension. Production deployment and rendered verification remain unverified.
 
 ## Sources and route coverage
 
@@ -30,7 +52,7 @@ Use the same NEXT_DIST_DIR value when starting a production build. These are run
 - All eight published case studies use ProjectDetail. Dynamic details and explicit pages/works/lagosnet.jsx and reconciliation-rpa.jsx load through getProjectBySlug. Original src/lib/projects.js database queries, normalization, and fallback behavior are unchanged; the two explicit routes are no longer independent of that loader.
 - ProjectDetail retains full descriptions/conclusions, genuine image galleries, a native full-image dialog, video controls and original video destinations, live links, and next-project links.
 - pages/blog.jsx and pages/blog/[slug].jsx share the shell. WritingList uses h2 archive/h3 compact headings; ArticleBody retains all three full original article bodies, not shortened substitutes.
-- PortfolioShell supplies the capsule, PT name reveal, expanded section menu, console trigger, common ground/footer, and route metadata. The securityPortfolio flag in pages/_app.js bypasses legacy loader/stylesheet links for these routes.
+- PortfolioShell supplies the capsule with canonical SVG identity, expanded section menu, console trigger, common ground/footer, and route metadata. The securityPortfolio flag in pages/_app.js uses SecurityApp for route/font-pending loading and bypasses legacy loader/stylesheet links.
 - styles/SecurityPortfolio.module.css remains the scoped visual system, including local fonts, responsive layout, focus, dialog, and reduced-motion rules.
 
 ## Console and project explorer
@@ -122,6 +144,8 @@ The generated-HTML report checks 15 content routes: home, /works, /works-list, /
 The source-only reviewers identified and the implementation resolved three code issues: archive h2 versus compact h3 hierarchy; a late mobile identity-width override conflicting with the compact capsule; and the explorer details' keyboard focus entry point. The console review reports no further material code correction in its bounded source scope, while leaving rendered/runtime verification owed. Its disposition is not whole-UI SHIP.
 
 Evidence reviewed for this documentation:
+- C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/.build/security-portfolio/brand-review/source-review.md
+- Brand geometry/components, route lifecycle helper, shell/app/CSS integration, asset ledger, and implementation handoff check results. Artwork proof is static logo artwork, not UI capture.
 - C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/.build/security-portfolio/campaign-review/source-review.md
 - Current campaign state/GUI, terminal timers/ownership/scroll integration, typed actions/output, appended CSS, and campaign tests; latest check results supplied by the implementation handoff.
 - C:/Users/USER/OneDrive/My Documents/ChatGPT/KooduLabs/.build/security-portfolio/email-review/source-review.md

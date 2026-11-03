@@ -1,3 +1,4 @@
+import SecurityApp from "../src/components/security/SecurityApp";
 import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
 import PreLoader from "../src/layouts/PreLoader";
@@ -11,16 +12,7 @@ const App = ({ Component, pageProps }) => {
   }, []);
 
   if (Component.securityPortfolio) {
-    return (
-      <>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="author" content="paul-tobiloba" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Component {...pageProps} />
-      </>
-    );
+    return <SecurityApp Component={Component} pageProps={pageProps}/>;
   }
 
   return (

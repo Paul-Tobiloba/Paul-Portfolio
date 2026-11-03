@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "test:terminal": "node --test tests/terminal-playground.test.mjs"
+    "test:terminal": "node --test tests/terminal-playground.test.mjs",
+    "test:brand": "node --test tests/brand-loading.test.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",

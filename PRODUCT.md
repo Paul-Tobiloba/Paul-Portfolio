@@ -16,11 +16,17 @@ The sign-in investigation remains explicitly synthetic. The reconciliation workf
 
 ## Experience commitments
 
-- Keep the established Matrix/graphite/green world, locally hosted Manrope and IBM Plex Mono, PT capsule navigation, left desktop copy, and right Photo 3 hoodie portrait.
+- Keep the established Matrix/graphite/green world, locally hosted Manrope and IBM Plex Mono, approved direction C SVG identity in the capsule, left desktop copy, and right Photo 3 hoodie portrait.
 - Preserve the source-photo binary portrait and aligned local photo reveal; mobile actions precede the portrait and tap hint.
 - Give visitors direct case-study/article routes and readable source content. Console and explorer are optional additional discovery paths.
 - Keep role positioning, résumé, email, GitHub, LinkedIn, and existing project destinations accessible.
 - Preserve still and reduced-motion reading/action paths without making animation necessary.
+
+## Approved identity extension
+
+The user selected direction C from the right column of the second concept board. The open P, shaped T, and rounded geometric lettering are a font-free vector interpretation of that approved imagegen concept, not a bitmap crop or exact-tracing claim. src/data/brandGeometry.json is canonical: BrandLogo, wordmark, P+T icon, favicons, and loading mark reuse the same paths. No body font or palette changes accompany the identity.
+
+P+T expands to Paul Tobiloba on desktop hover/keyboard focus. Compact mobile keeps P+T and reveals a below-header wordmark; the full name remains available in the menu. A finite contour entrance and actual-route/font-pending nonblocking labelled status use the same artwork, with still reduced-motion alternatives. Assets and implementation behavior are recorded in IMPLEMENTATION.md. The static artwork proof is not a UI screenshot or evidence of motion/runtime verification.
 
 ## Current local scope
 
@@ -42,4 +48,4 @@ The original src/lib/projects.js database/fallback access remains unchanged. Bot
 
 The final after-fix isolated .next-security-campaign build passed all 17 static pages and API routes. Targeted ESLint including tests exited 0 without warnings or errors. The terminal suite passed 28 tests and git diff --check passed. The source review marks retained complete feedback and inactive attack-card Exit P2s resolved in source. These source/build checks do not verify rendered or browser behavior.
 
-The implementation is committed and published on the GitHub branch [codex/security-portfolio](https://github.com/Paul-Tobiloba/Paul-Portfolio/tree/codex/security-portfolio). Production deployment has not been verified. [IMPLEMENTATION.md](IMPLEMENTATION.md) records current checks and remaining verification. [DESIGN.md](DESIGN.md) and the [surface brief](.impeccable/surfaces/security-portfolio.md) record the established visual authority: [Figma](https://www.figma.com/design/XcYJ00CBa60q4GyCns4RW8).
+The previous implementation was pushed at 92da56d to [codex/security-portfolio](https://github.com/Paul-Tobiloba/Paul-Portfolio/tree/codex/security-portfolio). The approved identity extension lives on that branch and is authorized for publication; production deployment and rendered verification remain unverified. Production deployment has not been verified. [IMPLEMENTATION.md](IMPLEMENTATION.md) records current checks and remaining verification. [DESIGN.md](DESIGN.md) and the [surface brief](.impeccable/surfaces/security-portfolio.md) record the established visual authority: [Figma](https://www.figma.com/design/XcYJ00CBa60q4GyCns4RW8).

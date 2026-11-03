@@ -14,12 +14,6 @@ colors:
   grid: "#263D2E"
   amber: "#E5C486"
 typography:
-  logo:
-    fontFamily: "Manrope"
-    fontSize: "23px"
-    fontWeight: 700
-    lineHeight: "28px"
-    letterSpacing: "-1px"
   hero:
     fontFamily: "Manrope"
     fontSize: "64px"
@@ -100,6 +94,18 @@ spacing:
   s64: "64px"
   s80: "80px"
 components:
+  brand-identity:
+    textColor: '{colors.accent}'
+    width: '238px'
+    height: '44px'
+  brand-wordmark:
+    textColor: '{colors.accent}'
+    width: '238px'
+    height: '32px'
+  brand-icon:
+    textColor: '{colors.accent}'
+    width: '56px'
+    height: '32px'
   capsule-header:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.text}"
@@ -226,7 +232,7 @@ The earlier native review measured reading colors above 4.5:1 on documented dark
 ### Hierarchy
 
 - **hero / hero-mobile:** the approved desktop 64/72 and mobile 32/40 styles with tight tracking.
-- **logo:** PT at 23/28, bold, with -1px tracking; an intentional identity size.
+- **Identity artwork:** approved direction C is font-free canonical SVG geometry; it does not change Manrope or IBM Plex Mono text roles.
 - **display:** large case-study titles.
 - **title:** prominent section statements.
 - **heading / subheading:** section and project headings; scenario titles and workflow stages.
@@ -234,7 +240,7 @@ The earlier native review measured reading colors above 4.5:1 on documented dark
 - **mono:** event data.
 - **portrait:** six overlaid preformatted text maps, 90 columns × 102 rows; asset-specific 6px/3.65px typography.
 
-Frontmatter defines shared reference roles. Responsive CSS intentionally adapts hero type to clamp(40px, 4.45vw, 64px) below 1250px, 38/46 at ≤900px, 32/40 at ≤650px, and 29/37 at ≤370px. Case titles step through 56/64, 48/56, 44/52, and 36/44; editorial headings use 36/44, 32/40, and 26/34. These values and the 23px monogram are deliberate responsive/identity treatments, not token drift. Hidden desktop breaks retain literal spaces so adjacent words stay separated.
+Frontmatter defines shared reference roles. Responsive CSS intentionally adapts hero type to clamp(40px, 4.45vw, 64px) below 1250px, 38/46 at ≤900px, 32/40 at ≤650px, and 29/37 at ≤370px. Case titles step through 56/64, 48/56, 44/52, and 36/44; editorial headings use 36/44, 32/40, and 26/34. These are deliberate responsive text treatments. Identity artwork uses shared SVG paths rather than a type token. Hidden desktop breaks retain literal spaces so adjacent words stay separated.
 
 **The Reading First Rule.** Confine character disturbance to the portrait; links, labels, headings, and prose stay stable and readable.
 
@@ -244,7 +250,7 @@ The page scrolls under a fixed inset capsule. At desktop reference width, the he
 
 At ≤1250px, horizontal insets become 40px and columns tighten. At ≤900px, editorial sections and cases stack, inline navigation hides, and the hero remains a two-column composition. At ≤650px, header insets are 16px with 12px top offset; body insets are 24px, hero copy/actions precede the portrait, and a touch hint explains reveal. The narrowest ≤370px layout uses 20px body insets. Actual text flow determines page height; native full-frame heights are reference-only.
 
-The source constrains menu/dialog height to the viewport and permits internal scrolling. Project and article editorial layouts stack at existing responsive widths; restored services, skills, testimonials, and archive grids reuse the established rhythm. The compact identity retains its 44px width beside four circular header actions after removing a conflicting late override. Earlier 390/900/1440 overflow checks covered the narrow implementation; the current restored layout and new dialogs have no final rendered verification.
+The source constrains menu/dialog height to the viewport and permits internal scrolling. Project and article editorial layouts stack at existing responsive widths; restored services, skills, testimonials, and archive grids reuse the established rhythm. The approved SVG identity reserves 238 × 44px on desktop and 56px width at ≤650px, beside unchanged 44px circular actions. Menu identity flexes to the available width. Earlier 390/900/1440 overflow checks covered the narrow implementation; the current restored layout and new dialogs have no final rendered verification.
 
 ## Elevation & Depth
 
@@ -270,7 +276,7 @@ Events, Context, and Decision are three explicit investigation states. Inactive 
 
 ### Navigation and work
 
-The capsule combines PT, desktop section navigation, and four circular actions: Console, Résumé, Email, and Menu. The full name appears on desktop identity hover/focus over 180ms. The compact header uses PT alone; expanded menus show the full name. The additional console trigger retains the existing circular-action language; current mobile rendering is unverified.
+The capsule combines the approved SVG P+T identity, desktop section navigation, and four 44px circular actions: Console, Résumé, Email, and Menu. Direction C expansion and loading are specified below; current rendered header behavior remains unverified.
 
 Expanded navigation retains the native dialog contract and links every restored section. The homepage, /works, /works-list, all eight case details, /blog, and all three articles use the shared shell. Original database/fallback access in src/lib/projects.js is unchanged; explicit LagosNet and reconciliation routes now use getProjectBySlug. Full genuine descriptions, conclusions, galleries, video controls, article bodies, and direct links remain. Archive result titles use h2; compact lists nested below homepage h2 sections use h3, including empty project results.
 
@@ -283,6 +289,18 @@ The optional console uses IBM Plex Mono for commands/output inside the existing 
 Project-card image buttons open Overview, Stack, and Outcomes from supplied project content and genuine mapped images. A full case-study action remains available. usePortfolioDialog implements native modal entry, Tab wrapping, Escape/backdrop close, scroll lock, and focus restoration; the explorer detail region is focusable and labelled. These contracts are verified in source, not final browser behavior. No new design primitives are introduced by this documentation.
 
 The console/explorer pattern was inspired by uibeawuchi.com; no other person's claims or project evidence were borrowed. Current source/build/content checks and the explicit verification boundary are recorded in IMPLEMENTATION.md.
+
+### Direction C SVG identity and loading
+
+The user selected direction C from the right column of the second concept board. The open P, shaped T, and rounded geometric lettering are a font-free vector interpretation of that approved imagegen concept, not a bitmap crop or exact-tracing claim. src/data/brandGeometry.json is canonical: BrandLogo, wordmark, P+T icon, favicons, and loading mark reuse the same paths. No body font or palette changes accompany the identity.
+
+Desktop reserves 238 × 44px for the home link and renders the canonical SVG at 238 × 32px (viewBox 0 0 681 90). P stays fixed; T moves from 76 to 236 SVG units over 420ms using cubic-bezier(.16,1,.3,1). Remaining letters use 200ms opacity and 420ms translation with 80ms entrance delay. Hover and keyboard focus reveal the full name. The finite contour intro is 700ms with T delayed 90ms. The logo is artwork, not a font role.
+
+At ≤650px, identity is 56px wide with compact P+T; a 252px below-header full-name panel appears on hover/focus. Expanded menus show the full wordmark, flex to available width, and constrain artwork to at most 238 × 32px. Touch visitors can always find the full name in the menu. Action circles remain 44px.
+
+A labelled nonblocking status near the header appears only for actual navigation/font pending state. Pending ink loops at 1.6s and sweep at 1.4s; hidden tabs pause them. Reduced motion keeps complete visible static paths and a still pending indicator. No fake percentages, minimum waits, or page blocking. Router URL ownership prevents older cancellation from clearing a newer pending route; shallow filters are ignored and listeners/frame/font callbacks are cleaned up.
+
+Static artwork proof confirms the vector interpretation only. Rendered header layout, hover/focus/touch behavior, loading timing, navigation interruption, screen-reader delivery, and reduced-motion/hidden-tab execution remain browser-unverified. See IMPLEMENTATION.md and public/assets/brand/SOURCE.md for assets/provenance.
 
 ### Binary portrait and dotted ground
 

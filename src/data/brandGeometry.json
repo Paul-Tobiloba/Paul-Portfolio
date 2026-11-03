@@ -1,0 +1,228 @@
+{
+  "viewBox": "0 0 681 90",
+  "width": 681,
+  "height": 90,
+  "tCollapsed": 76,
+  "tExpanded": 236,
+  "glyphs": {
+    "P": {
+      "width": 68,
+      "shapes": [
+        {
+          "tag": "path",
+          "attrs": {
+            "d": "M4 6H43C59 6 68 16 68 31C68 45 58 54 43 54H24C17 54 13 58 13 65V84H4V65C4 52 12 44 24 44H43C53 44 58 39 58 31C58 22 52 16 43 16H13C7 16 4 12 4 6Z"
+          }
+        }
+      ]
+    },
+    "T": {
+      "width": 76,
+      "shapes": [
+        {
+          "tag": "path",
+          "attrs": {
+            "d": "M13 6H76V8C76 13 73 16 68 16H45V84H35V16H4V15C4 9 7 6 13 6Z"
+          }
+        }
+      ]
+    },
+    "a": {
+      "width": 56,
+      "shapes": [
+        {
+          "tag": "ellipse",
+          "attrs": {
+            "cx": 27,
+            "cy": 56,
+            "rx": 23,
+            "ry": 24,
+            "fill": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 8.5,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "round"
+          }
+        },
+        {
+          "tag": "path",
+          "attrs": {
+            "d": "M50 32V84",
+            "fill": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 8.5,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "round"
+          }
+        }
+      ]
+    },
+    "u": {
+      "width": 54,
+      "shapes": [
+        {
+          "tag": "path",
+          "attrs": {
+            "d": "M7 31V62C7 76 14 81 27 81C40 81 47 76 47 62V31",
+            "fill": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 8.5,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "round"
+          }
+        }
+      ]
+    },
+    "l": {
+      "width": 16,
+      "shapes": [
+        {
+          "tag": "path",
+          "attrs": {
+            "d": "M8 6V84",
+            "fill": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 8.5,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "round"
+          }
+        }
+      ]
+    },
+    "o": {
+      "width": 58,
+      "shapes": [
+        {
+          "tag": "ellipse",
+          "attrs": {
+            "cx": 29,
+            "cy": 56,
+            "rx": 24,
+            "ry": 24,
+            "fill": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 8.5,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "round"
+          }
+        }
+      ]
+    },
+    "b": {
+      "width": 58,
+      "shapes": [
+        {
+          "tag": "ellipse",
+          "attrs": {
+            "cx": 30,
+            "cy": 56,
+            "rx": 23,
+            "ry": 24,
+            "fill": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 8.5,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "round"
+          }
+        },
+        {
+          "tag": "path",
+          "attrs": {
+            "d": "M7 6V84",
+            "fill": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 8.5,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "round"
+          }
+        }
+      ]
+    },
+    "i": {
+      "width": 18,
+      "shapes": [
+        {
+          "tag": "path",
+          "attrs": {
+            "d": "M9 32V84",
+            "fill": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 8.5,
+            "strokeLinecap": "butt",
+            "strokeLinejoin": "round"
+          }
+        },
+        {
+          "tag": "circle",
+          "attrs": {
+            "cx": 9,
+            "cy": 15,
+            "r": 5.5
+          }
+        }
+      ]
+    }
+  },
+  "layout": [
+    {
+      "letter": "P",
+      "x": 0,
+      "part": "P"
+    },
+    {
+      "letter": "a",
+      "x": 74,
+      "part": "rest"
+    },
+    {
+      "letter": "u",
+      "x": 136,
+      "part": "rest"
+    },
+    {
+      "letter": "l",
+      "x": 196,
+      "part": "rest"
+    },
+    {
+      "letter": "T",
+      "x": 236,
+      "part": "T"
+    },
+    {
+      "letter": "o",
+      "x": 318,
+      "part": "rest"
+    },
+    {
+      "letter": "b",
+      "x": 382,
+      "part": "rest"
+    },
+    {
+      "letter": "i",
+      "x": 446,
+      "part": "rest"
+    },
+    {
+      "letter": "l",
+      "x": 470,
+      "part": "rest"
+    },
+    {
+      "letter": "o",
+      "x": 492,
+      "part": "rest"
+    },
+    {
+      "letter": "b",
+      "x": 556,
+      "part": "rest"
+    },
+    {
+      "letter": "a",
+      "x": 620,
+      "part": "rest"
+    }
+  ]
+}
