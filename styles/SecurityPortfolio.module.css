@@ -158,21 +158,12 @@
 .serviceItem h3{font-size:26px;line-height:34px;font-weight:500;letter-spacing:0}
 .serviceItem>p{color:var(--secondary)}
 .serviceItem .serviceCategory{font-size:14px;line-height:22px;color:var(--accent)}
-.skillSection,.collection{display:flex;flex-direction:column;gap:24px;min-width:0}
+.collection{display:flex;flex-direction:column;gap:24px;min-width:0}
 .filterBar{display:flex;flex-wrap:wrap;gap:8px}
 .filterButton,.selectedFilter{border:1px solid var(--border);background:var(--background);border-radius:8px;min-height:44px;padding:10px 16px;font-size:14px!important;line-height:22px;color:var(--secondary)!important}
 .selectedFilter{border-color:var(--accent);color:var(--accent)!important;background:var(--raised)}
 .filterButton:hover{background:var(--surface);color:var(--text)!important}
-.skillGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
-.skillItem{border-top:1px solid var(--border);padding-top:20px;display:flex;flex-direction:column;gap:12px}
-.skillHeading{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
-.skillHeading h3{font-size:20px;line-height:28px}
-.skillHeading>span{font-size:14px;line-height:22px;color:var(--accent);font-variant-numeric:tabular-nums}
-.skillItem>p{font-size:14px;line-height:22px;color:var(--secondary)}
-.skillMeter{width:100%;height:4px;border:0;border-radius:0;background:var(--border);margin-top:auto}
-.skillMeter::-webkit-meter-bar{background:var(--border);border:0;border-radius:0}
-.skillMeter::-webkit-meter-optimum-value{background:var(--accent)}
-.skillMeter::-moz-meter-bar{background:var(--accent)}
+
 .resumeList{display:flex;flex-direction:column;gap:24px}
 .resumeRole{border-top:1px solid var(--border);padding-top:24px}
 .resumeRole summary{cursor:pointer;display:list-item;list-style-position:outside;padding-left:8px;margin-left:16px}
@@ -297,7 +288,7 @@
 @media(max-width:900px){.archiveHeading h1{font-size:56px;line-height:64px}.articleHeading h1,.projectPageHeading h1{font-size:44px;line-height:52px}.articleLayout,.projectNarrative{grid-template-columns:1fr}.articleAside,.projectAside{position:static}.articleAside{display:grid;grid-template-columns:1fr 1fr}.articleAside h2{grid-column:1/-1}.projectAside{flex-direction:row;flex-wrap:wrap;align-items:center}.projectAside h2{width:100%}.projectCover{height:clamp(280px,60vw,600px)}.writingItem :is(h2,h3){font-size:26px;line-height:34px}}
 @media(max-width:650px){
 .anchorAlias{scroll-margin-top:100px}
-.serviceList,.skillGrid,.portfolioGrid{grid-template-columns:1fr;gap:32px}
+.serviceList,.portfolioGrid{grid-template-columns:1fr;gap:32px}
 .serviceItem h3{font-size:20px;line-height:28px}
 .filterButton,.selectedFilter{padding:10px 12px}
 .resumeTitle{font-size:20px;line-height:28px}.responsibilities{font-size:16px;line-height:26px;gap:16px}
@@ -528,3 +519,10 @@
 .matrixSkip:focus-visible{outline:2px solid #a5f3b8;outline-offset:3px;border-radius:4px}
 @media(max-width:650px){.matrixComposition{width:76vw;gap:26px}.matrixMeter{width:min(220px,70vw)}}
 @media(prefers-reduced-motion:reduce){.matrixLoading,.matrixFill{transition:none}.matrixNoise{display:none}.matrixStill{display:block}}
+
+.editorialSection.fullWidthSection{grid-template-columns:1fr;gap:32px}
+.fullWidthSection .sectionIntro{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:24px}
+.fullWidthSection .sectionIntro h2{font-size:44px;line-height:52px;letter-spacing:-.035em}
+.fullWidthSection .sectionIntro p{max-width:300px}
+@media(max-width:900px){.fullWidthSection .sectionIntro h2 br{display:block}}
+@media(max-width:650px){.fullWidthSection .sectionIntro{flex-direction:column;align-items:flex-start;gap:16px}.fullWidthSection .sectionIntro h2{font-size:32px;line-height:40px}}

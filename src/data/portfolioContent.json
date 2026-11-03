@@ -55,7 +55,13 @@
       "id": 6,
       "title": "Cybersecurity Intern",
       "company": "Programming Buddies",
-      "dec": [],
+      "dec": [
+        "Apply cloud security principles across identity management, access control, resource protection and governance in practical training environments.",
+        "Analyse network traffic and system logs to develop threat detection and security investigation skills.",
+        "Automate basic security checks and practise secure Windows and Linux system administration.",
+        "Apply secure development practices through repository security, secrets management and automated code scanning exercises.",
+        "Assess security risks, research threats and vulnerabilities, and document findings and recommended controls."
+      ],
       "startYear": "2026",
       "startMonth": "September",
       "endYear": false

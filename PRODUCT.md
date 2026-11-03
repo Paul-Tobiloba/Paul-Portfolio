@@ -1,6 +1,6 @@
 # Paul Tobiloba — Security Portfolio
 
-**Current verification boundary:** the restored site, project explorer, and PowerShell playground have source/build/unit-test evidence, with earlier content-parity and generated-HTML checks for the restoration. Final visual, browser, and runtime QA is incomplete. Automatic approval review denied localhost access because of the account usage limit; no retry or alternate access method was used. There are no current screenshots or whole-UI SHIP verdict. Historical browser checks and SHIP decisions apply only to the earlier, narrower implementation.
+**Current verification boundary:** the restored site, project explorer, PowerShell playground, local Signal map, and Role explorer have source/build/unit-test evidence, with earlier content-parity and generated-HTML checks for the restoration. Final visual, browser, and runtime QA is incomplete. Automatic approval review denied localhost access for account usage/origin-authority reasons; no retry or alternate access method was used. There are no current screenshots or whole-UI SHIP verdict. Historical browser checks and SHIP decisions apply only to the earlier, narrower implementation.
 
 ## Product purpose
 
@@ -8,9 +8,9 @@ Help recruiters and hiring teams assess Paul for entry-level SOC analyst and clo
 
 ## Product truth
 
-Paul is a Cybersecurity Intern at Programming Buddies, September 2026–present. No internship duties were supplied; the role is presented without invented responsibilities. Union Bank employment runs from 2025 through August 2026. The six-role résumé retains all 27 responsibility bullets from the five original roles.
+Paul is a Cybersecurity Intern at Programming Buddies, September 2026–present. Five role-level internship bullets summarize cloud security, security analysis, system administration and automation, secure development, and risk research/documentation. The wording reflects the training context without enumerating individual lab tasks. Union Bank employment runs from 2025 through August 2026. The six-role résumé retains all 27 responsibility bullets from the five original roles.
 
-The skills collection contains 32 unique skills, retaining all 24 original skills. The nine confirmed cybersecurity entries are Azure, AWS, Microsoft Sentinel, Wireshark, Cisco Packet Tracer, Kali Linux, Networking, SQL, and tcpdump. New entries use hands-on stage labels rather than fabricated proficiency percentages; SQL retains its existing self-assessed 80%. Do not infer certifications, labs, independent security engagements, or duties beyond the supplied content.
+The skills collection contains 32 unique skills, retaining all 24 original skills. The nine confirmed cybersecurity entries are Azure, AWS, Microsoft Sentinel, Wireshark, Cisco Packet Tracer, Kali Linux, Networking, SQL, and tcpdump. The approved Signal map presents names and original descriptions across Cybersecurity, Automation, Frontend, and Tools & data (9/11/9/3 unique entries); SQL appears once, in Cybersecurity. Its UI has no proficiency percentages, rating meters, or stage badges. Existing numeric proficiency fields remain in the source data for content preservation only. Do not infer certifications, labs, independent security engagements, or duties beyond the supplied content.
 
 The sign-in investigation remains explicitly synthetic. The reconciliation workflow remains a simplified reconstruction, separate from genuine published project screenshots. Preserve professional attribution, all seven original testimonials, the eight published projects, and the three full original article bodies.
 
@@ -38,6 +38,18 @@ Default CSS hides and disables pointer handling for the SSR overlay. Only the cl
 
 All 15 loading tests passed via npm.cmd run test:brand (five route lifecycle + ten Matrix controller tests); targeted lint reports zero errors/warnings. The final after-fix .next-security-matrix build passed all 17 static pages and API routes; git diff --check passed. The bounded source review marks hydration-trap and renewed-pending P2s resolved. No browser/rendered/runtime or whole-UI SHIP claim follows from these checks.
 
+## Approved Signal map skills extension
+
+The user selected the Signal map interactive code preview. The homepage skills section uses the user-preferred full-width section layout, with the heading above four discipline controls, a central category hub connected to named tools, and the selected tool’s original description below. Cybersecurity opens with Microsoft Sentinel selected. Hover/focus highlights a connection; activating a tool selects its description and triggers one finite 800ms pulse. Reduced motion retains selection without the pulse; compact screens use two tool columns beneath the hub and hide decorative curves. All skills and descriptions remain in a noscript catalog. These behaviors are source-inspected, not browser-verified.
+
+The Signal map skills extension, Role explorer, and existing internship wording edits were developed locally for the authorized GitHub update. The user’s latest instruction explicitly authorizes pushing the completed work to GitHub, superseding the earlier local-only publication restriction. The publication target is codex/security-portfolio. Earlier publication records below refer only to their historical snapshots. Production deployment remains unverified.
+
+## Approved Role explorer experience extension
+
+The user selected “Implement the Role explorer” from the experience code previews and now prefers Skills and Experience to take the full available width. This newest preference supersedes the earlier screenshot-based heading-left/content-right constraint for these two sections. Engineering roots / Security direction sits above six company/date selectors and the selected role’s complete title, company attribution, dates, and responsibilities. Programming Buddies opens first. All six roles and 32 responsibilities remain verbatim, including the 27 original bullets and five internship bullets; Programming Buddies remains September 2026–present and Union Bank ends August 2026. The #resume-section and #experience anchors and /resume.pdf destination remain.
+
+Native pressed-state buttons select a labelled role article and announce the selection politely. A finite 200ms fade/5px entrance runs only when the role changes; reduced motion preserves still selection. At compact content widths, two selector columns precede the details. Without JavaScript all six complete roles remain readable; print rules restore all articles. Source/build/generated-output checks support these contracts; current desktop/mobile, runtime, assistive-technology, reduced-motion and print behavior remain unverified. This local extension introduces no dependency, network, storage, or raster feature.
+
 ## Current local scope
 
 The homepage restores six services including SOC/cloud role interests; the full skill collection; all six roles and original responsibility bullets; seven testimonials; eight genuine projects; three full article bodies via writing links; security direction; and contact.
@@ -58,4 +70,4 @@ The original src/lib/projects.js database/fallback access remains unchanged. Bot
 
 The final after-fix isolated .next-security-campaign build passed all 17 static pages and API routes. Targeted ESLint including tests exited 0 without warnings or errors. The terminal suite passed 28 tests and git diff --check passed. The source review marks retained complete feedback and inactive attack-card Exit P2s resolved in source. These source/build checks do not verify rendered or browser behavior.
 
-The previous identity implementation was pushed at 6cc5ac4 to [codex/security-portfolio](https://github.com/Paul-Tobiloba/Paul-Portfolio/tree/codex/security-portfolio). The approved identity extension lives on that branch and is authorized for publication; production deployment and rendered verification remain unverified. Production deployment has not been verified. [IMPLEMENTATION.md](IMPLEMENTATION.md) records current checks and remaining verification. [DESIGN.md](DESIGN.md) and the [surface brief](.impeccable/surfaces/security-portfolio.md) record the established visual authority: [Figma](https://www.figma.com/design/XcYJ00CBa60q4GyCns4RW8).
+The previous identity implementation was pushed at 6cc5ac4 to [codex/security-portfolio](https://github.com/Paul-Tobiloba/Paul-Portfolio/tree/codex/security-portfolio). The latest user instruction authorizes pushing the completed Signal map, Role explorer and internship edits to GitHub; the publication target is codex/security-portfolio, and production deployment and rendered verification remain unverified. [IMPLEMENTATION.md](IMPLEMENTATION.md) records current checks and remaining verification. [DESIGN.md](DESIGN.md) and the [surface brief](.impeccable/surfaces/security-portfolio.md) record the established visual authority: [Figma](https://www.figma.com/design/XcYJ00CBa60q4GyCns4RW8).
