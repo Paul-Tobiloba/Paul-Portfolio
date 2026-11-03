@@ -1,62 +1,9 @@
-import dynamic from "next/dynamic";
-import Layout from "../src/layouts/Layout";
+import PortfolioShell from "../src/components/security/PortfolioShell";
+import ProjectCollection from "../src/components/security/ProjectCollection";
 import { getProjects } from "../src/lib/projects";
-
-const PortfolioIsotope = dynamic(
-  () => import("../src/components/PortfolioIsotope"),
-  {
-    ssr: false,
-  }
-);
-const Works = ({ projects }) => {
-  return (
-    <Layout>
-      {/* Section Started Heading */}
-      <section className="section section-inner started-heading">
-        <div className="container">
-          {/* Heading */}
-          <div className="m-titles align-center">
-            <h1
-              className="m-title splitting-text-anim-1 scroll-animate"
-              data-splitting="words"
-              data-animate="active"
-            >
-              <span> Portfolio </span>
-            </h1>
-            <div
-              className="m-subtitle splitting-text-anim-1 scroll-animate"
-              data-splitting="words"
-              data-animate="active"
-            >
-              <span>
-                {" "}
-                my <b>Cases</b>
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Section - works */}
-      <section className="lui-section">
-        {/* works */}
-        <div className="v-line v-line-right v-line-top">
-          <div className="container">
-            <PortfolioIsotope noViewMore projects={projects} />
-            <div className="lui-bgtitle">
-              <span> Portfolio </span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Layout>
-  );
-};
-
-export const getStaticProps = async () => ({
-  props: {
-    projects: await getProjects(),
-  },
-  revalidate: 60,
-});
-
-export default Works;
+import styles from "../styles/SecurityPortfolio.module.css";
+export default function Works({ projects }) {
+  return <PortfolioShell title="Portfolio | Paul Tobiloba" description="Explore Paul Tobiloba's complete portfolio of web development, workflow automation, AI and RPA projects."><main id="main" className={`${styles.main} ${styles.archiveMain}`}><div className={styles.archiveHeading}><h1>Portfolio</h1><p>Websites, workflows and automations.<br/>The work, and the decisions behind it.</p></div><ProjectCollection projects={projects}/></main></PortfolioShell>;
+}
+export const getStaticProps=async()=>({props:{projects:await getProjects()},revalidate:60});
+Works.securityPortfolio=true;

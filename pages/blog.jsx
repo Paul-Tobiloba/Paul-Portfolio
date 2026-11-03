@@ -1,85 +1,16 @@
-import Link from "next/link";
-import Layout from "../src/layouts/Layout";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import PortfolioShell from "../src/components/security/PortfolioShell";
+import WritingList from "../src/components/security/WritingList";
 import { blogPosts } from "../src/data/blogPosts";
-
-const Blog = () => {
-  return (
-    <Layout>
-      <section className="section section-inner started-heading">
-        <div className="container">
-          <div className="m-titles align-center">
-            <h1
-              className="m-title splitting-text-anim-1 scroll-animate"
-              data-splitting="words"
-              data-animate="active"
-            >
-              <span> Blog </span>
-            </h1>
-            <div
-              className="m-subtitle splitting-text-anim-1 scroll-animate"
-              data-splitting="words"
-              data-animate="active"
-            >
-              <span> Practical notes on <b>automation delivery</b> </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="section section-inner m-archive">
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-10 offset-lg-1">
-              <div className="articles-container">
-                {blogPosts.map((post) => (
-                  <div
-                    key={post.slug}
-                    className="archive-item scrolla-element-anim-1 scroll-animate"
-                    data-animate="active"
-                  >
-                    <div className="image">
-                      <Link legacyBehavior href={`/blog/${post.slug}`}>
-                        <a>
-                          <img
-                            src={post.image}
-                            alt={post.title}
-                            loading="lazy"
-                          />
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="desc">
-                      <div className="category lui-subtitle">
-                        <span>{post.categoryText}</span>
-                      </div>
-                      <h5 className="lui-title">
-                        <Link legacyBehavior href={`/blog/${post.slug}`}>
-                          <a>{post.title}</a>
-                        </Link>
-                      </h5>
-                      <div className="lui-text">
-                        <p>{post.excerpt}</p>
-                        <div className="readmore">
-                          <Link legacyBehavior href={`/blog/${post.slug}`}>
-                            <a className="lnk">Read article</a>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="v-line-left v-line-top">
-            <div className="v-line-block">
-              <span />
-            </div>
-          </div>
-        </div>
-      </div>
-    </Layout>
-  );
-};
-
-export default Blog;
+import styles from "../styles/SecurityPortfolio.module.css";
+export default function Blog() {
+  const router=useRouter();
+  const [query,setQuery]=useState("");
+  const tag=typeof router.query.tag==="string"?router.query.tag:"";
+  const topics=[...new Set(blogPosts.flatMap(post=>post.tags))];
+  const posts=blogPosts.filter(post=>(!tag||post.tags.includes(tag)||post.categories.includes(tag))&&(post.title+" "+post.excerpt).toLowerCase().includes(query.trim().toLowerCase()));
+  function topic(value){router.replace({pathname:"/blog",query:value?{tag:value}:{}},undefined,{shallow:true,scroll:false});}
+  return <PortfolioShell title="Blog | Paul Tobiloba" description="Practical writing on web development, automation, Python and reliable systems."><main id="main" className={`${styles.main} ${styles.archiveMain}`}><div className={styles.archiveHeading}><h1>Blog</h1><p>Practical notes from building real systems.<br/>Web development, automation and the lessons along the way.</p></div><div className={styles.archiveTools}><label className={styles.searchField}>Search articles<input type="search" value={query} onChange={event=>setQuery(event.target.value)} placeholder="Find a topic or article"/></label><label className={styles.searchField}>Topic<select value={tag} onChange={event=>topic(event.target.value)}><option value="">All topics</option>{topics.map(value=><option key={value} value={value}>{value}</option>)}</select></label></div><p className={styles.caption} aria-live="polite">{posts.length} {posts.length===1?"article":"articles"}</p><WritingList posts={posts}/>{!posts.length&&<div className={styles.emptyResults}><h2>No matching articles</h2><p>Try another topic or search term.</p><button type="button" className={styles.secondaryButton} onClick={()=>{setQuery("");topic("");}}>Reset filters</button></div>}</main></PortfolioShell>;
+}
+Blog.securityPortfolio=true;

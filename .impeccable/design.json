@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T22:25:49.5076180+00:00",
+  "title": "Design System: Paul Tobiloba — Security Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "Graphite Ground",
+        "tonalRamp": [
+          "oklch(15.00% 0.00909 168.99)",
+          "oklch(26.43% 0.00909 168.99)",
+          "oklch(37.86% 0.00909 168.99)",
+          "oklch(49.29% 0.00909 168.99)",
+          "oklch(60.71% 0.00909 168.99)",
+          "oklch(72.14% 0.00909 168.99)",
+          "oklch(83.57% 0.00909 168.99)",
+          "oklch(95.00% 0.00909 168.99)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Workbench Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.01654 160.21)",
+          "oklch(26.43% 0.01654 160.21)",
+          "oklch(37.86% 0.01654 160.21)",
+          "oklch(49.29% 0.01654 160.21)",
+          "oklch(60.71% 0.01654 160.21)",
+          "oklch(72.14% 0.01654 160.21)",
+          "oklch(83.57% 0.01654 160.21)",
+          "oklch(95.00% 0.01654 160.21)"
+        ]
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Raised Green",
+        "tonalRamp": [
+          "oklch(15.00% 0.02357 157.20)",
+          "oklch(26.43% 0.02357 157.20)",
+          "oklch(37.86% 0.02357 157.20)",
+          "oklch(49.29% 0.02357 157.20)",
+          "oklch(60.71% 0.02357 157.20)",
+          "oklch(72.14% 0.02357 157.20)",
+          "oklch(83.57% 0.02357 157.20)",
+          "oklch(95.00% 0.02357 157.20)"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Reading White",
+        "tonalRamp": [
+          "oklch(15.00% 0.01085 149.86)",
+          "oklch(26.43% 0.01085 149.86)",
+          "oklch(37.86% 0.01085 149.86)",
+          "oklch(49.29% 0.01085 149.86)",
+          "oklch(60.71% 0.01085 149.86)",
+          "oklch(72.14% 0.01085 149.86)",
+          "oklch(83.57% 0.01085 149.86)",
+          "oklch(95.00% 0.01085 149.86)"
+        ]
+      },
+      "secondary": {
+        "role": "neutral",
+        "displayName": "Soft Sage",
+        "tonalRamp": [
+          "oklch(15.00% 0.02435 157.43)",
+          "oklch(26.43% 0.02435 157.43)",
+          "oklch(37.86% 0.02435 157.43)",
+          "oklch(49.29% 0.02435 157.43)",
+          "oklch(60.71% 0.02435 157.43)",
+          "oklch(72.14% 0.02435 157.43)",
+          "oklch(83.57% 0.02435 157.43)",
+          "oklch(95.00% 0.02435 157.43)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Sage",
+        "tonalRamp": [
+          "oklch(15.00% 0.03530 154.94)",
+          "oklch(26.43% 0.03530 154.94)",
+          "oklch(37.86% 0.03530 154.94)",
+          "oklch(49.29% 0.03530 154.94)",
+          "oklch(60.71% 0.03530 154.94)",
+          "oklch(72.14% 0.03530 154.94)",
+          "oklch(83.57% 0.03530 154.94)",
+          "oklch(95.00% 0.03530 154.94)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Pale Signal Green",
+        "tonalRamp": [
+          "oklch(15.00% 0.11169 151.30)",
+          "oklch(26.43% 0.11169 151.30)",
+          "oklch(37.86% 0.11169 151.30)",
+          "oklch(49.29% 0.11169 151.30)",
+          "oklch(60.71% 0.11169 151.30)",
+          "oklch(72.14% 0.11169 151.30)",
+          "oklch(83.57% 0.11169 151.30)",
+          "oklch(95.00% 0.11169 151.30)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Green Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.04323 152.58)",
+          "oklch(26.43% 0.04323 152.58)",
+          "oklch(37.86% 0.04323 152.58)",
+          "oklch(49.29% 0.04323 152.58)",
+          "oklch(60.71% 0.04323 152.58)",
+          "oklch(72.14% 0.04323 152.58)",
+          "oklch(83.57% 0.04323 152.58)",
+          "oklch(95.00% 0.04323 152.58)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Quiet Border",
+        "tonalRamp": [
+          "oklch(15.00% 0.03047 153.79)",
+          "oklch(26.43% 0.03047 153.79)",
+          "oklch(37.86% 0.03047 153.79)",
+          "oklch(49.29% 0.03047 153.79)",
+          "oklch(60.71% 0.03047 153.79)",
+          "oklch(72.14% 0.03047 153.79)",
+          "oklch(83.57% 0.03047 153.79)",
+          "oklch(95.00% 0.03047 153.79)"
+        ]
+      },
+      "grid": {
+        "role": "neutral",
+        "displayName": "Dot Green",
+        "tonalRamp": [
+          "oklch(15.00% 0.03926 155.12)",
+          "oklch(26.43% 0.03926 155.12)",
+          "oklch(37.86% 0.03926 155.12)",
+          "oklch(49.29% 0.03926 155.12)",
+          "oklch(60.71% 0.03926 155.12)",
+          "oklch(72.14% 0.03926 155.12)",
+          "oklch(83.57% 0.03926 155.12)",
+          "oklch(95.00% 0.03926 155.12)"
+        ]
+      },
+      "amber": {
+        "role": "tertiary",
+        "displayName": "Sample Amber",
+        "tonalRamp": [
+          "oklch(15.00% 0.08787 82.68)",
+          "oklch(26.43% 0.08787 82.68)",
+          "oklch(37.86% 0.08787 82.68)",
+          "oklch(49.29% 0.08787 82.68)",
+          "oklch(60.71% 0.08787 82.68)",
+          "oklch(72.14% 0.08787 82.68)",
+          "oklch(83.57% 0.08787 82.68)",
+          "oklch(95.00% 0.08787 82.68)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Large case-study titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Identity and prominent section statements."
+      },
+      "heading": {
+        "displayName": "Heading",
+        "purpose": "Section headings."
+      },
+      "subheading": {
+        "displayName": "Subheading",
+        "purpose": "Scenario titles and workflow stages."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Explanatory prose and project descriptions."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Navigation, tabs, support copy, and concise details."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Metadata and sample labels."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Action labels."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Event data."
+      },
+      "portrait": {
+        "displayName": "Portrait",
+        "purpose": "Six preformatted binary text layers, 90 columns × 102 rows, preserving approved Photo 3 mapping."
+      },
+      "hero": {
+        "displayName": "Desktop hero",
+        "purpose": "Approved desktop hero reference implemented at 64/72; intermediate widths intentionally scale in responsive CSS."
+      },
+      "hero-mobile": {
+        "displayName": "Mobile hero",
+        "purpose": "Approved mobile hero reference implemented at 32/40; ≤370px uses 29/37."
+      },
+      "logo": {
+        "displayName": "PT monogram",
+        "purpose": "Intentional 23/28 Manrope Bold identity size with -1px tracking."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "150ms ease-out",
+        "purpose": "Implemented button background/color/border state changes."
+      },
+      {
+        "name": "portrait-reveal",
+        "value": "160ms ease-out",
+        "purpose": "Photo-window opacity; actual pointer coordinates update via requestAnimationFrame and local CSS variables."
+      },
+      {
+        "name": "logo-name-reveal",
+        "value": "180ms ease-out",
+        "purpose": "Desktop identity name opacity and small horizontal translation on hover/focus."
+      },
+      {
+        "name": "ground-return",
+        "value": "350ms ease-out",
+        "purpose": "Native illumination SVG opacity return; pointer placement snaps to the 24px grid."
+      },
+      {
+        "name": "portrait-reveal-diameter",
+        "value": "160px",
+        "purpose": "Circular source-canvas window scaled with the portrait."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0ms",
+        "purpose": "Implemented CSS removes transitions and hides moving ground; source inspected, OS emulation not performed."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "content-tighten",
+        "value": "1250px"
+      },
+      {
+        "name": "editorial-stack",
+        "value": "900px"
+      },
+      {
+        "name": "compact",
+        "value": "650px"
+      },
+      {
+        "name": "narrow",
+        "value": "370px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Documentation preview of the implemented résumé/investigation action; browser focus and pending disabled treatment included.",
+      "html": "<button class=\"ds-button-primary\">View résumé</button>",
+      "css": ".ds-button-primary{font:600 14px/22px Manrope,sans-serif;padding:12px 20px;height:46px;box-sizing:border-box;border-radius:8px;cursor:pointer;transition:background-color 150ms ease-out;background:#A5F3B8;color:#0C2414;border:1px solid transparent}.ds-button-primary:hover{background:#EDF4EE}.ds-button-primary:focus-visible{outline:2px solid #A5F3B8;outline-offset:5px}.ds-button-primary:disabled{opacity:.6;cursor:default}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Documentation preview of the quiet project/résumé action.",
+      "html": "<button class=\"ds-button-secondary\">Email me</button>",
+      "css": ".ds-button-secondary{font:600 14px/22px Manrope,sans-serif;padding:12px 20px;height:46px;box-sizing:border-box;border-radius:8px;cursor:pointer;transition:background-color 150ms ease-out;background:#111A15;color:#EDF4EE;border:1px solid #2B3C30}.ds-button-secondary:hover{background:#18251D}.ds-button-secondary:focus-visible{outline:2px solid #A5F3B8;outline-offset:5px}.ds-button-secondary:disabled{opacity:.6;cursor:default}"
+    },
+    {
+      "name": "Investigation Tab",
+      "kind": "nav",
+      "refersTo": "tab",
+      "description": "Documentation preview of an inactive implemented scenario tab; selection is represented by the active-tab preview.",
+      "html": "<button class=\"ds-tab\">Context</button>",
+      "css": ".ds-tab{font:400 14px/22px Manrope,sans-serif;padding:12px;border-radius:8px;cursor:pointer;transition:background-color 180ms ease-out;background:#090E0C;color:#A7B8AD;border:1px solid transparent}.ds-tab:hover{background:#18251D}.ds-tab:focus-visible{outline:2px solid #A5F3B8;outline-offset:5px}"
+    },
+    {
+      "name": "Active Investigation Tab",
+      "kind": "nav",
+      "refersTo": "tab-active",
+      "description": "Documentation preview of the selected Events/Context/Decision tab.",
+      "html": "<button class=\"ds-tab-active\" aria-pressed=\"true\">Events</button>",
+      "css": ".ds-tab-active{font:400 14px/22px Manrope,sans-serif;padding:12px;border-radius:8px;cursor:pointer;transition:background-color 180ms ease-out;background:#18251D;color:#A5F3B8;border:1px solid #A5F3B8}.ds-tab-active:hover{background:#18251D}.ds-tab-active:focus-visible{outline:2px solid #A5F3B8;outline-offset:5px}"
+    },
+    {
+      "name": "Synthetic Scenario Surface",
+      "kind": "card",
+      "refersTo": "scenario",
+      "description": "Documentation preview of the contained synthetic sample. Text remains explicit about its illustrative status.",
+      "html": "<section class=\"ds-scenario\"><h3 class=\"ds-scenario-title\">A suspicious sign-in</h3><p class=\"ds-scenario-label\">Synthetic scenario · Interaction concept</p><p class=\"ds-scenario-copy\">Repeated failures are followed by a successful sign-in from the same source.</p></section>",
+      "css": ".ds-scenario{background:#111A15;color:#EDF4EE;border:1px solid #2B3C30;border-radius:12px;padding:24px}.ds-scenario-title{font:600 20px/28px Manrope,sans-serif;margin:0}.ds-scenario-label{font:500 12px/18px Manrope,sans-serif;color:#E5C486}.ds-scenario-copy{font:400 14px/22px Manrope,sans-serif;color:#A7B8AD}"
+    },
+    {
+      "name": "Event Data",
+      "kind": "custom",
+      "refersTo": "event-data",
+      "description": "Documentation preview of synthetic event typography and written status labels; not a live feed.",
+      "html": "<div class=\"ds-events\"><div>09:14:02 · Sign-in · 203.0.113.24 · <span class=\"ds-failed\">Failed</span></div><div>09:15:03 · Sign-in · 203.0.113.24 · <span class=\"ds-success\">Success</span></div></div>",
+      "css": ".ds-events{font:400 12px/20px \"IBM Plex Mono\",monospace;background:#090E0C;color:#A7B8AD;border-radius:8px}.ds-failed{color:#E5C486}.ds-success{color:#A5F3B8}"
+    },
+    {
+      "name": "Floating Capsule Header",
+      "kind": "nav",
+      "refersTo": "capsule-header",
+      "description": "Historical three-action documentation specimen, preserved without token/CSS changes. The current shared header has four actions including the simulated console; its final rendering/runtime verification is incomplete. See IMPLEMENTATION.md.",
+      "html": "<nav class=\"ds-capsule\" aria-label=\"Portfolio\"><span class=\"ds-pt\">PT</span><div class=\"ds-nav-actions\"><button class=\"ds-nav-action\" aria-label=\"Résumé\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" > <path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\" /> <path d=\"M14 2v5a1 1 0 0 0 1 1h5\" /> <path d=\"M10 9H8\" /> <path d=\"M16 13H8\" /> <path d=\"M16 17H8\" /> </svg> </button><button class=\"ds-nav-action\" aria-label=\"Email\" style=\"background:#A5F3B8;color:#0C2414;border:0\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" > <path d=\"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7\" /> <rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\" /> </svg> </button><button class=\"ds-nav-action\" aria-label=\"Menu\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" > <path d=\"M4 5h16\" /> <path d=\"M4 12h16\" /> <path d=\"M4 19h16\" /> </svg> </button></div></nav>",
+      "css": ".ds-capsule{display:flex;align-items:center;justify-content:space-between;background:#111A15;color:#EDF4EE;border:1px solid #2B3C30;border-radius:32px;height:64px;padding:0 10px 0 20px;font:600 14px/22px Manrope,sans-serif}.ds-nav-actions{display:flex;gap:8px}.ds-nav-action{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #2B3C30;background:#18251D;color:#EDF4EE;cursor:pointer;transition:background 150ms ease-out}.ds-nav-action:hover{background:#2B3C30}.ds-nav-action:focus-visible{outline:2px solid #A5F3B8;outline-offset:5px;outline-offset:2px}.ds-nav-action:active{background:#18251D;color:#A5F3B8}.ds-pt{color:#A5F3B8;font:700 23px/28px Manrope,sans-serif;letter-spacing:-1px}"
+    },
+    {
+      "name": "PT Name Reveal",
+      "kind": "custom",
+      "description": "Preserved identity specimen. The compact 44px identity cascade conflict is resolved in source; the restored header with four circular actions has no final browser verification.",
+      "html": "<button class=\"ds-logo\"><span class=\"ds-logo-pt\">PT</span><span class=\"ds-logo-name\">Paul Tobiloba</span></button>",
+      "css": ".ds-logo{display:flex;align-items:center;gap:12px;width:190px;height:44px;background:transparent;border:0;color:#EDF4EE;font:500 14px/22px Manrope,sans-serif;cursor:pointer;text-align:left}.ds-logo-pt{color:#A5F3B8;font:700 23px/28px Manrope,sans-serif;letter-spacing:-1px}.ds-logo-name{opacity:0;transition:opacity 180ms ease-out}.ds-logo:hover .ds-logo-name,.ds-logo:focus-visible .ds-logo-name{opacity:1}.ds-logo:focus-visible{outline:2px solid #A5F3B8;outline-offset:5px;border-radius:8px}.ds-logo:active{color:#A5F3B8}@media(prefers-reduced-motion:reduce){.ds-logo-name{transition:none}}"
+    },
+    {
+      "name": "Hero Typography",
+      "kind": "custom",
+      "description": "Documentation specimen of approved hero typography; actual responsive scaling is documented in DESIGN.md.",
+      "html": "<div class=\"ds-hero-type\">An engineering mind.<br>A security focus.</div>",
+      "css": ".ds-hero-type{font:500 64px/72px Manrope,sans-serif;letter-spacing:-.03em;color:#EDF4EE;background:#090E0C;padding:24px}@media(max-width:500px){.ds-hero-type{font-size:32px;line-height:40px}}"
+    },
+    {
+      "name": "Contact Field",
+      "kind": "input",
+      "refersTo": "contact-input",
+      "description": "Documentation specimen of a required contact field. Runtime form retains the existing API and exposes polite pending/error/success status; delivery is untested.",
+      "html": "<label class=\"ds-contact-label\">Email address<input class=\"ds-contact-input\" name=\"email\" type=\"email\" required autocomplete=\"email\"></label>",
+      "css": ".ds-contact-label{display:flex;flex-direction:column;gap:8px;color:#A7B8AD;font:400 14px/22px Manrope,sans-serif}.ds-contact-input{min-height:46px;padding:12px;border:1px solid #2B3C30;border-radius:8px;background:#111A15;color:#EDF4EE;font:400 14px/22px Manrope,sans-serif;caret-color:#A5F3B8}.ds-contact-input:hover{border-color:#7C9383}.ds-contact-input:focus-visible{outline:2px solid #A5F3B8;outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Security Workbench",
+    "overview": "A calm, technical portfolio with a recognisable human presence. Dark green graphite, faint dots, a pale green accent, and clear typography frame engineering evidence and a careful exploration of security.\n\nThe binary portrait is the signature. Its source is Paul's user-selected hoodie photograph (Photo 3); a local circular window reveals the aligned real photograph within six layers of binary text. The floating capsule header keeps identity and actions accessible while the page scrolls. Interaction supports reading and investigation, with complete reading and action paths when motion is reduced.\n\nCurrent scope restores six services, 32 unique skills, six roles with all 27 original bullets, seven testimonials, eight genuine projects, and three full articles across the shared shell. The Programming Buddies internship is September 2026–present without invented duties; Union Bank ends August 2026. The optional client-only simulated console and source-content project explorer extend the established world in code, inspired by uibeawuchi.com without borrowing claims. Original database/fallback access is unchanged; explicit LagosNet/reconciliation cases now use getProjectBySlug. Project assets are genuine published rasters with local mapping and provenance sidecars.\n\n**Current verification boundary:** the restored site and new console/explorer have source, build, parser, content-parity, and generated-HTML evidence. Final visual, browser, and runtime QA is incomplete. Automatic approval review denied localhost access because of the account usage limit; no retry or alternate access method was used. There are no current screenshots or whole-UI SHIP verdict. Historical browser checks and SHIP decisions apply only to the earlier, narrower implementation.",
+    "keyCharacteristics": [
+      "Restrained green over a dark dotted ground.",
+      "Human identity expressed through binary text and a local photo reveal.",
+      "Legible engineering evidence with explicit attribution.",
+      "Purposeful interaction with a complete still alternative."
+    ],
+    "rules": [
+      {
+        "name": "The Restrained Signal Rule",
+        "body": "Reserve accent for actions, active states, and deliberate emphasis; keep the baseline dotted ground faint.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reading First Rule",
+        "body": "Confine character disturbance to the portrait; links, labels, headings, and prose stay stable and readable.",
+        "section": "typography"
+      },
+      {
+        "name": "The Still Access Rule",
+        "body": "Reduced-motion and touch presentation preserve the portrait, all content, and every action without dependence on animation.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do keep role positioning and résumé access immediately legible.",
+      "Do preserve the source-photo binary portrait and aligned local reveal.",
+      "Do keep synthetic events and reconstructed project visuals explicitly labelled.",
+      "Do retain complete reading and action paths in still and reduced-motion states.",
+      "Do use shared tokens, local fonts, and scoped security styles consistently."
+    ],
+    "donts": [
+      "Don't invent internship duties, certifications, labs, or security engagements beyond the supplied role and content.",
+      "Don't spread the character effect into links or reading text.",
+      "Don't treat finite Figma states as proof of browser behavior; use runtime evidence.",
+      "Don't turn the subdued dotted field into a competing foreground effect."
+    ]
+  }
+}
