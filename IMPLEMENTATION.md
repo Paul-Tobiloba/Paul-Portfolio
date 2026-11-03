@@ -2,7 +2,7 @@
 
 **Current verification boundary:** the restored site, project explorer, and PowerShell playground have source/build/unit-test evidence, with earlier content-parity and generated-HTML checks for the restoration. Final visual, browser, and runtime QA is incomplete. Automatic approval review denied localhost access because of the account usage limit; no retry or alternate access method was used. There are no current screenshots or whole-UI SHIP verdict. Historical browser checks and SHIP decisions apply only to the earlier, narrower implementation.
 
-The local branch is codex/security-portfolio. The working changes are uncommitted, not pushed, and not deployed. No dependencies were added. The [Figma design](https://www.figma.com/design/XcYJ00CBa60q4GyCns4RW8) remains visual authority for the established capsule/hoodie world; restored content layouts and console/explorer extensions are code-only.
+The implementation is committed and published on [codex/security-portfolio](https://github.com/Paul-Tobiloba/Paul-Portfolio/tree/codex/security-portfolio). Production deployment has not been verified. No dependencies were added. The [Figma design](https://www.figma.com/design/XcYJ00CBa60q4GyCns4RW8) remains visual authority for the established capsule/hoodie world; restored content layouts and console/explorer extensions are code-only.
 
 ## Run on Windows
 
