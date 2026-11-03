@@ -298,7 +298,15 @@ Desktop reserves 238 × 44px for the home link and renders the canonical SVG at 
 
 At ≤650px, identity is 56px wide with compact P+T; a 252px below-header full-name panel appears on hover/focus. Expanded menus show the full wordmark, flex to available width, and constrain artwork to at most 238 × 32px. Touch visitors can always find the full name in the menu. Action circles remain 44px.
 
-A labelled nonblocking status near the header appears only for actual navigation/font pending state. Pending ink loops at 1.6s and sweep at 1.4s; hidden tabs pause them. Reduced motion keeps complete visible static paths and a still pending indicator. No fake percentages, minimum waits, or page blocking. Router URL ownership prevents older cancellation from clearing a newer pending route; shallow filters are ignored and listeners/frame/font callbacks are cleaned up.
+### Full-screen Matrix loading
+
+The approved full-screen graphite loader replaces the rejected header badge. Canonical direction-C SVG glyphs resolve from binary/mixed letters left-to-right into Paul Tobiloba, capped at 520px (76vw compact). The exact label is “Loading,” with 11px labels, 12px subtext, and “Hacking in progress…” then “Access granted.” The latter is presentation copy, not authentication. Progress is timed presentation, not bytes: it caps at 95% during actual route/font pending work and reaches 100% only when ready.
+
+Startup uses 4200ms resolve + 220ms hold + 220ms fade. Subsequent pending navigation is delayed 120ms and resolves over 1800ms; fast/shallow transitions avoid a flash. Skip/Escape and a 10s fail-safe release the page, even if work is still pending. Reduced motion uses a full static name and immediate ready exit. Hidden-tab RAF pauses and resumes against wall time. New pending work revokes completion during hold/fade.
+
+Default CSS hides and disables pointer handling for the SSR overlay. Only the client data-loader-ready effect reveals it and applies inert/aria-hidden/page-scroll management to the content wrapper; SSR content is not inert, so failed hydration leaves the page accessible. Noscript fallback and cleanup restore content/focus/scroll. The modal/progress/Skip contracts are source-inspected; their actual browser behavior remains unverified. Header identity paths/hover, brand exports, palette, and body typography are unchanged.
+
+The meter is min(240px,72vw), or min(220px,70vw) at ≤650px; the name is about 24% smaller than the approved preview’s 681px composition. Its SVG identity remains font-free. The earlier header loading badge and looping ink/sweep specimen are retired; the separate finite header contour intro is unchanged.
 
 Static artwork proof confirms the vector interpretation only. Rendered header layout, hover/focus/touch behavior, loading timing, navigation interruption, screen-reader delivery, and reduced-motion/hidden-tab execution remain browser-unverified. See IMPLEMENTATION.md and public/assets/brand/SOURCE.md for assets/provenance.
 
