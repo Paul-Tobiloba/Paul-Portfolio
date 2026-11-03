@@ -1,0 +1,7 @@
+{
+  "tool": "image_gen built-in",
+  "purpose": "background-extraction",
+  "source": "User attachment Photo 3.jpg",
+  "prompt": "Edit target: the supplied Photo 3, a left-facing side-profile portrait of a man with glasses, short textured hair, a beard and a black hoodie with the hood down behind his neck. Use case: background-extraction. Remove ONLY the entire amber studio background and glow to genuine transparency. Preserve exactly the man's identity, left-facing pose, side-profile nose/lips/beard shape, glasses, hair texture, hood shape and down position, shoulder shape and original crop. Preserve the dark, moody photographic exposure and fine amber rim light on his silhouette. Do not invent facial detail in shadows, do not rotate him, do not put the hood over his head, do not change clothes, do not add text, symbols, digital effects or additional objects. Retain the original portrait's proportions and place the complete existing visible subject against alpha. This cutout will be sampled into native binary-character artwork in a Figma portfolio; no style transfer is needed at this stage.",
+  "origin": "Figma image fill 42131c04b6984faad71e464bb475f10ab370768f; user-supplied Photo 3 hoodie cutout."
+}

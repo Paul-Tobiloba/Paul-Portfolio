@@ -1,0 +1,372 @@
+{
+  "testimonials": [
+    {
+      "name": "Abhi Kuril",
+      "role": "CEO, Advanced Cloud Partners",
+      "text": "Working with Paul has been a game-changer for our team. His deep knowledge of AI and workflow automation streamlined our operations and added real value. He brings both skill and strategy to the table.",
+      "image": "assets/images/testi4-2.jpg",
+      "avatar": "/assets/images/testi4-2.jpg"
+    },
+    {
+      "name": "Charles Okafor",
+      "role": "CEO, Noirak Technologies",
+      "text": "Paul's meticulous nature and drive for excellence truly stand out. He has a sharp eye for both design and functionality, always pushing the boundaries to deliver more than expected.",
+      "image": "assets/images/testi4-3.jpg",
+      "avatar": "/assets/images/testi4-3.jpg"
+    },
+    {
+      "name": "Oluwafemi Bombata",
+      "role": "Lead Solutions Architect, SakalGb",
+      "text": "I’ve had the pleasure of watching him consistently deliver exceptional results across a wide range of client projects. His ability to understand complex requirements, automate workflows, and collaborate seamlessly with cross-functional teams makes him an invaluable asset. Paul brings a rare combination of technical depth, creativity, and professionalism to every engagement.",
+      "image": "assets/images/testi4-4.jpg",
+      "avatar": "/assets/images/testi4-4.jpg"
+    },
+    {
+      "name": "Ayomide Adefe",
+      "role": "Business Analyst, IPNX Nigeria",
+      "text": "Paul has an impressive grasp of RPA and process automation. His ability to dissect intricate workflows and convert them into elegant, functional systems is second to none.",
+      "image": "assets/images/testi4-7.jpg",
+      "avatar": null
+    },
+    {
+      "name": "Akin Oluka",
+      "role": "Automation Engineer, Parallex Bank",
+      "text": "I’ve had the pleasure of collaborating with Paul on several client projects. His ability to blend technical knowledge with teamwork makes him not only effective but also inspiring to work alongside.",
+      "image": "assets/images/testi4-5.jpg",
+      "avatar": "/assets/images/testi4-5.jpg"
+    },
+    {
+      "name": "Ebenezer Adeleye",
+      "role": "Solutions Architect",
+      "text": "Collaborating with Paul across diverse client engagements has shown me just how impactful his workflow automation skills are. He approaches challenges with clarity and consistently crafts solutions that are both robust and easy to maintain. A true team player with a sharp problem-solving mindset.",
+      "image": "assets/images/testi4-1.jpg",
+      "avatar": "/assets/images/testi4-1.jpg"
+    },
+    {
+      "name": "Tochukwu Jonah",
+      "role": "Workflow Developer, Wema Bank",
+      "text": "Paul has a rare combination of frontend finesse and automation expertise. His contributions elevated our systems and brought clarity and efficiency to our workflows.",
+      "image": "assets/images/testi4-6.jpg",
+      "avatar": null
+    }
+  ],
+  "experience": [
+    {
+      "id": 6,
+      "title": "Cybersecurity Intern",
+      "company": "Programming Buddies",
+      "dec": [],
+      "startYear": "2026",
+      "startMonth": "September",
+      "endYear": false
+    },
+    {
+      "id": 1,
+      "title": "Power Automate Desktop RPA Engineer",
+      "company": "Union Bank (Contract, secondment from SakalGb Solutions)",
+      "dec": [
+        "Developed automation solutions using Power Automate Desktop for high-volume financial reconciliation processes, ensuring accuracy and consistency across transaction datasets.",
+        "Engineered data processing workflows combining RPA and Python to handle large-scale transformations, validation logic, and structured output generation.",
+        "Implemented efficient data handling strategies including bulk operations, in-memory processing, and formula-driven workflows to overcome performance and memory constraints in Excel-based automations.",
+        "Designed reusable automation components for data parsing, session-based mapping, and reporting, improving maintainability and reducing execution time.",
+        "Delivered automation solutions aligned with business requirements, with clear logging, error handling, and support for operational monitoring."
+      ],
+      "startYear": "2025",
+      "endYear": "2026",
+      "endMonth": "August"
+    },
+    {
+      "id": 2,
+      "title": "AI Automations / Workflow Developer",
+      "company": "Freelance",
+      "dec": [
+        "Developed and implemented AI-driven automation solutions for various clients, enhancing operational efficiency and reducing manual workload.",
+        "Designed and built custom automation workflows using n8n, Make.com, and other platforms, integrating AI capabilities to optimize business processes.",
+        "Collaborated with clients to identify automation opportunities, analyze requirements, and deliver tailored solutions that meet specific business needs.",
+        "Created user-friendly interfaces and dashboards to visualize automation processes and provide insights into performance metrics."
+      ],
+      "startYear": "2023",
+      "endYear": false
+    },
+    {
+      "id": 3,
+      "title": "Solutions Architect / K2 & Frontend Developer",
+      "company": "SakalGb Solutions, Nigeria",
+      "dec": [
+        "Built User-friendly interfaces for business processes.",
+        "Redesigned K2 custom Themes into modern interfaces using CSS and Javascript.",
+        "Streamlined business processes through process mapping and automation, improving overall efficiency and productivity.",
+        "Collaborated with cross-functional teams to identify areas for improvement and develop solutions.",
+        "Built Power Automate Desktop Bots to automate reconciliation of external records with organization's GL account records.",
+        "Automated various processes using K2, including LASG E-Planning Permit, Account Opening, Foreign Operations Portal, Project Management, Employee Onboarding and Offboarding.",
+        "Maintained detailed documentation of business process requirements, product value optimization, and risk management.",
+        "Conducted training sessions to educate interns on business processes and technologies.",
+        "Provided technical support to clients and resolved issues promptly."
+      ],
+      "startYear": "2022",
+      "endYear": false
+    },
+    {
+      "id": 4,
+      "title": "Automations Developer",
+      "company": "Advanced Cloud Partners, USA",
+      "dec": [
+        "Streamlined business processes through process mapping and automation, enhancing efficiency and productivity for multiple clients across diverse industries.",
+        "Developed and customized business processes using n8n, Make.com, Power Automate, Zenphi, and other platforms, incorporating custom nodes and user-friendly interfaces to enhance workflow adoption and improve user experience.",
+        "Redesigned and optimized existing Power Automate flows, integrating them with K2 solutions to consolidate disparate automation processes into cohesive, scalable systems.",
+        "Utilized open-source automation tools alongside MS/Google platform capabilities to deliver tailored, high-value automation solutions aligned with client needs.",
+        "Documented technical specifications, process requirements, and UI design decisions to ensure maintainability and support future enhancements."
+      ],
+      "startYear": "2024",
+      "endYear": "2025"
+    },
+    {
+      "id": 5,
+      "title": "Lead Engineer / Frontend Developer",
+      "company": "Noirak Technologies,  Nigeria",
+      "dec": [
+        "Built responsive and user-friendly websites, ensuring optimal performance and functionality.",
+        "Worked closely with designers and project managers to ensure timely delivery of projects.",
+        "Conducted quality assurance testing and resolved issues before launch.",
+        "Collaborated with back-end developers to integrate front-end features with back-end functionality."
+      ],
+      "startYear": "2023",
+      "endYear": "2025"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "title": "Cyber Security",
+      "academy": "Miva University",
+      "dec": "Bachelor of Science in Cyber Security...",
+      "startYear": "2023",
+      "endYear": "2026"
+    },
+    {
+      "id": 2,
+      "title": "IT Developer Expert",
+      "academy": "Nintex University",
+      "dec": "Completed requirements to be recognized as a Certified k2 IT Developer.",
+      "startYear": "2023",
+      "endYear": "2023"
+    },
+    {
+      "id": 3,
+      "title": "Maths & Statistics",
+      "academy": "Polytechnic of Ibadan",
+      "dec": "National Diploma in Math and Statistics...",
+      "startYear": "2012",
+      "endYear": "2014"
+    }
+  ],
+  "skills": {
+    "automation": [
+      {
+        "name": "Nintex K2",
+        "proficiency": 99,
+        "desc": "Expert in K2 workflow design and implementation, with experience creating complex business process applications. Skilled in SmartObject development and integration with external systems."
+      },
+      {
+        "name": "Nintex Workflow Cloud",
+        "proficiency": 90,
+        "desc": "Skilled in designing cloud-based workflows with Nintex, creating form-based solutions, and integrating with various enterprise systems. Experienced with document generation and automation."
+      },
+      {
+        "name": "Power Apps",
+        "proficiency": 75,
+        "desc": "Proficient in building canvas and model-driven apps with advanced formulas and custom connectors. Experienced in designing intuitive interfaces and optimizing app performance."
+      },
+      {
+        "name": "Power Automate",
+        "proficiency": 99,
+        "desc": "Advanced skills in creating complex flows with conditions, approvals, and custom connectors. Experienced with error handling, expressions, and integration with various Microsoft services."
+      },
+      {
+        "name": "SharePoint",
+        "proficiency": 95,
+        "desc": "Strong knowledge of SharePoint Online and on-premises, including custom list configurations, workflows, and Power Platform integration. Experienced with PnP patterns and practices."
+      },
+      {
+        "name": "n8n",
+        "proficiency": 99,
+        "desc": "Skilled in building n8n workflows with custom nodes and expressions. Experienced with self-hosted deployments and creating complex integrations between disparate systems."
+      },
+      {
+        "name": "Zenphi",
+        "proficiency": 99,
+        "desc": "Competent with Zenphi for Google Workspace automation, building efficient workflows for document processing and approvals. Experienced with form integrations and conditional logic."
+      },
+      {
+        "name": "Make.com",
+        "proficiency": 90,
+        "desc": "Proficient in creating advanced scenarios with iterators, aggregators, and custom modules. Experienced in error handling, webhook implementations, and complex data transformations."
+      },
+      {
+        "name": "Gumloop",
+        "proficiency": 75,
+        "desc": "Skilled in crafting Gumloop workflows to automate business processes and integrate diverse platforms, with hands-on experience developing custom nodes and actions."
+      },
+      {
+        "name": "Activepieces",
+        "proficiency": 85,
+        "desc": "Competent with Activepieces automation platform for building integrated workflows with custom pieces. Experienced in creating reusable components and implementing data transformation flows."
+      },
+      {
+        "name": "SmartSuite",
+        "proficiency": 85,
+        "desc": "Proficient in SmartSuite app creation, automation rules, and formula fields. Capable of designing solution templates and implementing cross-solution workflows for business processes."
+      }
+    ],
+    "frontend": [
+      {
+        "name": "HTML",
+        "proficiency": 95,
+        "desc": "Expert in semantic HTML5 markup with focus on accessibility standards and SEO-friendly structure. Experienced with custom data attributes and modern structural elements."
+      },
+      {
+        "name": "CSS",
+        "proficiency": 95,
+        "desc": "Strong command of CSS3 with expertise in responsive design, animations, and advanced layout techniques including Grid and Flexbox. Well-versed in cross-browser compatibility solutions."
+      },
+      {
+        "name": "JavaScript",
+        "proficiency": 90,
+        "desc": "Advanced JavaScript skills including ES6+ features, asynchronous programming with Promises/async-await, and DOM manipulation. Comfortable with functional programming concepts."
+      },
+      {
+        "name": "React",
+        "proficiency": 92,
+        "desc": "Proficient in React component architecture, hooks, context API, and performance optimization. Experienced with custom hooks and integration with various state management solutions."
+      },
+      {
+        "name": "Next.js",
+        "proficiency": 95,
+        "desc": "Skilled in server-side rendering, static site generation, and API routes in Next.js. Experienced with image optimization, incremental static regeneration, and middleware implementations."
+      },
+      {
+        "name": "Redux",
+        "proficiency": 80,
+        "desc": "Competent with Redux ecosystem including thunks, selectors, and the toolkit. Experienced in state normalization and optimization patterns for complex application state."
+      },
+      {
+        "name": "Tailwind",
+        "proficiency": 90,
+        "desc": "Expert in utility-first CSS with Tailwind, including custom configuration, responsive designs, and component extraction. Skilled at creating consistent design systems with minimal CSS."
+      },
+      {
+        "name": "SCSS",
+        "proficiency": 85,
+        "desc": "Advanced knowledge of SCSS with expertise in mixins, functions, and modular architecture. Proficient in creating maintainable stylesheets with variables and nested rules."
+      },
+      {
+        "name": "jQuery",
+        "proficiency": 78,
+        "desc": "Solid foundation in jQuery for DOM manipulation, animations, and AJAX operations. Experienced in legacy codebase maintenance and optimization of jQuery implementations."
+      }
+    ],
+    "others": [
+      {
+        "name": "SQL",
+        "proficiency": 80,
+        "desc": "Solid understanding of relational databases with experience writing complex queries, stored procedures, and optimizing database performance across multiple platforms."
+      },
+      {
+        "name": "PostgreSQL",
+        "proficiency": 80,
+        "desc": "Proficient in PostgreSQL database management, including schema design, query optimization, and data migration. Experienced with advanced features like JSONB and full-text search."
+      },
+      {
+        "name": "WordPress (Elementor)",
+        "proficiency": 85,
+        "desc": "Expert in WordPress theme customization and plugin development with advanced Elementor skills. Experienced in creating custom widgets, dynamic content, and optimizing site performance."
+      },
+      {
+        "name": "Python",
+        "proficiency": 70,
+        "desc": "Strong Python skills for automation, data processing, and Scripting."
+      }
+    ],
+    "cybersecurity": [
+      {
+        "name": "Azure",
+        "stage": "Hands-on",
+        "desc": "Experience with Azure environments, with a focus on cloud security fundamentals, secure configuration and identity and access."
+      },
+      {
+        "name": "AWS",
+        "stage": "Hands-on",
+        "desc": "Experience with AWS environments, with an ongoing focus on cloud security, access controls and monitoring."
+      },
+      {
+        "name": "Microsoft Sentinel",
+        "stage": "Hands-on",
+        "desc": "Experience with Microsoft Sentinel, focused on security monitoring, log analysis and alert triage."
+      },
+      {
+        "name": "Wireshark",
+        "stage": "Hands-on",
+        "desc": "Packet capture and protocol analysis for examining network traffic and investigating connections."
+      },
+      {
+        "name": "Cisco Packet Tracer",
+        "stage": "Hands-on",
+        "desc": "Network simulation and practice with routing, switching and connectivity troubleshooting."
+      },
+      {
+        "name": "Kali Linux",
+        "stage": "Hands-on",
+        "desc": "Familiarity with the Kali Linux environment and its security-testing toolset."
+      },
+      {
+        "name": "Networking",
+        "stage": "Hands-on",
+        "desc": "TCP/IP, addressing, routing and network troubleshooting fundamentals."
+      },
+      {
+        "name": "SQL",
+        "proficiency": 80,
+        "desc": "Solid understanding of relational databases with experience writing complex queries, stored procedures, and optimizing database performance across multiple platforms."
+      },
+      {
+        "name": "tcpdump",
+        "stage": "Hands-on",
+        "desc": "Command-line packet capture and traffic filtering for network investigation."
+      }
+    ]
+  },
+  "services": [
+    {
+      "category": "Cybersecurity · SOC focus",
+      "title": "SOC analysis & security monitoring",
+      "description": "SOC analyst focus, supported by experience with Microsoft Sentinel, Wireshark, tcpdump, networking and SQL. I’m building toward security monitoring, alert triage and documented investigations.",
+      "intent": "role"
+    },
+    {
+      "category": "Cybersecurity · Cloud focus",
+      "title": "Cloud security",
+      "description": "Experience with AWS and Azure, with a focus on cloud security fundamentals, identity and access, and secure configuration. I’m targeting entry-level cloud security opportunities.",
+      "intent": "role"
+    },
+    {
+      "category": "Web Development",
+      "title": "Frontend Web Developer",
+      "description": "I build responsive, user-friendly websites with a focus on performance, ensuring seamless integration between design and functionality using modern frameworks like React and Next.js"
+    },
+    {
+      "category": "Business Process Management",
+      "title": "Solutions Architect",
+      "description": "I help businesses streamline complex workflows by designing and implementing efficient systems. Through process mapping and automation, I develop tailored solutions that optimize business processes, enhance productivity, and reduce operational risks."
+    },
+    {
+      "category": "Scripting & Automations",
+      "title": "Automations Specialist",
+      "description": "With extensive experience in automation, I specialize in simplifying repetitive tasks and boosting efficiency for organizations. Using tools like Power Automate, n8n, and make.com, I design and deploy automated workflows that integrate various systems, helping businesses save time and reduce human error."
+    },
+    {
+      "category": "Power Platform",
+      "title": "Power Developer",
+      "description": "I develop custom solutions on Microsoft’s Power Platform, optimizing workflows and creating apps that improve business processes, enhance collaboration, and drive productivity across organizations."
+    }
+  ]
+}
