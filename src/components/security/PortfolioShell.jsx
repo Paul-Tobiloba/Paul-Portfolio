@@ -1,5 +1,6 @@
 import { LuTerminal } from "react-icons/lu";
 import PortfolioTerminal from "./PortfolioTerminal";
+import BrandLogo from "./BrandLogo";
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -15,7 +16,7 @@ function Icon({ name }) {
 }
 
 function Identity({ expanded = false }) {
-  return <Link href="/" className={`${styles.identity} ${expanded ? styles.identityExpanded : ""}`} aria-label="Paul Tobiloba, home"><span className={styles.monogram} aria-hidden="true">PT</span><span className={styles.fullName} aria-hidden="true">Paul Tobiloba</span></Link>;
+  return <Link href="/" className={`${styles.identity} ${expanded ? styles.identityExpanded : ""}`} aria-label="Paul Tobiloba, home"><BrandLogo expanded={expanded}/>{!expanded&&<span className={styles.brandMobileName} aria-hidden="true"><img src="/assets/brand/wordmark.svg" alt="" width="681" height="90"/></span>}</Link>;
 }
 
 function Header({ home }) {

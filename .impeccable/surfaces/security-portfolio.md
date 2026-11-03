@@ -6,7 +6,7 @@
 
 ## Authority and mode
 
-Mode: Experience, with readable project/article evidence. The [Figma design](https://www.figma.com/design/XcYJ00CBa60q4GyCns4RW8) remains visual authority: Matrix/green graphite, copy left, binary Photo 3 hoodie right, fixed rounded PT capsule, full-name reveal, and expanded menu. Continue this world; no new identity or token changes are requested. Restored content, console, and project explorer are code-only extensions.
+Mode: Experience, with readable project/article evidence. The [Figma design](https://www.figma.com/design/XcYJ00CBa60q4GyCns4RW8) remains visual authority: Matrix/green graphite, copy left, binary Photo 3 hoodie right, fixed rounded PT capsule, full-name reveal, and expanded menu. Continue this visual world with the explicitly user-approved direction C identity extension below; palette and body typography are unchanged. Restored content, console, and project explorer are code-only extensions.
 
 ## Surface scope
 
@@ -36,11 +36,27 @@ Preserve typed email click/report/delete/undo/next/retry/pause/resume, quiz/camp
 
 Project image buttons open a labelled native explorer. Overview, Stack, and Outcomes use supplied project content and a direct full-case link. Preserve focusable output/detail regions, initial focus, Escape closing, focus containment/restoration, and body scroll lock. Their actual runtime behavior remains unverified.
 
-Services/skills use existing section/card/filter patterns. Résumé disclosures retain all original responsibilities; the internship is a simple role heading. Testimonials retain all seven quotes and source attribution with native scrolling/controls. Archive titles use h2; nested compact lists use h3. Keep mobile identity at the compact 44px width without a later conflicting override.
+Services/skills use existing section/card/filter patterns. Résumé disclosures retain all original responsibilities; the internship is a simple role heading. Testimonials retain all seven quotes and source attribution with native scrolling/controls. Archive titles use h2; nested compact lists use h3. The approved brand extension supersedes the earlier compact text identity with a 56px SVG identity; existing action controls remain 44px.
 
 ## Provenance and preservation
 
-Keep shared tokens/fonts/radii and the 23px PT monogram. The 37 local project rasters are genuine published assets, resolved through projectAssets.json with sidecars. Preserve the synthetic sign-in and simplified-workflow labels. The console/explorer pattern is inspired by uibeawuchi.com without borrowing another person's claims. Do not infer certifications, labs, additional security engagements, or internship duties.
+Keep shared tokens/fonts/radii and the approved canonical SVG direction C identity. The 37 local project rasters are genuine published assets, resolved through projectAssets.json with sidecars. Preserve the synthetic sign-in and simplified-workflow labels. The console/explorer pattern is inspired by uibeawuchi.com without borrowing another person's claims. Do not infer certifications, labs, additional security engagements, or internship duties.
+
+## Approved direction C brand extension
+
+The user selected direction C from the right column of the second concept board. The open P, shaped T, and rounded geometric lettering are a font-free vector interpretation of that approved imagegen concept, not a bitmap crop or exact-tracing claim. src/data/brandGeometry.json is canonical: BrandLogo, wordmark, P+T icon, favicons, and loading mark reuse the same paths. No body font or palette changes accompany the identity.
+
+Replace the former text PT with the canonical SVG. Desktop identity is 238 × 44px, artwork 238 × 32px with viewBox 0 0 681 90. P remains anchored; T moves 76→236 SVG units over 420ms cubic-bezier(.16,1,.3,1). Other letters use 200ms opacity/420ms translation with 80ms delay. Hover and keyboard focus reveal “Paul Tobiloba.” The finite 700ms contour intro delays T by 90ms.
+
+At ≤650px, compact P+T reserves 56px; the full name appears in a 252px below-header hover/focus panel and stays available to touch visitors in the menu. Menu identity flexes within available width, with SVG no larger than 238 × 32px. Action circles stay 44px.
+
+Only actual route/font pending state shows a nonblocking labelled loading status near the header. Ink loops for 1.6s and sweep for 1.4s while pending, pause in hidden tabs, and become complete still paths/indicator under reduced motion. No fake percentage, minimum wait, or blocking overlay. Active-URL route guards ignore stale completion/cancellation and shallow filters; listeners/frame/font callbacks are cleaned up.
+
+All assets share brandGeometry.json paths: SVG wordmarks/monogram/icon, 32/180/512px PNGs, and root favicon.ico. Native SVG-to-PNG exports use installed Sharp with source sidecars; public/assets/brand/SOURCE.md records provenance. This vectors an already-approved imagegen concept; no new imagegen call occurred.
+
+Five route lifecycle tests pass via npm.cmd run test:brand. Final .next-security-brand build passed all 17 static pages and API routes; git diff --check passed. Targeted lint: zero errors, 13 warnings (11 unchanged legacy _app font/manual-style, two native SVG-image). Source/artwork review found no material defect. Artwork proof is static SVG evidence only, not a rendered UI screenshot or motion proof; all browser limitations remain.
+
+The implementation lives on codex/security-portfolio, with the previous snapshot pushed at 92da56d and publication of the identity extension authorized. Production deployment and rendered verification remain unverified.
 
 ## Evidence and remaining work
 

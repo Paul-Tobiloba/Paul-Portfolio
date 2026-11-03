@@ -20,10 +20,6 @@
 .skipLink{position:fixed;top:0;left:24px;transform:translateY(-150%);z-index:100;padding:12px 20px;background:var(--accent);color:var(--ink)!important;border-radius:8px}
 .skipLink:focus{transform:translateY(0)}
 .header{position:fixed;z-index:20;top:24px;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:space-between;width:calc(100% - 128px);max-width:1312px;height:64px;padding:9px;background:var(--surface);border:1px solid var(--border);border-radius:32px}
-.identity{position:relative;display:flex;align-items:center;flex-shrink:0;width:190px;height:44px}
-.monogram{position:absolute;left:8px;top:6px;font-size:23px;line-height:28px;font-weight:700;letter-spacing:-1px;color:var(--accent)}
-.fullName{position:absolute;left:52px;top:11px;white-space:nowrap;font-size:14px;line-height:22px;opacity:0;transform:translateX(-4px);transition:opacity 180ms ease-out,transform 180ms ease-out}
-.identity:hover .fullName,.identity:focus-visible .fullName,.identityExpanded .fullName{opacity:1;transform:translateX(0)}
 .inlineNav{display:flex;align-items:center;gap:32px;font-size:14px;line-height:22px;color:var(--secondary)}
 .circularActions{display:flex;gap:8px}
 .iconButton{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;height:44px;padding:0;border:1px solid var(--border);border-radius:50%;background:var(--raised);transition:background 150ms ease-out}
@@ -129,7 +125,7 @@
 @media(max-width:1250px){.main{padding-left:40px;padding-right:40px}.header,.menu{width:calc(100% - 80px)}.hero h1{font-size:clamp(40px,4.45vw,64px);line-height:1.125}.editorialSection{grid-template-columns:minmax(240px,30%) minmax(0,1fr);column-gap:48px}.sectionIntro h2{font-size:32px;line-height:40px}.caseMain{grid-template-columns:minmax(0,1fr) 280px;gap:48px}.caseTitle{font-size:48px;line-height:56px}.scenarioHeading{flex-wrap:wrap;gap:8px}.eventRow{grid-template-columns:90px 1fr 70px;gap:12px}}
 @media(max-width:900px){.inlineNav{display:none}.hero{gap:24px}.heroCopy{max-width:57%}.hero h1{font-size:38px;line-height:46px}.editorialSection{grid-template-columns:1fr;gap:24px}.sectionIntro p{max-width:620px}.sectionIntro h2 br{display:none}.caseMain{grid-template-columns:1fr}.projectContext{position:static}.caseTitle{font-size:44px;line-height:52px}}
 @media(max-width:650px){
-.header{top:12px;width:calc(100% - 32px);padding:9px}.header .identity{width:44px}.header .fullName{display:none}.menu{top:12px;width:calc(100% - 32px);padding:24px;max-height:calc(100dvh - 24px)}.menuActions{flex-direction:column;gap:8px}.menuActions a{align-self:stretch}
+.header{top:12px;width:calc(100% - 32px);padding:9px}.header .identity{width:44px}.menu{top:12px;width:calc(100% - 32px);padding:24px;max-height:calc(100dvh - 24px)}.menuActions{flex-direction:column;gap:8px}.menuActions a{align-self:stretch}
 .ground,.groundLight{background-image:url("/assets/security/dotted-background-still-mobile.svg");background-size:390px 844px}
 .main{padding:102px 24px 48px;gap:32px}.hero{flex-direction:column;align-items:stretch;justify-content:flex-start;gap:24px;min-height:0}.heroCopy{max-width:none;width:100%;gap:24px}.hero h1{font-size:32px;line-height:40px;white-space:normal}.heroDescription{font-size:16px;line-height:26px}.desktopBio,.heroMeta,.pointerHint{display:none}.heroActions{gap:12px}.primaryButton,.secondaryButton{padding:12px 20px;white-space:nowrap}.portraitFigure{width:100%;max-width:342px;align-self:center;gap:24px}.portraitCanvas{--portrait-scale:.95}.touchHint{display:inline}.mobileLocation{display:block;font-size:12px;line-height:18px;color:var(--muted)}.editorialSection{gap:24px;scroll-margin-top:100px}.sectionIntro h2{font-size:26px;line-height:34px}.investigationSection .sectionIntro{display:none}.sectionBody{gap:24px}
 .scenario{padding:20px;min-height:590px}.scenarioHeading{flex-direction:column;align-items:flex-start;gap:16px}.scenario h3{font-size:20px;line-height:28px}.mobileOnly{display:inline}.tabs{gap:4px}.evidence{min-height:214px}.eventRow{grid-template-columns:minmax(0,130px) 1fr;gap:16px;padding-bottom:12px;margin-bottom:12px;min-height:33px}.eventSource{display:none}.mobileSource{display:block;font:400 12px/20px "IBM Plex Mono",monospace;color:var(--muted);margin-top:12px!important}.evidenceText{overflow-wrap:anywhere}
@@ -479,3 +475,43 @@
 .campaignLessonReview p{margin-top:12px}
 .campaignLessonReview ul{list-style:disc;padding-left:20px;margin-top:12px;gap:8px}
 .campaignLessonReview li{display:list-item;color:var(--secondary)}
+
+
+/* Direction C: a font-free wordmark whose P and T retain spatial continuity. */
+.site .identity{position:relative;display:flex;align-items:center;flex-shrink:0;width:238px;height:44px;color:var(--accent)}
+.site .identity:hover,.site .identity:focus-visible,.site .identityExpanded{color:var(--text)}
+.brandSvg{display:block;flex-shrink:0;width:238px;height:32px;max-width:none;overflow:visible;pointer-events:none}
+.brandMovingT{transform:translateX(76px);transition:transform 420ms cubic-bezier(.16,1,.3,1)}
+.brandNameLetters{opacity:0;transform:translateX(-8px);transition:opacity 200ms ease-out,transform 420ms cubic-bezier(.16,1,.3,1)}
+.identity:hover .brandMovingT,.identity:focus-visible .brandMovingT,.brandExpanded .brandMovingT{transform:translateX(var(--brand-t-end))}
+.identity:hover .brandNameLetters,.identity:focus-visible .brandNameLetters,.brandExpanded .brandNameLetters{opacity:1;transform:translateX(0);transition-delay:80ms}
+.brandContour{stroke:currentColor;stroke-width:1.3;stroke-dasharray:1;stroke-dashoffset:0;animation:brandInk 700ms cubic-bezier(.16,1,.3,1) both}
+.brandSecondLetter .brandContour{animation-delay:90ms}
+.brandExpanded .brandContour{animation:none}
+.brandMobileName{display:none}
+.menuHeading{gap:12px}
+.menuHeading .identityExpanded{flex:1;min-width:0;width:auto}
+.identityExpanded .brandSvg{width:min(100%,238px);height:auto;max-height:32px}
+.brandMonogramSvg{display:block;width:56px;height:32px;flex-shrink:0;color:#a5f3b8}
+.brandLoadingInk .brandContour{animation:brandLoadingInk 1600ms ease-in-out infinite;animation-play-state:var(--brand-play-state,running)}
+.brandLoadingInk .brandSecondLetter .brandContour{animation-delay:180ms}
+.brandLoading{position:fixed;z-index:80;top:104px;right:64px;display:flex;align-items:center;gap:12px;width:246px;min-height:74px;padding:14px 16px;background:#111a15;color:#edf4ee;border:1px solid #2b3c30;border-radius:12px;font:400 14px/22px Manrope,sans-serif;pointer-events:none;--brand-play-state:running;box-sizing:border-box}
+.brandLoadingLine{position:absolute;left:16px;right:16px;bottom:0;height:2px;overflow:hidden}
+.brandLoadingLine::after{content:"";display:block;width:35%;height:100%;background:#a5f3b8;animation:brandLoadingSweep 1400ms ease-in-out infinite;animation-play-state:var(--brand-play-state,running)}
+@keyframes brandInk{0%{fill-opacity:.05;stroke-dashoffset:1}65%{fill-opacity:.2;stroke-dashoffset:0}100%{fill-opacity:1;stroke-dashoffset:0}}
+@keyframes brandLoadingInk{0%,100%{fill-opacity:.3;stroke-dashoffset:1}50%,80%{fill-opacity:1;stroke-dashoffset:0}}
+@keyframes brandLoadingSweep{from{transform:translateX(-110%)}to{transform:translateX(400%)}}
+@media(max-width:650px){
+  .header .identity{width:56px}
+  .header .identity .brandMovingT{transform:translateX(76px)}
+  .header .identity .brandNameLetters{opacity:0;transform:translateX(-8px)}
+  .header .brandMobileName{position:absolute;left:-9px;top:58px;display:flex;align-items:center;width:252px;min-height:56px;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:var(--surface);opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity 160ms ease-out,transform 220ms cubic-bezier(.16,1,.3,1),visibility 160ms;pointer-events:none}
+  .brandMobileName img{display:block;width:100%;height:auto;max-height:32px}
+  .header .identity:hover .brandMobileName,.header .identity:focus-visible .brandMobileName{opacity:1;visibility:visible;transform:translateY(0)}
+  .brandLoading{top:88px;right:16px;width:232px}
+}
+@media(prefers-reduced-motion:reduce){
+  .brandContour,.brandLoadingInk .brandContour{animation:none!important;fill-opacity:1;stroke-dashoffset:0}
+  .brandMovingT,.brandNameLetters,.header .brandMobileName{transition:none!important}
+  .brandLoadingLine::after{animation:none;transform:translateX(90%)}
+}
