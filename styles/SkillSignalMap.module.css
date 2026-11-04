@@ -35,3 +35,18 @@
 @media(forced-colors:active){.signalMap .tool,.hub{border-color:ButtonText;background:Canvas}.signalMap .tool[aria-pressed=true]{outline:2px solid Highlight}.route,.activeRoute{stroke:CanvasText}.hub>svg,.signalMap .tool>svg{color:ButtonText}}
 
 @container skill-signal (max-width:650px){.disciplines{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding-bottom:16px}.disciplines button{text-align:left;padding:10px 12px;font-size:14px}.network{--map-connected:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px;min-height:0;padding:0}.connections{display:none}.hub{grid-column:1/-1;grid-row:1;width:120px;height:120px;gap:4px}.toolColumn{justify-content:flex-start;gap:12px}.signalMap .tool{min-height:52px;gap:6px;padding:12px 10px;font-size:12px;line-height:20px}.signalMap .tool>svg{width:14px;height:14px}.detail{grid-template-columns:1fr;gap:16px;min-height:0;padding-top:20px}.detail h3{font-size:20px;line-height:28px}.detailCategory{margin-top:4px!important}}
+
+.toolLabel,.detailIdentity{display:flex;align-items:center;gap:10px;min-width:0}
+.toolLabel>span:last-child,.detailIdentity>div{min-width:0;overflow-wrap:anywhere}
+.toolMark{display:grid;place-items:center;flex:none;width:22px;height:22px;color:var(--secondary);background-position:center;background-repeat:no-repeat;background-size:contain}
+.toolMark svg{width:100%;height:100%}
+.brandMark{filter:grayscale(1) brightness(1.3);opacity:.78;transition:filter 160ms ease-out,opacity 160ms ease-out}
+.markSurface{border-radius:4px;background-color:#edf4ee;background-size:82%}
+.tool:hover .brandMark,.tool:focus-visible .brandMark,.tool[aria-pressed=true] .brandMark,.detailIdentity .brandMark{filter:none;opacity:1}
+.tool:hover .toolMark,.tool:focus-visible .toolMark,.tool[aria-pressed=true] .toolMark,.detailIdentity .toolMark{color:var(--accent)}
+.detailIdentity{gap:16px}
+.detailIdentity .toolMark{width:44px;height:44px}
+@media(max-width:650px){.toolLabel{gap:6px}.toolLabel .toolMark{width:16px;height:16px}.detailIdentity{gap:12px}.detailIdentity .toolMark{width:36px;height:36px}}
+@container skill-signal (max-width:650px){.toolLabel{gap:6px}.toolLabel .toolMark{width:16px;height:16px}.detailIdentity{gap:12px}.detailIdentity .toolMark{width:36px;height:36px}}
+@media(prefers-reduced-motion:reduce){.brandMark{transition:none}}
+@media(forced-colors:active){.toolMark{forced-color-adjust:none;color:CanvasText}.markSurface{background-color:#edf4ee}}

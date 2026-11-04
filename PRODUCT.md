@@ -14,6 +14,12 @@ The skills collection contains 32 unique skills, retaining all 24 original skill
 
 The sign-in investigation remains explicitly synthetic. The reconciliation workflow remains a simplified reconstruction, separate from genuine published project screenshots. Preserve professional attribution, all seven original testimonials, the eight published projects, and the three full original article bodies.
 
+## Project evidence and availability
+
+The hero presents Paul as an automation engineer expanding into security operations and cloud security. Project cards lead to case studies. Case studies offer a public website only for an explicitly reviewed project destination; gallery and lab actions link to actual content. Account Reconciliation RPA is a private deployment. Vendor pages and legacy file links are not project demos. No recordings are approved for public sharing, so the site omits video links and embeds. The AI Accountant outcome is qualitative because no measurement baseline is available.
+
+Suspicious Sign-in Triage is a dedicated synthetic SOC lab documenting the existing interactive scenario. It identifies the sample evidence, method, limitations and next steps. Future lab pages require actual, shareable evidence and must distinguish training from production work. Publish numeric results only with a defined baseline, comparable measurements and a documented calculation.
+
 ## Experience commitments
 
 - Keep the established Matrix/graphite/green world, locally hosted Manrope and IBM Plex Mono, approved direction C SVG identity in the capsule, left desktop copy, and right Photo 3 hoodie portrait.

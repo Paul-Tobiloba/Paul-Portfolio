@@ -39,7 +39,7 @@
 .main{position:relative;max-width:1440px;margin:0 auto;padding:136px 64px 64px;display:flex;flex-direction:column;gap:64px}
 .hero{display:flex;align-items:center;justify-content:space-between;min-height:520px;gap:48px}
 .heroCopy{display:flex;flex-direction:column;align-items:flex-start;gap:24px;width:720px;max-width:55%;flex-shrink:0}
-.hero h1{font-size:64px;line-height:72px;white-space:nowrap}
+.hero h1{font-size:clamp(38px,4.15vw,60px);line-height:1.12;white-space:normal;text-wrap:balance}
 .heroDescription{max-width:620px;color:var(--secondary)}
 .heroActions{display:flex;gap:12px;flex-wrap:wrap}
 .primaryButton,.secondaryButton{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:46px;padding:12px 20px;border:1px solid transparent;border-radius:8px;font-size:14px!important;line-height:22px;font-weight:600;transition:background 150ms ease-out,color 150ms ease-out,border-color 150ms ease-out}
@@ -121,7 +121,7 @@
 .projectContext dl{display:flex;flex-direction:column;gap:24px;margin:0}
 .projectContext dt{font-size:12px;line-height:18px;color:var(--muted);margin-bottom:8px}
 .projectContext dd{margin:0}
-@media(min-width:1441px){.hero h1{font-size:64px;line-height:72px}}
+
 @media(max-width:1250px){.main{padding-left:40px;padding-right:40px}.header,.menu{width:calc(100% - 80px)}.hero h1{font-size:clamp(40px,4.45vw,64px);line-height:1.125}.editorialSection{grid-template-columns:minmax(240px,30%) minmax(0,1fr);column-gap:48px}.sectionIntro h2{font-size:32px;line-height:40px}.caseMain{grid-template-columns:minmax(0,1fr) 280px;gap:48px}.caseTitle{font-size:48px;line-height:56px}.scenarioHeading{flex-wrap:wrap;gap:8px}.eventRow{grid-template-columns:90px 1fr 70px;gap:12px}}
 @media(max-width:900px){.inlineNav{display:none}.hero{gap:24px}.heroCopy{max-width:57%}.hero h1{font-size:38px;line-height:46px}.editorialSection{grid-template-columns:1fr;gap:24px}.sectionIntro p{max-width:620px}.sectionIntro h2 br{display:none}.caseMain{grid-template-columns:1fr}.projectContext{position:static}.caseTitle{font-size:44px;line-height:52px}}
 @media(max-width:650px){
@@ -500,7 +500,7 @@
 
 
 /* Approved full-screen Matrix resolve, with a smaller 520px wordmark. */
-.matrixLoading{position:fixed;z-index:100;inset:0;display:grid;place-items:center;box-sizing:border-box;padding:24px;background:#090e0c;color:#edf4ee;isolation:isolate;overflow:hidden;overscroll-behavior:none;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 220ms ease-out}
+.matrixLoading{position:fixed;z-index:100;inset:0;display:grid;place-items:center;box-sizing:border-box;padding:24px;background:#090e0c;color:#edf4ee;isolation:isolate;overflow:hidden;overscroll-behavior:none;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 140ms ease-out}
 .matrixLoading[data-loader-ready]{opacity:1;visibility:visible;pointer-events:auto}
 .matrixLoading[data-loader-ready].matrixLoadingExit{opacity:0;pointer-events:none}
 .matrixComposition{width:min(76vw,520px);display:flex;align-items:center;flex-direction:column;gap:28px}
@@ -526,3 +526,11 @@
 .fullWidthSection .sectionIntro p{max-width:300px}
 @media(max-width:900px){.fullWidthSection .sectionIntro h2 br{display:block}}
 @media(max-width:650px){.fullWidthSection .sectionIntro{flex-direction:column;align-items:flex-start;gap:16px}.fullWidthSection .sectionIntro h2{font-size:32px;line-height:40px}}
+
+.heroDiscipline{color:var(--accent);font:400 12px/20px "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.065em}
+.projectAvailability{display:grid;gap:10px;min-width:0}
+.projectActions{display:flex;flex-wrap:wrap;gap:10px}
+.projectStatus{color:var(--accent);font-size:12px;line-height:20px}
+.site .projectLabThumb{align-self:flex-start;min-height:46px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--accent);font-size:14px}
+.site .projectLabThumb:hover{background:var(--raised)}
+#project-lab,#project-gallery,#project-video{scroll-margin-top:112px}

@@ -4,21 +4,22 @@ import { createMatrixSequence, INITIAL_MATRIX_FRAME } from './matrixLoading.mjs'
 import styles from '../../../styles/SecurityPortfolio.module.css';
 
 export default function BrandLoading({visible,contentRef}) {
-  const [frame,setFrame]=useState(INITIAL_MATRIX_FRAME);
+  const [frame,setFrame]=useState(() => ({...INITIAL_MATRIX_FRAME,visible:false}));
   const sequence=useRef(null),pending=useRef(visible),restart=useRef(null),skip=useRef(null),skipButton=useRef(null),screen=useRef(null);
   useEffect(()=>{
     let raf=0,lastTick=-1,lastPhase='',disposed=false;
     const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
     const draw=now=>{
       if(disposed||!sequence.current)return;
-      const next=sequence.current.update(now,pending.current||document.fonts?.status==='loading',motion.matches);
+      const next=sequence.current.update(now,pending.current,motion.matches);
       const phase=`${next.visible}:${next.exiting}:${next.caption}`;
       if(next.tick!==lastTick||phase!==lastPhase){lastTick=next.tick;lastPhase=phase;setFrame(next);}
       if(next.visible)raf=requestAnimationFrame(draw);
     };
-    const start=(duration=4200)=>{
+    const start=()=>{
+      if(!pending.current||motion.matches)return;
       cancelAnimationFrame(raf);lastTick=-1;lastPhase='';
-      sequence.current=createMatrixSequence({startedAt:performance.now(),duration});
+      sequence.current=createMatrixSequence({startedAt:performance.now(),duration:350,maxWait:1100,hold:70,fade:140});
       raf=requestAnimationFrame(draw);
     };
     const resume=()=>{
@@ -28,14 +29,13 @@ export default function BrandLoading({visible,contentRef}) {
     restart.current=start;
     skip.current=()=>{sequence.current?.skip();cancelAnimationFrame(raf);draw(performance.now());};
     document.addEventListener('visibilitychange',resume);motion.addEventListener('change',resume);
-    start();
     return ()=>{disposed=true;cancelAnimationFrame(raf);restart.current=null;skip.current=null;document.removeEventListener('visibilitychange',resume);motion.removeEventListener('change',resume);};
   },[]);
   useEffect(()=>{
     pending.current=visible;
     if(!visible)return;
-    // Fast cached navigation never flashes a full-screen transition.
-    const timer=setTimeout(()=>{if(pending.current&&(!sequence.current?.active||sequence.current.finishing))restart.current?.(1800);},120);
+    // Fast loads leave the page visible; only sustained pending work shows the intro.
+    const timer=setTimeout(()=>{if(pending.current&&!sequence.current?.active)restart.current?.();},220);
     return ()=>clearTimeout(timer);
   },[visible]);
   useEffect(()=>{

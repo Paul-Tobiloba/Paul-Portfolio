@@ -4,6 +4,18 @@
 
 Earlier implementation snapshots were committed and published on [codex/security-portfolio](https://github.com/Paul-Tobiloba/Paul-Portfolio/tree/codex/security-portfolio). The Signal map skills extension, Role explorer, and existing internship wording edits were developed locally for the authorized GitHub update. The user’s latest instruction explicitly authorizes pushing the completed work to GitHub, superseding the earlier local-only publication restriction. The publication target is codex/security-portfolio. Earlier publication records below refer only to their historical snapshots. Production deployment remains unverified. No dependencies were added. The [Figma design](https://www.figma.com/design/XcYJ00CBa60q4GyCns4RW8) remains visual authority for the established capsule/hoodie world; restored content layouts and console/explorer extensions are code-only.
 
+## Current project and loader update
+
+The public project and approved walkthrough registries in `src/lib/projectAvailability.mjs` determine available actions. The three public destinations returned HTTP 200 during the check. Noirak returned HTTP 500 and Lagos EPPPS could not be resolved during the check, so both retain their galleries without a public-site CTA. The old data-driven video/preview fields are not selected or serialized. No recording was approved; none is exposed. The AI Accountant outcomes use the revised qualitative copy for both database and fallback records. No database records were modified.
+
+The existing synthetic sign-in scenario also appears at `/works/sign-in-triage-lab`, with a methodology and decision rationale. This is an authored training exercise, not production incident evidence. The matrix intro now stays hidden unless real work is still pending after 220 ms. If shown, it uses a 350 ms animation, a 70 ms hold and a 140 ms fade, with an 1,100 ms cap from its start and reduced-motion suppression at entry. Earlier startup timing notes are historical. The homepage hero uses the revised automation and cybersecurity positioning.
+
+On 2026-11-04, Vercel reported the public alias on the ready `main` deployment for `d773b416`. Five sampled public responses across the homepage and two case studies shared one build ID and still served the old case-study CTA. The new update has local build, unit and generated-HTML coverage. Browser/mobile, assistive technology, and measured page performance remain unverified.
+
+## Signal map tool marks
+
+Each of the 32 existing entries has a decorative mark beside its button label and a larger mark in the selected details. The 29 branded entries use 28 local files, documented in `public/assets/skill-marks/SOURCES.md`. SQL, networking and tcpdump use neutral Lucide symbols. Brand marks are muted by default, with original colors shown on hover, focus and selection. The selected detail always shows the original colors. Sizes adapt within the existing responsive layout and transitions honor reduced motion. No new package or third-party image request is needed.
+
 ## Run on Windows
 
 Use npm.cmd in PowerShell to avoid the npm.ps1 execution-policy issue. NEXT_DIST_DIR keeps output separate from the existing tracked .next directory.

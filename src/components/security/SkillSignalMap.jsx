@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { LuArrowUpRight, LuBraces, LuDatabase, LuShieldCheck, LuWorkflow } from 'react-icons/lu';
 import content from '../../data/portfolioContent.json';
+import SkillMark from './SkillMark';
 import { buildSkillGroups, signalRoutes } from './skillSignalMap.mjs';
 import styles from '../../../styles/SkillSignalMap.module.css';
 
@@ -111,7 +112,7 @@ export default function SkillSignalMap() {
       onFocus={() => setFocused(tool.name)}
       onBlur={() => setFocused(null)}
       onClick={() => chooseTool(tool)}
-    ><span>{tool.name}</span><LuArrowUpRight aria-hidden="true"/></button>;
+    ><span className={styles.toolLabel}><SkillMark name={tool.name}/><span>{tool.name}</span></span><LuArrowUpRight aria-hidden="true"/></button>;
   }
 
   return <div className={styles.signalMap}>
@@ -128,7 +129,7 @@ export default function SkillSignalMap() {
       <div className={styles.toolColumn}>{group.tools.slice(split).map(toolButton)}</div>
     </div>
     <div id={detailId} className={styles.detail} role="status" aria-live="polite" aria-atomic="true">
-      <div><h3>{selected.name}</h3><p className={styles.detailCategory}>{group.name}</p></div><p className={styles.description}>{selected.desc}</p>
+      <div className={styles.detailIdentity}><SkillMark name={selected.name}/><div><h3>{selected.name}</h3><p className={styles.detailCategory}>{group.name}</p></div></div><p className={styles.description}>{selected.desc}</p>
     </div>
     <noscript><div className={styles.fallback}><h3>All skills &amp; tools</h3>{groups.map(item => <section key={item.id}><h4>{item.name}</h4><ul>{item.tools.map(tool => <li key={tool.name}><strong>{tool.name}</strong>: {tool.desc}</li>)}</ul></section>)}</div></noscript>
   </div>;

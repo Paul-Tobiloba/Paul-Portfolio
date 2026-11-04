@@ -24,8 +24,6 @@ export const projects = [
       "Enabled consistent handling of irregular and unstructured transaction descriptions.",
       "Provided a scalable foundation for extending automation to additional financial workflows."
     ],
-    "video": "https://youtu.be/vvulpM9I8uU?si=rR8g-OopMltmwdlu",
-    "livePreview": "https://make.powerautomate.com/",
     "nextProjectSlug": "noirak",
     "projectImg": [
       "https://res.cloudinary.com/tobycodes/image/upload/v1774053764/Screenshot_2026-03-21_014009_xcccfl.png",
@@ -57,8 +55,6 @@ export const projects = [
     "conclusion": [
       "The Lagos EPPPS project reflects how thoughtful design and smart technology can enhance public service delivery. By combining modern web development with workflow optimization, the platform now provides a seamless digital experience for both citizens and government stakeholders—supporting transparency, efficiency, and the state’s broader vision for sustainable urban development."
     ],
-    "video": null,
-    "livePreview": "https://lagoseppps.com.ng/",
     "nextProjectSlug": "k2themes",
     "projectImg": [
       "https://res.cloudinary.com/tobycodes/image/upload/v1743928773/Portfolio%20V2/Screenshot_47_larh4a.png",
@@ -89,8 +85,6 @@ export const projects = [
     "conclusion": [
       "Noirak.com has evolved into more than just a marketing site—it's a full-fledged, scalable platform tailored to both users and administrators. I led the development of the landing page to clearly communicate the brand's value, and I also built the customer dashboard and admin portal used to manage loan applications, approvals, and customer data. Powered by a clean architecture using Next.js and Supabase, the platform is fast, secure, and built for scale—delivering a seamless experience across all user roles."
     ],
-    "video": null,
-    "livePreview": "https://www.noirak.com",
     "nextProjectSlug": "heroesforchristministry",
     "projectImg": [
       "https://res.cloudinary.com/tobycodes/image/upload/v1743928847/Portfolio%20V2/noirak/Screenshot_2025-04-06_092410_s2p7xe.png",
@@ -123,8 +117,6 @@ export const projects = [
     "conclusion": [
       "The result was a cohesive and responsive interface that elevated the overall look and functionality of the K2 environment—making automation processes more intuitive, accessible, and visually engaging."
     ],
-    "video": null,
-    "livePreview": "https://drive.google.com/file/d/1VvA0v9I0LjoO5N_JuQEzrMiISzvI2ttT/view?usp=drive_link",
     "nextProjectSlug": "lagosnet",
     "projectImg": [
       "https://res.cloudinary.com/tobycodes/image/upload/v1743928771/Portfolio%20V2/Screenshot_45_lbomqi.png",
@@ -157,12 +149,10 @@ export const projects = [
       "All extracted data is automatically logged into a centralized database, enabling real-time tracking and query-based insights. Users can interact conversationally—asking questions like monthly spend per project—and receive instant, accurate responses without manual reconciliation."
     ],
     "conclusion": [
-      "Eliminated manual expense tracking and reduced reconciliation effort by over 70%.",
+      "Automated expense entry from WhatsApp submissions and consolidated records in one database.",
       "Enabled real-time financial visibility across multiple projects through a conversational interface.",
       "Demonstrated how AI-powered automation can be effectively deployed outside enterprise environments for immediate business impact."
     ],
-    "video": "https://youtu.be/1540pDeGZD0?si=-RRCXBug8udS8LLt",
-    "livePreview": "https://n8n.io/",
     "nextProjectSlug": "reconciliation-rpa",
     "projectImg": [
       "https://res.cloudinary.com/tobycodes/image/upload/v1774054560/Screenshot_2026-02-22_232458_em48kw.png",
@@ -196,8 +186,6 @@ export const projects = [
       "Improved user navigation and content clarity, leading to better engagement and conversion potential.",
       "Established a scalable foundation for future expansion, including service pages and lead generation funnels."
     ],
-    "video": null,
-    "livePreview": "https://diergasia.com/",
     "nextProjectSlug": "ai-accountant",
     "projectImg": [
       "https://res.cloudinary.com/tobycodes/image/upload/v1774052008/Screenshot_2026-03-21_005328_hc8r0x.png",
@@ -235,8 +223,6 @@ export const projects = [
       "Created a scalable architecture that can support future product growth, including learning workflows, analytics, and communication features.",
       "Delivered a polished and responsive interface across both the public website and authenticated dashboard environments."
     ],
-    "video": null,
-    "livePreview": "https://www.theladeconsult.com/",
     "nextProjectSlug": "diergasia",
     "projectImg": [
       "https://res.cloudinary.com/tobycodes/image/upload/v1774050002/Screenshot_2026-03-21_002401_oyxnn0.png",
@@ -272,8 +258,6 @@ export const projects = [
       "Provided a central platform for members and visitors to access information about events and engagements.",
       "Established a digital foundation that supports the ministry’s growth and outreach efforts."
     ],
-    "video": null,
-    "livePreview": "https://www.heroesforchristministry.org/",
     "nextProjectSlug": "thelade-consult",
     "projectImg": [
       "https://res.cloudinary.com/tobycodes/image/upload/v1774052006/Screenshot_2026-03-21_010429_pn0fd1.png",

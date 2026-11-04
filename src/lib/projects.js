@@ -1,7 +1,10 @@
 import { neon } from "@neondatabase/serverless";
 import { projects as fallbackProjects } from "../data/projects";
+import { signInLab } from "../data/securityLab.mjs";
 
 let sql;
+
+const aiAccountantOutcomes = fallbackProjects.find(project => project.slug === "ai-accountant").conclusion;
 
 const normalizeAssetPath = (value) => {
   if (typeof value !== "string" || !value.trim()) {
@@ -35,9 +38,8 @@ const normalizeProjectShape = (project) => ({
   filters: Array.isArray(project.filters) ? project.filters : [],
   image: normalizeAssetPath(project.image ?? null),
   description: Array.isArray(project.description) ? project.description : [],
-  conclusion: Array.isArray(project.conclusion) ? project.conclusion : [],
-  video: project.video ?? null,
-  livePreview: project.livePreview ?? project.live_preview ?? null,
+  conclusion: project.slug === "ai-accountant" ? aiAccountantOutcomes
+    : Array.isArray(project.conclusion) ? project.conclusion : [],
   nextProjectSlug:
     project.nextProjectSlug ?? project.next_project_slug ?? project.nextProject?.slug ?? null,
   projectImg: Array.isArray(project.projectImg)
@@ -64,7 +66,7 @@ const attachNextProject = (projects) => {
   }));
 };
 
-const normalizeProjects = (projects) => attachNextProject(projects.map(normalizeProjectShape));
+const normalizeProjects = (projects) => attachNextProject([signInLab, ...projects.filter(project => project.slug !== signInLab.slug)].map(normalizeProjectShape));
 
 const getSql = () => {
   if (!process.env.DATABASE_URL) {
@@ -102,8 +104,6 @@ export const getProjects = async () => {
         image,
         description,
         conclusion,
-        video,
-        "livePreview",
         "nextProjectSlug",
         COALESCE("projectImg", ARRAY[image]) AS "projectImg"
       FROM public.projects
