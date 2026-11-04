@@ -1,6 +1,7 @@
 import { neon } from "@neondatabase/serverless";
 import { projects as fallbackProjects } from "../data/projects";
 import { signInLab } from "../data/securityLab.mjs";
+import { kodeArcade } from "../data/kodeArcade.mjs";
 
 let sql;
 
@@ -66,7 +67,12 @@ const attachNextProject = (projects) => {
   }));
 };
 
-const normalizeProjects = (projects) => attachNextProject([signInLab, ...projects.filter(project => project.slug !== signInLab.slug)].map(normalizeProjectShape));
+const builtInProjects = [signInLab, kodeArcade];
+const builtInSlugs = new Set(builtInProjects.map(project => project.slug));
+const normalizeProjects = (projects) => attachNextProject([
+  ...builtInProjects,
+  ...projects.filter(project => !builtInSlugs.has(project.slug)),
+].map(normalizeProjectShape));
 
 const getSql = () => {
   if (!process.env.DATABASE_URL) {

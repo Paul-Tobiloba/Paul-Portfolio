@@ -8,7 +8,7 @@ export const blogPosts = [
     categories: ["Web Development", "WordPress"],
     date: "May 2026",
     author: "Paul Tobiloba",
-    image: "/assets/images/blog-4-scaled-1.jpg",
+    image: "/assets/security/blog/wordpress-web-development.webp",
     tags: ["WordPress", "Web Development", "CMS", "Frontend", "UX", "Website Performance"],
   },
   {
@@ -20,7 +20,7 @@ export const blogPosts = [
     categories: ["Automation Engineering", "Banking Automation"],
     date: "April 2026",
     author: "Paul Tobiloba",
-    image: "/assets/images/blog-2.jpg",
+    image: "/assets/security/blog/bank-reconciliation-rpa.webp",
     tags: ["RPA", "Power Automate Desktop", "Reconciliation", "Automation", "Banking", "Data Processing"],
   },
   {
@@ -32,7 +32,7 @@ export const blogPosts = [
     categories: ["Automation Engineering", "Power Automate Desktop"],
     date: "March 2026",
     author: "Paul Tobiloba",
-    image: "/assets/images/single7.jpg",
+    image: "/assets/security/blog/python-power-automate.webp",
     tags: ["Python", "Power Automate Desktop", "RPA", "Automation"],
   },
 ];

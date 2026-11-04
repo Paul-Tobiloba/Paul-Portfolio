@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 import content from "../../data/portfolioContent.json";
 import styles from "../../../styles/SecurityPortfolio.module.css";
 
@@ -11,12 +12,50 @@ export { default as ProfessionalSkills } from "./SkillSignalMap";
 export { default as FullResume } from "./RoleExplorer";
 
 export function Testimonials() {
-  const [active,setActive]=useState(0);
-  const track=useRef(null);
-  function go(index) {
-    const next=Math.max(0,Math.min(content.testimonials.length-1,index));
-    const rail=track.current;
-    rail.scrollTo({left:next*rail.clientWidth,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+  const [active, setActive] = useState(0);
+  const { testimonials } = content;
+  const person = testimonials[active];
+  const initials = person.name.split(" ").slice(0, 2).map(word => word[0]).join("");
+
+  function move(direction) {
+    setActive(current => Math.max(0, Math.min(testimonials.length - 1, current + direction)));
   }
-  return <div className={styles.testimonialSection}><div ref={track} className={styles.testimonialTrack} tabIndex="0" role="region" aria-label="Client and colleague testimonials" onScroll={event=>setActive(Math.round(event.currentTarget.scrollLeft/event.currentTarget.clientWidth))} onKeyDown={event=>{if(event.key==="ArrowRight"){event.preventDefault();go(active+1);}if(event.key==="ArrowLeft"){event.preventDefault();go(active-1);}}}>{content.testimonials.map((item,index)=><figure key={item.name} className={styles.testimonialSlide} aria-label={`Testimonial ${index+1} of ${content.testimonials.length}`}><blockquote>{item.text}</blockquote><figcaption><span className={styles.authorAvatar} aria-hidden="true">{item.avatar?<img src={item.avatar} width="48" height="48" alt="" loading="lazy"/>:item.name.split(" ").map(word=>word[0]).slice(0,2).join("")}</span><span><strong>{item.name}</strong><span>{item.role}</span></span></figcaption></figure>)}</div><div className={styles.carouselControls}><p className={styles.caption} aria-live="polite">{active+1} of {content.testimonials.length}</p><div><button type="button" className={styles.secondaryButton} onClick={()=>go(active-1)} disabled={active===0} aria-label="Previous testimonial">Previous</button><button type="button" className={styles.secondaryButton} onClick={()=>go(active+1)} disabled={active===content.testimonials.length-1} aria-label="Next testimonial">Next</button></div></div></div>;
+
+  function handleKeyDown(event) {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      move(event.key === "ArrowLeft" ? -1 : 1);
+    }
+  }
+
+  return (
+    <div className={styles.testimonialSection} onKeyDown={handleKeyDown}>
+      <div role="region" tabIndex={0} aria-label="Client and colleague testimonials" aria-live="polite" aria-atomic="true">
+        <figure className={styles.testimonialSpotlight}>
+          <svg className={styles.testimonialQuoteMark} viewBox="0 0 32 24" fill="currentColor" aria-hidden="true">
+            <path d="M0 24V13C0 5 5 1 13 0v4c-5 1-7 4-7 8h7v12H0Zm19 0V13c0-8 5-12 13-13v4c-5 1-7 4-7 8h7v12H19Z" />
+          </svg>
+          <blockquote>{person.text}</blockquote>
+          <figcaption>
+            <span className={styles.authorAvatar} aria-hidden="true">
+              {person.avatar ? <img src={person.avatar} width="40" height="40" alt="" loading="lazy" /> : initials}
+            </span>
+            <span>
+              <strong>{person.name}</strong>
+              <span>{person.role}</span>
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+      <div className={styles.testimonialControls} role="group" aria-label="Browse testimonials">
+        <span className={styles.testimonialCount}>{active + 1} of {testimonials.length}</span>
+        <button type="button" onClick={() => move(-1)} aria-disabled={active === 0} aria-label="Previous testimonial">
+          <LuArrowLeft size={18} aria-hidden="true" />
+        </button>
+        <button type="button" onClick={() => move(1)} aria-disabled={active === testimonials.length - 1} aria-label="Next testimonial">
+          <LuArrowRight size={18} aria-hidden="true" />
+        </button>
+      </div>
+    </div>
+  );
 }

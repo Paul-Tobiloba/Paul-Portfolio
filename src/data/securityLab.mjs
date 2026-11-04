@@ -6,6 +6,8 @@ export const signInLab = {
   technologies: 'Identity sign-in logs, SOC triage',
   categories: 'Cybersecurity Lab',
   filters: ['sorting-cybersecurity'],
+  image: '/assets/security/sign-in-triage-cover.svg',
+  projectImg: [],
   description: [
     'I built this interactive exercise to show how I would triage an identity alert using a small, fictional sign-in timeline. It uses sample events only, with no production identity or customer data.',
     'The scenario starts with failures at 09:14:02 and 09:14:19, followed by a success at 09:15:03. The three events share an identity and source. The exercise separates those observations from evidence that is still missing, including device context, MFA details and user confirmation.',

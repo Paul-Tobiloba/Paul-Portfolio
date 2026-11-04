@@ -1,6 +1,7 @@
 // Only explicitly reviewed public destinations belong here. Legacy database
 // preview and video fields are never a source of public calls to action.
 const publicSites = new Map([
+  ['kodearcade', 'https://kodearcade.laelixsolutions.cloud/'],
   ['diergasia', 'https://diergasia.com/'],
   ['thelade-consult', 'https://www.theladeconsult.com/'],
   ['heroesforchristministry', 'https://heroesforchristministry.org/'],
@@ -10,7 +11,7 @@ const approvedWalkthroughs = new Map();
 export function projectAvailability(project) {
   const liveUrl = publicSites.get(project.slug) ?? null;
   const videoUrl = approvedWalkthroughs.get(project.slug) ?? null;
-  const hasGallery = Boolean(project.projectImg?.length || project.image);
+  const hasGallery = Array.isArray(project.projectImg) ? project.projectImg.length > 0 : Boolean(project.image);
   const isLab = project.slug === 'sign-in-triage-lab';
   const isPrivate = project.slug === 'reconciliation-rpa';
   return {

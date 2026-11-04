@@ -1,25 +1,30 @@
 import { useEffect, useRef, useState } from 'react';
 import MatrixWordmark from './MatrixWordmark';
 import { createMatrixSequence, INITIAL_MATRIX_FRAME } from './matrixLoading.mjs';
+import { LOADER_MAX_WAIT, STARTUP_MARKER } from './startupLoading.mjs';
 import styles from '../../../styles/SecurityPortfolio.module.css';
 
 export default function BrandLoading({visible,contentRef}) {
-  const [frame,setFrame]=useState(() => ({...INITIAL_MATRIX_FRAME,visible:false}));
+  const [frame,setFrame]=useState(() => ({...INITIAL_MATRIX_FRAME,startup:true}));
   const sequence=useRef(null),pending=useRef(visible),restart=useRef(null),skip=useRef(null),skipButton=useRef(null),screen=useRef(null);
   useEffect(()=>{
-    let raf=0,lastTick=-1,lastPhase='',disposed=false;
+    let raf=0,lastTick=-1,lastPhase='',disposed=false,startup=false;
+    const root=document.documentElement;
     const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
     const draw=now=>{
       if(disposed||!sequence.current)return;
-      const next=sequence.current.update(now,pending.current,motion.matches);
+      if(startup&&(!root.hasAttribute(STARTUP_MARKER)||motion.matches))sequence.current.skip();
+      const next=sequence.current.update(now,pending.current||(startup&&document.fonts?.status==='loading'),motion.matches);
+      if(startup&&!next.visible)root.removeAttribute(STARTUP_MARKER);
       const phase=`${next.visible}:${next.exiting}:${next.caption}`;
-      if(next.tick!==lastTick||phase!==lastPhase){lastTick=next.tick;lastPhase=phase;setFrame(next);}
+      if(next.tick!==lastTick||phase!==lastPhase){lastTick=next.tick;lastPhase=phase;setFrame({...next,startup});}
       if(next.visible)raf=requestAnimationFrame(draw);
     };
-    const start=()=>{
-      if(!pending.current||motion.matches)return;
+    const start=(initial=false,startedAt=performance.now())=>{
+      if(!initial&&(!pending.current||motion.matches))return;
+      startup=initial;
       cancelAnimationFrame(raf);lastTick=-1;lastPhase='';
-      sequence.current=createMatrixSequence({startedAt:performance.now(),duration:350,maxWait:1100,hold:70,fade:140});
+      sequence.current=createMatrixSequence({startedAt,duration:350,maxWait:LOADER_MAX_WAIT,hold:70,fade:140});
       raf=requestAnimationFrame(draw);
     };
     const resume=()=>{
@@ -29,6 +34,8 @@ export default function BrandLoading({visible,contentRef}) {
     restart.current=start;
     skip.current=()=>{sequence.current?.skip();cancelAnimationFrame(raf);draw(performance.now());};
     document.addEventListener('visibilitychange',resume);motion.addEventListener('change',resume);
+    const started=root.getAttribute(STARTUP_MARKER);
+    if(started!==null)start(true,Number(started));
     return ()=>{disposed=true;cancelAnimationFrame(raf);restart.current=null;skip.current=null;document.removeEventListener('visibilitychange',resume);motion.removeEventListener('change',resume);};
   },[]);
   useEffect(()=>{
@@ -39,7 +46,7 @@ export default function BrandLoading({visible,contentRef}) {
     return ()=>clearTimeout(timer);
   },[visible]);
   useEffect(()=>{
-    if(!frame.visible)return;
+    if(!frame.visible||frame.startup)return;
     const screenNode=screen.current;
     // Default CSS keeps the SSR overlay hidden if hydration never reaches effects.
     screenNode?.setAttribute('data-loader-ready','true');
@@ -58,10 +65,10 @@ export default function BrandLoading({visible,contentRef}) {
       if(previousFocus?.isConnected&&previousFocus!==document.body)previousFocus.focus({preventScroll:true});
       else {const main=page?.querySelector('main');if(main){main.setAttribute('tabindex','-1');main.focus({preventScroll:true});}}
     };
-  },[frame.visible,contentRef]);
+  },[frame.visible,frame.startup,contentRef]);
   if(!frame.visible)return null;
   const percent=Math.round(frame.progress*100);
-  return <div ref={screen} id="portfolio-loading-screen" className={`${styles.matrixLoading} ${frame.exiting?styles.matrixLoadingExit:''}`} role="dialog" aria-modal="true" aria-labelledby="portfolio-loading-label" aria-describedby="portfolio-loading-name" onKeyDown={event=>{event.stopPropagation();if(event.key==='Escape'){event.preventDefault();skip.current?.();}if(event.key==='Tab'){event.preventDefault();skipButton.current?.focus();}}}>
+  return <div ref={screen} id="portfolio-loading-screen" data-startup-loader={frame.startup ? "" : undefined} data-startup-exiting={frame.startup && frame.exiting ? "" : undefined} className={`${styles.matrixLoading} ${frame.exiting?styles.matrixLoadingExit:''}`} role="dialog" aria-modal="true" aria-labelledby="portfolio-loading-label" aria-describedby="portfolio-loading-name" onKeyDown={event=>{event.stopPropagation();if(event.key==='Escape'){event.preventDefault();skip.current?.();}if(event.key==='Tab'){event.preventDefault();skipButton.current?.focus();}}}>
     <div className={styles.matrixComposition}>
       <MatrixWordmark resolve={frame.resolve} tick={frame.tick}/>
       <span id="portfolio-loading-name" className={styles.srOnly}>Paul Tobiloba</span>
