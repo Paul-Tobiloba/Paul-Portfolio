@@ -65,7 +65,7 @@ function Header({ home }) {
     <header className={styles.header}>
       <Identity />
       <nav className={styles.inlineNav} aria-label="Main navigation">
-        {home ? <><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a></> : <Link href="/#work">Back to portfolio</Link>}
+        {home ? <><a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills-section">Skills/Tools</a></> : <Link href="/#work">Back to portfolio</Link>}
       </nav>
       <div className={styles.circularActions}>
         <button type="button" className={styles.iconButton} onClick={() => setTerminalOpen(true)} aria-label="Open portfolio console" aria-haspopup="dialog" aria-keyshortcuts="Control+k Meta+k" title="Portfolio console · Ctrl / Cmd + K"><LuTerminal size={20}/></button>
@@ -78,7 +78,7 @@ function Header({ home }) {
     <dialog ref={dialog} id="portfolio-menu" className={styles.menu} aria-label="Portfolio navigation" onCancel={close} onKeyDown={containFocus} onClick={(event) => { if (event.target === event.currentTarget) { const r=event.currentTarget.getBoundingClientRect(); if(event.clientX<r.left || event.clientX>r.right || event.clientY<r.top || event.clientY>r.bottom) close(); } }}>
       <div className={styles.menuHeading}><Identity expanded /><button className={styles.iconButton} type="button" onClick={close} aria-label="Close menu" autoFocus><Icon name="x" /></button></div>
       <nav className={styles.menuLinks} aria-label="Expanded navigation">
-        {[["What I do",section("services-section")],["Professional skills",section("skills-section")],["Portfolio","/works"],["Résumé",section("resume-section")],["Testimonials",section("testimonials-section")],["Blog","/blog"],["About",section("about")],["Contact",section("contact-section")]].map(([label,href]) => <Link key={label} href={href} onClick={close}>{label}</Link>)}
+        {[["What I do",section("services-section")],["Professional skills",section("skills-section")],["Portfolio","/works"],["Résumé",section("resume-section")],["Certifications",section("certifications-section")],["Testimonials",section("testimonials-section")],["Blog","/blog"],["Contact",section("contact-section")]].map(([label,href]) => <Link key={label} href={href} onClick={close}>{label}</Link>)}
       </nav>
       <div className={styles.menuActions}><a className={styles.primaryButton} href="/resume.pdf" target="_blank" rel="noopener noreferrer">View résumé</a><a className={styles.secondaryButton} href={EMAIL}>Email me</a></div>
       <div className={styles.menuProfiles}><a href={GITHUB} target="_blank" rel="noopener noreferrer">GitHub</a><a href={LINKEDIN} target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
